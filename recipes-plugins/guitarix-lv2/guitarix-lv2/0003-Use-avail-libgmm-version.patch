@@ -1,0 +1,13 @@
+diff --git a/wscript b/wscript
+index 8a9ee8d8..cf2cf791 100644
+--- a/wscript
++++ b/wscript
+@@ -314,7 +314,7 @@ def configure(conf):
+     # needed libaries
+     conf.check_cfg(package='sndfile', args=['--cflags','--libs','sndfile >= 1.0.17'], uselib_store='SNDFILE', mandatory=1)
+     conf.check_cfg(package='gthread-2.0', args=['--cflags','--libs','gthread-2.0 >= 2.24'], uselib_store='GTHREAD', mandatory=1)
+-    conf.check_cfg(package='glibmm-2.4', args=['--cflags','--libs','glibmm-2.4 >= 2.56'], uselib_store='GLIBMM', mandatory=1)
++    conf.check_cfg(package='glibmm-2.4', args=['--cflags','--libs','glibmm-2.4 >= 2.50.1'], uselib_store='GLIBMM', mandatory=1)
+     conf.check(header_name='fftw3.h', mandatory=1)
+     conf.check_cfg(package='fftw3f', args=['--cflags','--libs','fftw3f >= 3.3.8'], uselib_store='FFTW3', mandatory=1)
+ 

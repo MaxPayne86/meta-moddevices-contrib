@@ -1,0 +1,13 @@
+diff --git a/Makefile b/Makefile
+index 77d8f045..f009ed79 100644
+--- a/Makefile
++++ b/Makefile
+@@ -28,7 +28,7 @@ SHARE_PATH             ?= $(PREFIX)/share
+ ETC_PATH               ?= /etc
+ DOC_PATH               ?= $(SHARE_PATH)/doc
+ LADSPA_PATH             = $(LIB_PATH)/ladspa
+-LV2_PATH                = $(LIB_PATH)/lv2
++LV2_PATH               ?= $(LIB_PATH)/lv2
+ VST_PATH                = $(LIB_PATH)/vst
+ 
+ # Location

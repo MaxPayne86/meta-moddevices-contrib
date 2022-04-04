@@ -1,0 +1,52 @@
+diff --git a/src/polyclouds.cpp b/src/polyclouds.cpp
+index afe0ccc..4e34030 100755
+--- a/src/polyclouds.cpp
++++ b/src/polyclouds.cpp
+@@ -12,7 +12,7 @@
+   OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+ */
+ 
+-#include "lv2/core/lv2.h"
++#include "lv2.h"
+ 
+ /** Include standard C headers */
+ #include <math.h>
+diff --git a/src/polygrids.cpp b/src/polygrids.cpp
+index 98ce551..f0c00e7 100755
+--- a/src/polygrids.cpp
++++ b/src/polygrids.cpp
+@@ -23,7 +23,7 @@
+ #include "Metronome.hpp"
+ #include "Oneshot.hpp"
+ #include "TopographPatternGenerator.hpp"
+-#include "lv2/core/lv2.h"
++#include "lv2.h"
+ 
+ /** Include standard C headers */
+ #include <math.h>
+diff --git a/src/polyplaits.cpp b/src/polyplaits.cpp
+index 77fbe65..6e6fc2c 100755
+--- a/src/polyplaits.cpp
++++ b/src/polyplaits.cpp
+@@ -13,7 +13,7 @@
+ */
+ 
+ #include "plaits/dsp/voice.h"
+-#include "lv2/core/lv2.h"
++#include "lv2.h"
+ 
+ /** Include standard C headers */
+ #include <math.h>
+diff --git a/src/polywarps.cpp b/src/polywarps.cpp
+index 09527e9..9fc5625 100755
+--- a/src/polywarps.cpp
++++ b/src/polywarps.cpp
+@@ -12,7 +12,7 @@
+   OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+ */
+ 
+-#include "lv2/core/lv2.h"
++#include "lv2.h"
+ 
+ /** Include standard C headers */
+ #include <math.h>

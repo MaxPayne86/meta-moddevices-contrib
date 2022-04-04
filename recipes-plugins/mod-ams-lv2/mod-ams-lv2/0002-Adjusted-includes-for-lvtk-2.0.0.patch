@@ -1,0 +1,81 @@
+From c3456742ccf14485591841a4e05b448d2f8d3da1 Mon Sep 17 00:00:00 2001
+From: Massimo Pennazio <massimo.pennazio@gmail.com>
+Date: Sun, 15 Nov 2020 19:15:17 +0100
+Subject: [PATCH 2/2] Adjusted includes for lvtk 2.0.0
+
+---
+ src/env.cpp       | 2 +-
+ src/lfo2_freq.cpp | 2 +-
+ src/vcaexp.cpp    | 2 +-
+ src/vcalin.cpp    | 2 +-
+ src/vcf.cpp       | 2 +-
+ src/vco3.cpp      | 2 +-
+ 6 files changed, 6 insertions(+), 6 deletions(-)
+
+diff --git a/src/env.cpp b/src/env.cpp
+index c0f11d5..feae998 100644
+--- a/src/env.cpp
++++ b/src/env.cpp
+@@ -1,4 +1,4 @@
+-#include <lvtk-1/lvtk/plugin.hpp>
++#include <lvtk-2/lvtk/plugin.hpp>
+ 
+ #include "env.hpp"
+ #include "env_ttl.hpp"
+diff --git a/src/lfo2_freq.cpp b/src/lfo2_freq.cpp
+index 7111507..b266daa 100644
+--- a/src/lfo2_freq.cpp
++++ b/src/lfo2_freq.cpp
+@@ -1,4 +1,4 @@
+-#include <lvtk-1/lvtk/plugin.hpp>
++#include <lvtk-2/lvtk/plugin.hpp>
+ #include <iostream>
+ 
+ #include "lfo2_freq.hpp"
+diff --git a/src/vcaexp.cpp b/src/vcaexp.cpp
+index 329e148..843c1bc 100644
+--- a/src/vcaexp.cpp
++++ b/src/vcaexp.cpp
+@@ -1,4 +1,4 @@
+-#include <lvtk-1/lvtk/plugin.hpp>
++#include <lvtk-2/lvtk/plugin.hpp>
+ 
+ #include "vcaexp.hpp"
+ #include "vcaexp_ttl.hpp"
+diff --git a/src/vcalin.cpp b/src/vcalin.cpp
+index 3f36c6a..7a9e776 100644
+--- a/src/vcalin.cpp
++++ b/src/vcalin.cpp
+@@ -1,4 +1,4 @@
+-#include <lvtk-1/lvtk/plugin.hpp>
++#include <lvtk-2/lvtk/plugin.hpp>
+ 
+ #include "vcalin.hpp"
+ #include "vcalin_ttl.hpp"
+diff --git a/src/vcf.cpp b/src/vcf.cpp
+index e439149..0804ad1 100644
+--- a/src/vcf.cpp
++++ b/src/vcf.cpp
+@@ -1,6 +1,6 @@
+ #include <math.h>
+ 
+-#include <lvtk-1/lvtk/plugin.hpp>
++#include <lvtk-2/lvtk/plugin.hpp>
+ 
+ #include "vcf.hpp"
+ #include "vcf_ttl.hpp"
+diff --git a/src/vco3.cpp b/src/vco3.cpp
+index 2503964..cf4e9e1 100644
+--- a/src/vco3.cpp
++++ b/src/vco3.cpp
+@@ -1,6 +1,6 @@
+ #include <math.h>
+ 
+-#include <lvtk-1/lvtk/plugin.hpp>
++#include <lvtk-2/lvtk/plugin.hpp>
+ 
+ #include "vco3.hpp"
+ #include "vco3_ttl.hpp"
+-- 
+2.17.1
+

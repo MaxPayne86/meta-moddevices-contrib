@@ -1,0 +1,25 @@
+From 9f831595f754acde429ae16527f16a4fe010b047 Mon Sep 17 00:00:00 2001
+From: Massimo Pennazio <maxipenna@libero.it>
+Date: Sun, 14 Mar 2021 10:50:02 +0100
+Subject: [PATCH] Fixing shell command that broke compilation
+
+---
+ Makefile | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/Makefile b/Makefile
+index c99879f..8098adf 100644
+--- a/Makefile
++++ b/Makefile
+@@ -133,7 +133,7 @@ $(BUILDDIR)$(LV2NAME)$(LIB_EXT): src/$(LV2NAME).cpp $(OBJS) $(AUBIO_OBJS)
+ 	$(STRIP) $(STRIPFLAGS) $(BUILDDIR)$(LV2NAME)$(LIB_EXT)
+ 
+ $(BUILDDIR)modgui: $(BUILDDIR)$(LV2NAME).ttl
+-	cp -r modgui/* $(BUILDDIR)modgui/
++	cp -r modgui $(BUILDDIR)
+ 
+ # install/uninstall/clean target definitions
+ 
+-- 
+2.17.1
+

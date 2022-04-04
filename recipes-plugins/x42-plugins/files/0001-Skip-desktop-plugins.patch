@@ -1,0 +1,40 @@
+From 413b7218ffda6ddc0325e32a32a172ec95271aa3 Mon Sep 17 00:00:00 2001
+From: Massimo Pennazio <maxipenna@libero.it>
+Date: Sat, 19 Oct 2019 18:39:44 +0200
+Subject: [PATCH] Skip desktop plugins
+
+---
+ Makefile | 7 -------
+ 1 file changed, 7 deletions(-)
+
+diff --git a/Makefile b/Makefile
+index b0d8ded..5177f72 100644
+--- a/Makefile
++++ b/Makefile
+@@ -9,23 +9,16 @@ VERSION ?=$(shell date +%Y%m%d)
+ SUBDIRS = \
+           balance.lv2 \
+           controlfilter.lv2 \
+-          darc.lv2 \
+-          dpl.lv2 \
+           convoLV2 \
+           fat1.lv2 \
+           fil4.lv2 \
+           matrixmixer.lv2 \
+-          meters.lv2 \
+           mididebug.lv2 \
+           midifilter.lv2 \
+           midigen.lv2 \
+           midimap.lv2 \
+-          mixtri.lv2 \
+           nodelay.lv2 \
+           onsettrigger.lv2 \
+-          sisco.lv2 \
+-          spectra.lv2 \
+-          stepseq.lv2 \
+           stereoroute.lv2 \
+           testsignal.lv2 \
+           tuna.lv2 \
+-- 
+2.17.1
+

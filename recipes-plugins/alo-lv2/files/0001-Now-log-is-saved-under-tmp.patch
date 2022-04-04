@@ -1,0 +1,25 @@
+From 0db3229572e24ea32c4aeefcf87f0d1ea254b13b Mon Sep 17 00:00:00 2001
+From: Massimo Pennazio <maxipenna@libero.it>
+Date: Mon, 12 Aug 2019 19:09:25 +0200
+Subject: [PATCH] Now log is saved under /tmp/
+
+---
+ source/alo.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/source/alo.c b/source/alo.c
+index e5eed3a..6b02bca 100644
+--- a/source/alo.c
++++ b/source/alo.c
+@@ -83,7 +83,7 @@ void log(const char *message, ...)
+ 	}
+ 
+ 	FILE* f;
+-	f = fopen("/root/alo.log", "a+");
++	f = fopen("/tmp/alo.log", "a+");
+ 
+ 	char buffer[2048];
+ 	va_list argumentList;
+-- 
+2.17.1
+

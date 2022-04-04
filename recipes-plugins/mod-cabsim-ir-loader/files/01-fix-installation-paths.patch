@@ -1,0 +1,23 @@
+diff --git a/source/Makefile b/source/Makefile
+index b2e2626..563606f 100644
+--- a/source/Makefile
++++ b/source/Makefile
+@@ -30,13 +30,13 @@ clean:
+ # --------------------------------------------------------------
+ 
+ install: build
+-	install -d $(DESTDIR)$(PREFIX)/lib/lv2/$(NAME).lv2
++	install -d $(DESTDIR)/$(PREFIX)/$(NAME).lv2
+ 
+-	install -m 644 $(NAME).lv2/*.so  $(DESTDIR)$(PREFIX)/lib/lv2/$(NAME).lv2/
+-	install -m 644 $(NAME).lv2/*.ttl $(DESTDIR)$(PREFIX)/lib/lv2/$(NAME).lv2/
+-	install -m 644 $(NAME).lv2/*.wav $(DESTDIR)$(PREFIX)/lib/lv2/$(NAME).lv2/
++	install -m 644 $(NAME).lv2/*.so  $(DESTDIR)/$(PREFIX)/$(NAME).lv2/
++	install -m 644 $(NAME).lv2/*.ttl $(DESTDIR)/$(PREFIX)/$(NAME).lv2/
++	install -m 644 $(NAME).lv2/*.wav $(DESTDIR)/$(PREFIX)/$(NAME).lv2/
+ 
+-	cp -r $(NAME).lv2/modgui $(DESTDIR)$(PREFIX)/lib/lv2/$(NAME).lv2/
++	cp -r $(NAME).lv2/modgui $(DESTDIR)/$(PREFIX)/$(NAME).lv2/
+ 
+ # --------------------------------------------------------------
+ 

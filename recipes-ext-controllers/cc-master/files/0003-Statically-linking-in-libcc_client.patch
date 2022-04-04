@@ -1,0 +1,22 @@
+From 02471d95536758c4c85ebf3a9c347dc6bf5f3220 Mon Sep 17 00:00:00 2001
+From: Massimo Pennazio <maxipenna@libero.it>
+Date: Sun, 8 Sep 2019 15:31:33 +0200
+Subject: [PATCH 3/3] Statically linking in libcc_client
+
+---
+ client/wscript | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/client/wscript b/client/wscript
+index 732a182..60c39e6 100644
+--- a/client/wscript
++++ b/client/wscript
+@@ -37,4 +37,4 @@ def build(bld):
+     bld(source="cc_client.pc.in")
+ 
+     source_files = bld.path.ant_glob('src/*.c')
+-    bld.shlib(source=source_files, target=APPNAME, use='CC CONTROLCHAIN JANSSON')
++    bld.shlib(source=source_files, target=APPNAME, use='CC CCLIB JANSSON')
+-- 
+2.17.1
+

@@ -1,0 +1,65 @@
+diff --git a/src/analyzer.cpp b/src/analyzer.cpp
+index fd42188f..73f9d4ef 100644
+--- a/src/analyzer.cpp
++++ b/src/analyzer.cpp
+@@ -471,12 +471,12 @@ void analyzer::draw(int subindex, float *data, int points, bool fftdone) const
+                                 //pumping up actual signal an erase surrounding
+                                 // sounds
+                                 fft_outL[_iter] = 0.25f * std::max(n * 0.6f * \
+-                                    fabs(fft_outL[_iter]) - var1L , 1e-20);
++                                    fabs(fft_outL[_iter]) - var1L , 1e-20f);
+                                 if(_mode == 3 or _mode == 4) {
+                                     // do the same with R channel if needed
+                                     lastoutR = fft_outR[_iter];
+                                     fft_outR[_iter] = 0.25f * std::max(n * \
+-                                        0.6f * fabs(fft_outR[_iter]) - var1R , 1e-20);
++                                        0.6f * fabs(fft_outR[_iter]) - var1R , 1e-20f);
+                                 }
+                                 break;
+                         }
+diff --git a/src/modules_dist.cpp b/src/modules_dist.cpp
+index 4b1b7f92..8f495ac9 100644
+--- a/src/modules_dist.cpp
++++ b/src/modules_dist.cpp
+@@ -794,8 +794,8 @@ uint32_t tapesimulator_audio_module::process(uint32_t offset, uint32_t numsample
+             lfo2.advance(1);
+             
+             // dot
+-            rms = std::max((double)rms, (fabs(Lo) + fabs(Ro)) / 2);
+-            input = std::max((double)input, (fabs(Lc) + fabs(Rc)) / 2);
++            rms = std::max((float)rms, (fabs(Lo) + fabs(Ro)) / 2);
++            input = std::max((float)input, (fabs(Lc) + fabs(Rc)) / 2);
+             
+             float values[] = {inL, inR, outs[0][i], outs[1][i]};
+             meters.process(values);
+diff --git a/src/modules_limit.cpp b/src/modules_limit.cpp
+index 6b7dcb62..131a2961 100644
+--- a/src/modules_limit.cpp
++++ b/src/modules_limit.cpp
+@@ -429,7 +429,7 @@ uint32_t multibandlimiter_audio_module::process(uint32_t offset, uint32_t numsam
+                 }
+                 
+                 // write multiband coefficient to buffer
+-                buffer[pos] = std::min(*params[param_limit] / std::max(fabs(tmpL), fabs(tmpR)), 1.0);
++                buffer[pos] = std::min(*params[param_limit] / std::max(fabs(tmpL), fabs(tmpR)), 1.0f);
+                 
+                 // step forward in multiband buffer
+                 pos = (pos + channels) % buffer_size;
+@@ -521,7 +521,7 @@ uint32_t multibandlimiter_audio_module::process(uint32_t offset, uint32_t numsam
+             //} // process single strip with filter
+ 
+             //// write multiband coefficient to buffer
+-            //buffer[pos] = std::min(*params[param_limit] / std::max(fabs(sum_left), fabs(sum_right)), 1.0);
++            //buffer[pos] = std::min(*params[param_limit] / std::max(fabs(sum_left), fabs(sum_right)), (double)1.0f);
+ 
+             //for (int i = 0; i < strips; i++) {
+                 //// process gain reduction
+@@ -811,7 +811,7 @@ uint32_t sidechainlimiter_audio_module::process(uint32_t offset, uint32_t numsam
+                 }
+                 
+                 // write multiband coefficient to buffer
+-                buffer[pos] = std::min(*params[param_limit] / std::max(fabs(tmpL), fabs(tmpR)), 1.0);
++                buffer[pos] = std::min(*params[param_limit] / std::max(fabs(tmpL), fabs(tmpR)), 1.0f);
+                 
+                 // step forward in multiband buffer
+                 pos = (pos + channels) % buffer_size;

@@ -1,0 +1,51 @@
+From 903d5455f9510d641a97a0da9e63f1f8af886a52 Mon Sep 17 00:00:00 2001
+From: Massimo Pennazio <maxipenna@libero.it>
+Date: Mon, 29 Jul 2019 23:11:00 +0200
+Subject: [PATCH] LDFLAGS provided by yocto are wrong, -Wl -O1
+
+---
+ plugin/Makefile         | 6 ++++--
+ plugin/library/Makefile | 3 ++-
+ 2 files changed, 6 insertions(+), 3 deletions(-)
+
+diff --git a/plugin/Makefile b/plugin/Makefile
+index 1a8e77d..2af2f6c 100644
+--- a/plugin/Makefile
++++ b/plugin/Makefile
+@@ -22,7 +22,7 @@
+ CC		?=	gcc
+ LD		?=	gcc
+ CFLAGS		+=	-I. -O3 -Wall -fomit-frame-pointer -fstrength-reduce -funroll-loops -ffast-math -c -fPIC -DPIC
+-LDFLAGS		+=	-shared -Llibrary -lc -lm  -linv_common -fPIC -DPIC
++LDFLAGS		=	-shared -Llibrary -lc -lm  -linv_common -fPIC
+ 
+ PLUGINS		=	inv_compressor.so \
+                         inv_delay.so \
+@@ -63,10 +63,12 @@ clean:
+ 
+ %.o: %.c
+ 	@echo "Compiling $<"
+-	@$(CC) -c $(CPPFLAGS) $(CFLAGS) $< -o $@ 
++	@echo "CFLAGS=$(CFLAGS)"
++	@$(CC) -c $(CFLAGS) $< -o $@ 
+ 
+ %.so: %.o
+ 	@echo "Creating  $@"
++	@echo "LDFLAGS=$(LDFLAGS)"
+ 	@$(LD) -o $@ $< $(LDFLAGS)
+ 
+ 
+diff --git a/plugin/library/Makefile b/plugin/library/Makefile
+index b3118e3..667c6a0 100644
+--- a/plugin/library/Makefile
++++ b/plugin/library/Makefile
+@@ -47,4 +47,5 @@ clean:
+ 
+ %.o: %.c
+ 			@echo "Compiling $<"
+-			@$(CC) -c $(CPPFLAGS) $(CFLAGS) $< -o $@ 
++			@echo "CFLAGS=$(CFLAGS)"
++			@$(CC) -c $(CFLAGS) $< -o $@ 
+-- 
+2.17.1
+

@@ -1,0 +1,587 @@
+diff --git a/source/mod-audio-to-cv/mod-audio-to-cv.lv2/mod-audio-to-cv.ttl b/source/mod-audio-to-cv/mod-audio-to-cv.lv2/mod-audio-to-cv.ttl
+index 888fa9b..b332c64 100644
+--- a/source/mod-audio-to-cv/mod-audio-to-cv.lv2/mod-audio-to-cv.ttl
++++ b/source/mod-audio-to-cv/mod-audio-to-cv.lv2/mod-audio-to-cv.ttl
+@@ -42,7 +42,7 @@ lv2:port
+     lv2:name "Audio Input";
+ ],
+ [
+-    a lv2:OutputPort, lv2:CVPort, mod:CVPort;
++    a lv2:OutputPort, lv2:CVPort ;
+     lv2:index 1;
+     lv2:symbol "CVout";
+     lv2:name "CV Output";
+diff --git a/source/mod-cv-abs/mod-cv-abs.lv2/mod-cv-abs.ttl b/source/mod-cv-abs/mod-cv-abs.lv2/mod-cv-abs.ttl
+index ebba831..e6f29e5 100644
+--- a/source/mod-cv-abs/mod-cv-abs.lv2/mod-cv-abs.ttl
++++ b/source/mod-cv-abs/mod-cv-abs.lv2/mod-cv-abs.ttl
+@@ -36,13 +36,13 @@ Plugin that converts the incoming signal to an absolute value.
+ 
+ lv2:port
+ [
+-    a lv2:InputPort, lv2:CVPort, mod:CVPort;
++    a lv2:InputPort, lv2:CVPort ;
+     lv2:index 0;
+     lv2:symbol "CVin";
+     lv2:name "CV Input";
+ ],
+ [
+-    a lv2:OutputPort, lv2:CVPort, mod:CVPort;
++    a lv2:OutputPort, lv2:CVPort ;
+     lv2:index 1;
+     lv2:symbol "CVout1";
+     lv2:name "CV Output";
+diff --git a/source/mod-cv-attenuverter/mod-cv-attenuverter.lv2/mod-cv-attenuverter.ttl b/source/mod-cv-attenuverter/mod-cv-attenuverter.lv2/mod-cv-attenuverter.ttl
+index c1c13eb..57af111 100644
+--- a/source/mod-cv-attenuverter/mod-cv-attenuverter.lv2/mod-cv-attenuverter.ttl
++++ b/source/mod-cv-attenuverter/mod-cv-attenuverter.lv2/mod-cv-attenuverter.ttl
+@@ -36,13 +36,13 @@ Attenuverter Booster multiplies the CV signal by any given value between -10 and
+ 
+ lv2:port
+ [
+-    a lv2:InputPort, lv2:CVPort, mod:CVPort;
++    a lv2:InputPort, lv2:CVPort ;
+     lv2:index 0;
+     lv2:symbol "CVin";
+     lv2:name "CV Input";
+ ],
+ [
+-    a lv2:OutputPort, lv2:CVPort, mod:CVPort;
++    a lv2:OutputPort, lv2:CVPort ;
+     lv2:index 1;
+     lv2:symbol "CVout1";
+     lv2:name "CV Output";
+diff --git a/source/mod-cv-clock/mod-cv-clock.lv2/mod-cv-clock.ttl b/source/mod-cv-clock/mod-cv-clock.lv2/mod-cv-clock.ttl
+index ae7fee5..5b21f51 100644
+--- a/source/mod-cv-clock/mod-cv-clock.lv2/mod-cv-clock.ttl
++++ b/source/mod-cv-clock/mod-cv-clock.lv2/mod-cv-clock.ttl
+@@ -37,7 +37,7 @@ CV Clock generates CV clock pulses or square waves in multiple divisions. The cl
+ 
+ lv2:port
+ [
+-    a lv2:OutputPort, lv2:CVPort, mod:CVPort;
++    a lv2:OutputPort, lv2:CVPort ;
+     lv2:index 0;
+     lv2:symbol "CVout1";
+     lv2:name "pulse";
+@@ -45,7 +45,7 @@ lv2:port
+     lv2:maximum 10.0 ;
+ ],
+ [
+-    a lv2:OutputPort, lv2:CVPort, mod:CVPort;
++    a lv2:OutputPort, lv2:CVPort ;
+     lv2:index 1;
+     lv2:symbol "CVout2";
+     lv2:name "square";
+diff --git a/source/mod-cv-control/mod-cv-control.lv2/mod-cv-control.ttl b/source/mod-cv-control/mod-cv-control.lv2/mod-cv-control.ttl
+index 7678d30..2cbd3a6 100644
+--- a/source/mod-cv-control/mod-cv-control.lv2/mod-cv-control.ttl
++++ b/source/mod-cv-control/mod-cv-control.lv2/mod-cv-control.ttl
+@@ -36,7 +36,7 @@ Control to CV enables you to generate a control voltage signal from a control va
+ 
+ lv2:port
+ [
+-    a lv2:OutputPort, lv2:CVPort, mod:CVPort;
++    a lv2:OutputPort, lv2:CVPort ;
+     lv2:index 0;
+     lv2:symbol "Cvoutput";
+     lv2:name "CV Output";
+diff --git a/source/mod-cv-gate/mod-cv-gate.lv2/mod-cv-gate.ttl b/source/mod-cv-gate/mod-cv-gate.lv2/mod-cv-gate.ttl
+index 3bbf275..4714c46 100644
+--- a/source/mod-cv-gate/mod-cv-gate.lv2/mod-cv-gate.ttl
++++ b/source/mod-cv-gate/mod-cv-gate.lv2/mod-cv-gate.ttl
+@@ -36,7 +36,7 @@ CV Gate Plugin - if the incoming signal on input on is equal or higher then 1 it
+ 
+ lv2:port
+ [
+-    a lv2:InputPort, lv2:CVPort, mod:CVPort;
++    a lv2:InputPort, lv2:CVPort ;
+     lv2:index 0;
+     lv2:minimum 0.0 ;
+     lv2:maximum 10.0 ;
+@@ -45,7 +45,7 @@ lv2:port
+     mod:volts ;
+ ],
+ [
+-    a lv2:InputPort, lv2:CVPort, mod:CVPort;
++    a lv2:InputPort, lv2:CVPort ;
+     lv2:index 1;
+     lv2:minimum -5.0 ;
+     lv2:maximum 5.0 ;
+@@ -53,7 +53,7 @@ lv2:port
+     lv2:name "CV Input";
+ ],
+ [
+-    a lv2:OutputPort, lv2:CVPort, mod:CVPort;
++    a lv2:OutputPort, lv2:CVPort ;
+     lv2:index 2;
+     lv2:minimum -5.0 ;
+     lv2:maximum 5.0 ;
+diff --git a/source/mod-cv-meter/mod-cv-meter.lv2/mod-cv-meter.ttl b/source/mod-cv-meter/mod-cv-meter.lv2/mod-cv-meter.ttl
+index f1a2b06..a525268 100644
+--- a/source/mod-cv-meter/mod-cv-meter.lv2/mod-cv-meter.ttl
++++ b/source/mod-cv-meter/mod-cv-meter.lv2/mod-cv-meter.ttl
+@@ -38,7 +38,7 @@ Plugin by MOD Devices
+ 
+ lv2:port
+ [
+-    a lv2:InputPort, lv2:CVPort, mod:CVPort;
++    a lv2:InputPort, lv2:CVPort ;
+     lv2:index 0;
+ 	lv2:minimum -5.0 ;
+ 	lv2:maximum 5.0  ;
+@@ -46,7 +46,7 @@ lv2:port
+     lv2:name "CV input";
+ ],
+ [
+-    a lv2:OutputPort, lv2:CVPort, mod:CVPort;
++    a lv2:OutputPort, lv2:CVPort ;
+     lv2:index 1;
+ 	lv2:minimum -5.0 ;
+ 	lv2:maximum 5.0  ;
+diff --git a/source/mod-cv-parameter-modulation/mod-cv-parameter-modulation.lv2/mod-cv-parameter-modulation.ttl b/source/mod-cv-parameter-modulation/mod-cv-parameter-modulation.lv2/mod-cv-parameter-modulation.ttl
+index 56d027c..c68faa7 100644
+--- a/source/mod-cv-parameter-modulation/mod-cv-parameter-modulation.lv2/mod-cv-parameter-modulation.ttl
++++ b/source/mod-cv-parameter-modulation/mod-cv-parameter-modulation.lv2/mod-cv-parameter-modulation.ttl
+@@ -33,13 +33,13 @@ rdfs:comment """
+ 
+ lv2:port
+ [
+-    a lv2:InputPort, lv2:CVPort, mod:CVPort;
++    a lv2:InputPort, lv2:CVPort ;
+     lv2:index 0;
+     lv2:symbol "CVin";
+     lv2:name "CV Input";
+ ],
+ [
+-    a lv2:OutputPort, lv2:CVPort, mod:CVPort;
++    a lv2:OutputPort, lv2:CVPort ;
+     lv2:index 1;
+     lv2:minimum 0.0 ;
+     lv2:maximum 10.0 ;
+diff --git a/source/mod-cv-random/mod-cv-random.lv2/mod-cv-random.ttl b/source/mod-cv-random/mod-cv-random.lv2/mod-cv-random.ttl
+index 1e459b9..7c984bd 100644
+--- a/source/mod-cv-random/mod-cv-random.lv2/mod-cv-random.ttl
++++ b/source/mod-cv-random/mod-cv-random.lv2/mod-cv-random.ttl
+@@ -36,7 +36,7 @@ Random CV generator. It uses a gate input to trigger the next random value
+ 
+ lv2:port
+ [
+-    a lv2:InputPort, lv2:CVPort, mod:CVPort;
++    a lv2:InputPort, lv2:CVPort ;
+     lv2:index 0;
+     lv2:minimum 0.0 ;
+     lv2:maximum 10.0 ;
+@@ -44,7 +44,7 @@ lv2:port
+     lv2:name "Gate In";
+ ],
+ [
+-    a lv2:OutputPort, lv2:CVPort, mod:CVPort;
++    a lv2:OutputPort, lv2:CVPort ;
+     lv2:index 1;
+     lv2:minimum -5.0 ;
+     lv2:maximum 5.0 ;
+diff --git a/source/mod-cv-range/mod-cv-range.lv2/mod-cv-range.ttl b/source/mod-cv-range/mod-cv-range.lv2/mod-cv-range.ttl
+index 27d8de1..181d025 100644
+--- a/source/mod-cv-range/mod-cv-range.lv2/mod-cv-range.ttl
++++ b/source/mod-cv-range/mod-cv-range.lv2/mod-cv-range.ttl
+@@ -37,7 +37,7 @@ When the input signal goes out of that range it will be routed to the second out
+ 
+ lv2:port
+ [
+-    a lv2:InputPort, lv2:CVPort, mod:CVPort;
++    a lv2:InputPort, lv2:CVPort ;
+     lv2:index 0;
+     lv2:minimum -5.0 ;
+     lv2:maximum 5.0 ;
+@@ -45,7 +45,7 @@ lv2:port
+     lv2:name "CV Input";
+ ],
+ [
+-    a lv2:OutputPort, lv2:CVPort, mod:CVPort;
++    a lv2:OutputPort, lv2:CVPort ;
+     lv2:index 1;
+     lv2:minimum -5.0 ;
+     lv2:maximum 5.0 ;
+@@ -53,7 +53,7 @@ lv2:port
+     lv2:name "CV Output1";
+ ],
+ [
+-    a lv2:OutputPort, lv2:CVPort, mod:CVPort;
++    a lv2:OutputPort, lv2:CVPort ;
+     lv2:index 2;
+     lv2:minimum -5.0 ;
+     lv2:maximum 5.0 ;
+diff --git a/source/mod-cv-round/mod-cv-round.lv2/mod-cv-round.ttl b/source/mod-cv-round/mod-cv-round.lv2/mod-cv-round.ttl
+index f8ccb3a..2182132 100644
+--- a/source/mod-cv-round/mod-cv-round.lv2/mod-cv-round.ttl
++++ b/source/mod-cv-round/mod-cv-round.lv2/mod-cv-round.ttl
+@@ -36,7 +36,7 @@ Plugin that can either return the integer value of the incoming signal or the de
+ 
+ lv2:port
+ [
+-    a lv2:InputPort, lv2:CVPort, mod:CVPort;
++    a lv2:InputPort, lv2:CVPort ;
+     lv2:index 0;
+     lv2:minimum -5.0 ;
+     lv2:maximum 5.0 ;
+@@ -44,7 +44,7 @@ lv2:port
+     lv2:name "CV Input";
+ ],
+ [
+-    a lv2:OutputPort, lv2:CVPort, mod:CVPort;
++    a lv2:OutputPort, lv2:CVPort ;
+     lv2:index 1;
+     lv2:minimum -5.0 ;
+     lv2:maximum 5.0 ;
+@@ -52,7 +52,7 @@ lv2:port
+     lv2:name "Round";
+ ],
+ [
+-    a lv2:OutputPort, lv2:CVPort, mod:CVPort;
++    a lv2:OutputPort, lv2:CVPort ;
+     lv2:index 2;
+     lv2:minimum -5.0 ;
+     lv2:maximum 5.0 ;
+@@ -60,7 +60,7 @@ lv2:port
+     lv2:name "Ceil";
+ ],
+ [
+-    a lv2:OutputPort, lv2:CVPort, mod:CVPort;
++    a lv2:OutputPort, lv2:CVPort ;
+     lv2:index 3;
+     lv2:minimum -5.0 ;
+     lv2:maximum 5.0 ;
+@@ -68,7 +68,7 @@ lv2:port
+     lv2:name "Floor";
+ ],
+ [
+-    a lv2:OutputPort, lv2:CVPort, mod:CVPort;
++    a lv2:OutputPort, lv2:CVPort ;
+     lv2:index 4;
+     lv2:minimum -5.0 ;
+     lv2:maximum 5.0 ;
+diff --git a/source/mod-cv-slew/mod-cv-slew.lv2/mod-cv-slew.ttl b/source/mod-cv-slew/mod-cv-slew.lv2/mod-cv-slew.ttl
+index 0382d40..c209651 100644
+--- a/source/mod-cv-slew/mod-cv-slew.lv2/mod-cv-slew.ttl
++++ b/source/mod-cv-slew/mod-cv-slew.lv2/mod-cv-slew.ttl
+@@ -37,7 +37,7 @@ Plugin to limit the speed of the rise and fall times of a CV signal.
+ 
+ lv2:port
+ [
+-    a lv2:InputPort, lv2:CVPort, mod:CVPort;
++    a lv2:InputPort, lv2:CVPort ;
+     lv2:index 0;
+     lv2:minimum -5.0;
+     lv2:maximum 5.0 ;
+@@ -45,7 +45,7 @@ lv2:port
+     lv2:name "CV Input";
+ ],
+ [
+-    a lv2:OutputPort, lv2:CVPort, mod:CVPort;
++    a lv2:OutputPort, lv2:CVPort ;
+     lv2:index 1;
+     lv2:minimum -5.0;
+     lv2:maximum 5.0 ;
+diff --git a/source/mod-cv-switch1/mod-cv-switch1.lv2/mod-cv-switch1.ttl b/source/mod-cv-switch1/mod-cv-switch1.lv2/mod-cv-switch1.ttl
+index 15123d2..69b3785 100644
+--- a/source/mod-cv-switch1/mod-cv-switch1.lv2/mod-cv-switch1.ttl
++++ b/source/mod-cv-switch1/mod-cv-switch1.lv2/mod-cv-switch1.ttl
+@@ -36,7 +36,7 @@ CV Switchbox 1-2 routes one cv input to either one of the two outputs.
+ 
+ lv2:port
+ [
+-    a lv2:InputPort, lv2:CVPort, mod:CVPort;
++    a lv2:InputPort, lv2:CVPort ;
+     lv2:index 0;
+     lv2:minimum -5.0;
+     lv2:maximum 5.0;
+@@ -44,7 +44,7 @@ lv2:port
+     lv2:name "CV in";
+ ],
+ [
+-    a lv2:OutputPort, lv2:CVPort, mod:CVPort;
++    a lv2:OutputPort, lv2:CVPort ;
+     lv2:index 1;
+     lv2:minimum -5.0;
+     lv2:maximum 5.0;
+@@ -52,7 +52,7 @@ lv2:port
+     lv2:name "CV out1";
+ ],
+ [
+-    a lv2:OutputPort, lv2:CVPort, mod:CVPort;
++    a lv2:OutputPort, lv2:CVPort ;
+     lv2:index 2;
+     lv2:minimum -5.0;
+     lv2:maximum 5.0;
+diff --git a/source/mod-cv-switch2/mod-cv-switch2.lv2/mod-cv-switch2.ttl b/source/mod-cv-switch2/mod-cv-switch2.lv2/mod-cv-switch2.ttl
+index ed8497f..e736006 100644
+--- a/source/mod-cv-switch2/mod-cv-switch2.lv2/mod-cv-switch2.ttl
++++ b/source/mod-cv-switch2/mod-cv-switch2.lv2/mod-cv-switch2.ttl
+@@ -36,7 +36,7 @@ CV Switchbox 2-1 routes either one of the two cv inputs to one cv output.
+ 
+ lv2:port
+ [
+-    a lv2:InputPort, lv2:CVPort, mod:CVPort;
++    a lv2:InputPort, lv2:CVPort ;
+     lv2:index 0;
+     lv2:minimum -5.0;
+     lv2:maximum 5.0;
+@@ -44,7 +44,7 @@ lv2:port
+     lv2:name "CV in1";
+ ],
+ [
+-    a lv2:InputPort, lv2:CVPort, mod:CVPort;
++    a lv2:InputPort, lv2:CVPort ;
+     lv2:index 1;
+     lv2:minimum -5.0;
+     lv2:maximum 5.0;
+@@ -52,7 +52,7 @@ lv2:port
+     lv2:name "CV in2";
+ ],
+ [
+-    a lv2:OutputPort, lv2:CVPort, mod:CVPort;
++    a lv2:OutputPort, lv2:CVPort ;
+     lv2:index 2;
+     lv2:minimum -5.0;
+     lv2:maximum 5.0;
+diff --git a/source/mod-cv-switch3/mod-cv-switch3.lv2/mod-cv-switch3.ttl b/source/mod-cv-switch3/mod-cv-switch3.lv2/mod-cv-switch3.ttl
+index 7381559..bfac906 100644
+--- a/source/mod-cv-switch3/mod-cv-switch3.lv2/mod-cv-switch3.ttl
++++ b/source/mod-cv-switch3/mod-cv-switch3.lv2/mod-cv-switch3.ttl
+@@ -36,7 +36,7 @@ CV Switchbox 1-3 routes one cv input to either one of the three outputs.
+ 
+ lv2:port
+ [
+-    a lv2:InputPort, lv2:CVPort, mod:CVPort;
++    a lv2:InputPort, lv2:CVPort ;
+     lv2:index 0;
+     lv2:minimum -5.0;
+     lv2:maximum 5.0;
+@@ -44,7 +44,7 @@ lv2:port
+     lv2:name "CV in";
+ ],
+ [
+-    a lv2:OutputPort, lv2:CVPort, mod:CVPort;
++    a lv2:OutputPort, lv2:CVPort ;
+     lv2:index 1;
+     lv2:minimum -5.0;
+     lv2:maximum 5.0;
+@@ -52,7 +52,7 @@ lv2:port
+     lv2:name "CV out1";
+ ],
+ [
+-    a lv2:OutputPort, lv2:CVPort, mod:CVPort;
++    a lv2:OutputPort, lv2:CVPort ;
+     lv2:index 2;
+     lv2:minimum -5.0;
+     lv2:maximum 5.0;
+@@ -60,7 +60,7 @@ lv2:port
+     lv2:name "CV out2";
+ ],
+ [
+-    a lv2:OutputPort, lv2:CVPort, mod:CVPort;
++    a lv2:OutputPort, lv2:CVPort ;
+     lv2:index 3;
+     lv2:minimum -5.0;
+     lv2:maximum 5.0;
+diff --git a/source/mod-cv-switch4/mod-cv-switch4.lv2/mod-cv-switch4.ttl b/source/mod-cv-switch4/mod-cv-switch4.lv2/mod-cv-switch4.ttl
+index 1e75a17..f175fc0 100644
+--- a/source/mod-cv-switch4/mod-cv-switch4.lv2/mod-cv-switch4.ttl
++++ b/source/mod-cv-switch4/mod-cv-switch4.lv2/mod-cv-switch4.ttl
+@@ -36,7 +36,7 @@ CV Switchbox 3-1 routes either one of the three cv inputs to one cv output.
+ 
+ lv2:port
+ [
+-    a lv2:InputPort, lv2:CVPort, mod:CVPort;
++    a lv2:InputPort, lv2:CVPort ;
+     lv2:index 0;
+     lv2:minimum -5.0;
+     lv2:maximum 5.0;
+@@ -44,7 +44,7 @@ lv2:port
+     lv2:name "CV in1";
+ ],
+ [
+-    a lv2:InputPort, lv2:CVPort, mod:CVPort;
++    a lv2:InputPort, lv2:CVPort ;
+     lv2:index 1;
+     lv2:minimum -5.0;
+     lv2:maximum 5.0;
+@@ -52,7 +52,7 @@ lv2:port
+     lv2:name "CV in2";
+ ],
+ [
+-    a lv2:InputPort, lv2:CVPort, mod:CVPort;
++    a lv2:InputPort, lv2:CVPort ;
+     lv2:index 2;
+     lv2:minimum -5.0;
+     lv2:maximum 5.0;
+@@ -60,7 +60,7 @@ lv2:port
+     lv2:name "CV in3";
+ ],
+ [
+-    a lv2:OutputPort, lv2:CVPort, mod:CVPort;
++    a lv2:OutputPort, lv2:CVPort ;
+     lv2:index 3;
+     lv2:minimum -5.0;
+     lv2:maximum 5.0;
+diff --git a/source/mod-cv-to-audio/mod-cv-to-audio.lv2/mod-cv-to-audio.ttl b/source/mod-cv-to-audio/mod-cv-to-audio.lv2/mod-cv-to-audio.ttl
+index c968138..0842f72 100644
+--- a/source/mod-cv-to-audio/mod-cv-to-audio.lv2/mod-cv-to-audio.ttl
++++ b/source/mod-cv-to-audio/mod-cv-to-audio.lv2/mod-cv-to-audio.ttl
+@@ -34,7 +34,7 @@ CV to audio converts an control voltage signal to an audio signal with DC Blocke
+ 
+ lv2:port
+ [
+-    a lv2:InputPort, lv2:CVPort, mod:CVPort;
++    a lv2:InputPort, lv2:CVPort ;
+     lv2:index 0;
+     lv2:minimum -5.0 ;
+     lv2:maximum 5.0 ;
+diff --git a/source/mod-logic-operators/plugins/logic-operators/lv2-data/logic-operators_dsp.ttl b/source/mod-logic-operators/plugins/logic-operators/lv2-data/logic-operators_dsp.ttl
+index c491780..ad94657 100644
+--- a/source/mod-logic-operators/plugins/logic-operators/lv2-data/logic-operators_dsp.ttl
++++ b/source/mod-logic-operators/plugins/logic-operators/lv2-data/logic-operators_dsp.ttl
+@@ -25,7 +25,7 @@ a lv2:Plugin, mod:ControlVoltagePlugin ;
+                          <http://lv2plug.in/ns/ext/parameters#sampleRate> ;
+ 
+     lv2:port [
+-        a lv2:InputPort, lv2:CVPort, mod:CVPort ;
++        a lv2:InputPort, lv2:CVPort  ;
+         lv2:index 0 ;
+         lv2:minimum 0.0 ;
+         lv2:maximum 10.0 ;
+@@ -33,7 +33,7 @@ a lv2:Plugin, mod:ControlVoltagePlugin ;
+         lv2:name "CV_in_1" ;
+     ] ,
+     [
+-        a lv2:InputPort, lv2:CVPort, mod:CVPort ;
++        a lv2:InputPort, lv2:CVPort  ;
+         lv2:index 1 ;
+         lv2:minimum 0.0 ;
+         lv2:maximum 10.0 ;
+@@ -42,7 +42,7 @@ a lv2:Plugin, mod:ControlVoltagePlugin ;
+     ] ;
+ 
+     lv2:port [
+-        a lv2:OutputPort, lv2:CVPort, mod:CVPort ;
++        a lv2:OutputPort, lv2:CVPort  ;
+         lv2:index 2 ;
+         lv2:symbol "CV_out" ;
+         lv2:name "CV_out" ;
+diff --git a/source/mod-midi-to-cv-mono/mod-midi-to-cv-mono.lv2/mod-midi-to-cv-mono.ttl b/source/mod-midi-to-cv-mono/mod-midi-to-cv-mono.lv2/mod-midi-to-cv-mono.ttl
+index ff01c5a..9b025f2 100644
+--- a/source/mod-midi-to-cv-mono/mod-midi-to-cv-mono.lv2/mod-midi-to-cv-mono.ttl
++++ b/source/mod-midi-to-cv-mono/mod-midi-to-cv-mono.lv2/mod-midi-to-cv-mono.ttl
+@@ -28,7 +28,7 @@ MIDI to CV mono converts a midi message to monophonic control voltage, 1/12 volt
+           lv2:name "In" ;
+         ] ,
+         [
+-           a lv2:OutputPort, lv2:CVPort, mod:CVPort;
++           a lv2:OutputPort, lv2:CVPort ;
+            lv2:index 1;
+            lv2:symbol "Pitch";
+            lv2:name "Pitch";
+@@ -36,7 +36,7 @@ MIDI to CV mono converts a midi message to monophonic control voltage, 1/12 volt
+            lv2:maximum 10.0;
+         ] ,
+         [
+-           a lv2:OutputPort, lv2:CVPort, mod:CVPort;
++           a lv2:OutputPort, lv2:CVPort ;
+            lv2:index 2;
+            lv2:symbol "Velocity";
+            lv2:name "Velocity";
+@@ -44,7 +44,7 @@ MIDI to CV mono converts a midi message to monophonic control voltage, 1/12 volt
+            lv2:maximum 10.0;
+         ] ,
+         [
+-           a lv2:OutputPort, lv2:CVPort, mod:CVPort;
++           a lv2:OutputPort, lv2:CVPort ;
+            lv2:index 3;
+            lv2:symbol "Gate";
+            lv2:name "Gate";
+diff --git a/source/mod-midi-to-cv-poly/mod-midi-to-cv-poly.lv2/mod-midi-to-cv-poly.ttl b/source/mod-midi-to-cv-poly/mod-midi-to-cv-poly.lv2/mod-midi-to-cv-poly.ttl
+index 5f6a937..55d52a7 100644
+--- a/source/mod-midi-to-cv-poly/mod-midi-to-cv-poly.lv2/mod-midi-to-cv-poly.ttl
++++ b/source/mod-midi-to-cv-poly/mod-midi-to-cv-poly.lv2/mod-midi-to-cv-poly.ttl
+@@ -45,7 +45,7 @@ lv2:port
+     lv2:name "MIDI Input";
+ ],
+ [
+-    a lv2:OutputPort, lv2:CVPort, mod:CVPort;
++    a lv2:OutputPort, lv2:CVPort ;
+     lv2:index 1;
+     lv2:symbol "Pitch1";
+     lv2:name "Pitch 1";
+@@ -53,7 +53,7 @@ lv2:port
+     lv2:maximum 10.0;
+ ],
+ [
+-    a lv2:OutputPort, lv2:CVPort, mod:CVPort;
++    a lv2:OutputPort, lv2:CVPort ;
+     lv2:index 2;
+     lv2:symbol "Pitch2";
+     lv2:name "Pitch 2";
+@@ -61,7 +61,7 @@ lv2:port
+     lv2:maximum 10.0;
+ ],
+ [
+-    a lv2:OutputPort, lv2:CVPort, mod:CVPort;
++    a lv2:OutputPort, lv2:CVPort ;
+     lv2:index 3;
+     lv2:symbol "Pitch3";
+     lv2:name "Pitch 3";
+@@ -69,7 +69,7 @@ lv2:port
+     lv2:maximum 10.0;
+ ],
+ [
+-    a lv2:OutputPort, lv2:CVPort, mod:CVPort;
++    a lv2:OutputPort, lv2:CVPort ;
+     lv2:index 4;
+     lv2:symbol "Pitch4";
+     lv2:name "Pitch 4";
+@@ -77,7 +77,7 @@ lv2:port
+     lv2:maximum 10.0;
+ ],
+ [
+-    a lv2:OutputPort, lv2:CVPort, mod:CVPort;
++    a lv2:OutputPort, lv2:CVPort ;
+     lv2:index 5;
+     lv2:symbol "vel";
+     lv2:name "Velocity";
+@@ -85,7 +85,7 @@ lv2:port
+     lv2:maximum 10.0;
+ ],
+ [
+-    a lv2:OutputPort, lv2:CVPort, mod:CVPort;
++    a lv2:OutputPort, lv2:CVPort ;
+     lv2:index 6;
+     lv2:symbol "Gate1";
+     lv2:name "Gate 1";
+@@ -93,7 +93,7 @@ lv2:port
+     lv2:maximum 10.0;
+ ],
+ [
+-    a lv2:OutputPort, lv2:CVPort, mod:CVPort;
++    a lv2:OutputPort, lv2:CVPort ;
+     lv2:index 7;
+     lv2:symbol "Gate2";
+     lv2:name "Gate 2";
+@@ -101,7 +101,7 @@ lv2:port
+     lv2:maximum 10.0;
+ ],
+ [
+-    a lv2:OutputPort, lv2:CVPort, mod:CVPort;
++    a lv2:OutputPort, lv2:CVPort ;
+     lv2:index 8;
+     lv2:symbol "Gate3";
+     lv2:name "Gate 3";
+@@ -109,7 +109,7 @@ lv2:port
+     lv2:maximum 10.0;
+ ],
+ [
+-    a lv2:OutputPort, lv2:CVPort, mod:CVPort;
++    a lv2:OutputPort, lv2:CVPort ;
+     lv2:index 9;
+     lv2:symbol "Gate4";
+     lv2:name "Gate 4";

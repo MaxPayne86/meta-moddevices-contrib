@@ -1,0 +1,25 @@
+From af860afccef185db8199f0496f1d835d246a0921 Mon Sep 17 00:00:00 2001
+From: Massimo Pennazio <massimo.pennazio@gmail.com>
+Date: Sun, 15 Nov 2020 19:14:39 +0100
+Subject: [PATCH 1/2] We're using lvtk version 2.0.0
+
+---
+ wscript | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/wscript b/wscript
+index 4eee619..8123cc5 100644
+--- a/wscript
++++ b/wscript
+@@ -30,7 +30,7 @@ def configure(conf):
+     conf.load('lv2')
+ 
+     autowaf.check_pkg(conf, 'lv2', uselib_store='LV2', atleast_version='1.10.0', mandatory=True)
+-    autowaf.check_pkg(conf, 'lvtk-plugin-1', uselib_store='LVTK_PLUGIN', atleast_version='1.2.0')
++    autowaf.check_pkg(conf, 'lvtk-plugin-2', uselib_store='LVTK_PLUGIN', atleast_version='1.2.0')
+     autowaf.check_pkg(conf, 'fftw3', uselib_store='FFTW3', atleast_version='3.3.3', mandatory=True)
+ 
+     check = 'Extended Initializer Lists'
+-- 
+2.17.1
+

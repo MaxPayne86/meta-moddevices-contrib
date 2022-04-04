@@ -1,0 +1,22 @@
+From a4beeef5d24c6bfc17a51bc0b539d974b543c66b Mon Sep 17 00:00:00 2001
+From: Massimo Pennazio <maxipenna@libero.it>
+Date: Sat, 7 Sep 2019 21:28:05 +0200
+Subject: [PATCH 1/2] Fixed linkage of jansson in libcc_client
+
+---
+ client/wscript | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/client/wscript b/client/wscript
+index f95f67d..732a182 100644
+--- a/client/wscript
++++ b/client/wscript
+@@ -37,4 +37,4 @@ def build(bld):
+     bld(source="cc_client.pc.in")
+ 
+     source_files = bld.path.ant_glob('src/*.c')
+-    bld.shlib(source=source_files, target=APPNAME, use='CC CONTROLCHAIN')
++    bld.shlib(source=source_files, target=APPNAME, use='CC CONTROLCHAIN JANSSON')
+-- 
+2.17.1
+

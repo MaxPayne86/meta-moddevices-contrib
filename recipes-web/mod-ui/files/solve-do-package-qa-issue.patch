@@ -1,0 +1,30 @@
+diff --git a/bluetooth.py b/bluetooth.py
+index eca4cb91..fa90cb17 100755
+--- a/bluetooth.py
++++ b/bluetooth.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/python
++#!/usr/bin/python3
+ 
+ import subprocess, sys
+ 
+diff --git a/hmi_debug.py b/hmi_debug.py
+index a5ad7b0a..3d042e26 100644
+--- a/hmi_debug.py
++++ b/hmi_debug.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/python
++#!/usr/bin/python3
+ 
+ import sys, tornado, serial, time
+ 
+diff --git a/host_debug.py b/host_debug.py
+index 99ba4a25..0605c6f1 100755
+--- a/host_debug.py
++++ b/host_debug.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/python
++#!/usr/bin/python3
+ 
+ import sys, tornado, time, socket
+ 

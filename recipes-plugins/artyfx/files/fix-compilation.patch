@@ -1,0 +1,15 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index ce986e7..1bece7d 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -26,8 +26,8 @@ include_directories( ${SND_INCLUDE_DIRS}  )
+ 
+ 
+ SET(CMAKE_SHARED_LINKER_FLAGS "-fPIC -shared -L./src/avtk -Wl,--no-undefined")
+-SET(CMAKE_C_FLAGS "-g -Wall -O2 -Wno-unused-variable -msse2 -mfpmath=sse")
+-SET(CMAKE_CXX_FLAGS "-g -Wall -O2 -Wno-unused-variable -msse2 -mfpmath=sse")
++SET(CMAKE_C_FLAGS "-g -Wall -O2 -Wno-unused-variable")
++SET(CMAKE_CXX_FLAGS "-g -Wall -O2 -Wno-unused-variable")
+ 
+ 
+ IF(BUILD_GUI)

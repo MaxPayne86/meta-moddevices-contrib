@@ -1,0 +1,21 @@
+diff --git a/Makefile b/Makefile
+index 7665af7..a05ec74 100644
+--- a/Makefile
++++ b/Makefile
+@@ -12,15 +12,13 @@ include Makefile.mk
+ 
+ # --------------------------------------------------------------
+ 
+-all: libs $(PLUGINS) gen
++all: libs $(PLUGINS)
+ 
+ libs:
+ ifeq ($(HAVE_DGL),true)
+ 	$(MAKE) -C dpf/dgl
+ endif
+ 
+-gen: $(PLUGINS) dpf/utils/lv2_ttl_generator
+-	@$(CURDIR)/dpf/utils/generate-ttl.sh
+ ifeq ($(MACOS),true)
+ 	@$(CURDIR)/dpf/utils/generate-vst-bundles.sh
+ endif
