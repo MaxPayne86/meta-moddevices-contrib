@@ -3,7 +3,7 @@ SECTION = "devel/python"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=eb4417802c56384aac71b34505528a60"
 
-inherit setuptools3 pkgconfig distutils-tools
+inherit setuptools3 pkgconfig
 
 SRC_URI = " \
     https://github.com/defunkt/pystache/archive/v${PV}.tar.gz \

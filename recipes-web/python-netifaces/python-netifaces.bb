@@ -11,6 +11,6 @@ SRC_URI[sha256sum] = "0c4da523f36d36f1ef92ee183f2512f3ceb9a9d2a45f7d19cda5a42c66
 
 S = "${WORKDIR}/netifaces-${PV}"
 
-inherit setuptools
+inherit setuptools3
 
 #RDEPENDS_${PN} = "${PYTHON_PN}-werkzeug ${PYTHON_PN}-jinja2 ${PYTHON_PN}-itsdangerous ${PYTHON_PN}-click"
