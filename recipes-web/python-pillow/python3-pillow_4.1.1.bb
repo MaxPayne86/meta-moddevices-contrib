@@ -3,7 +3,7 @@ SECTION = "devel/python"
 LICENSE = "PIL"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=fbbe34c5344f5c542baf8ef7621305d0"
 
-inherit setuptools3 pkgconfig distutils-tools
+inherit setuptools3 pkgconfig
 
 SRC_URI = " \
     https://github.com/python-pillow/Pillow/archive/${PV}.tar.gz \
