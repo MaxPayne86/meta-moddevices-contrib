@@ -5,9 +5,12 @@ LIC_FILES_CHKSUM = "file://COPYING;md5=fbc093901857fcd118f065f900982c24"
 
 inherit autotools pkgconfig
 
-SRC_URI = " \
+EXTRA_OECONF += "--enable-ipv6=no"
+
+SRC_URI = "\
     ${SOURCEFORGE_MIRROR}/project/${BPN}/${BPN}/${PV}/${BPN}-${PV}.tar.gz \
-    file://0001-message.c-ensure-variables-are-set-to-fix-build.patch \
+    file://01-initialize_message_vals.patch \
 "
-SRC_URI[md5sum] = "e2a4391a08b49bb316c03e2034e06fa2"
-SRC_URI[sha256sum] = "da94a9b67b93625354dd89ff7fe31e5297fc9400b6eaf7378c82ee1caf7db909"
+SRC_URI[md5sum] = "14378c1e74c58e777fbb4fcf33ac5315"
+SRC_URI[sha256sum] = "2b4f446e1220dcd624ecd8405248b08b7601e9a0d87a0b94730c2907dbccc750"
+PV = "0.31"
