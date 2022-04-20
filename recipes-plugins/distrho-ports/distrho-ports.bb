@@ -24,9 +24,9 @@ INSANE_SKIP_${PN} = "already-stripped"
 
 # No information for SRC_URI yet (only an external source tree was specified)
 SRC_URI = "\
-    git://github.com/DISTRHO/DISTRHO-Ports.git;protocol=git;branch=master \
+    git://github.com/DISTRHO/DISTRHO-Ports.git;protocol=https;branch=legacy \
 "
-SRCREV="65c7c68a79e532d01695466f5b94c0e1cc4ae940"
+SRCREV="d19e3eb1b79df52250e233329e3d31cdbc922cb4"
 
 S = "${WORKDIR}/git"
 
