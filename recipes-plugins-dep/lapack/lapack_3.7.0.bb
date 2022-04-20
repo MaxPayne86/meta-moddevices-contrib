@@ -15,14 +15,12 @@ SRC_URI += "file://make.inc;md5=27f41711dd1bc0b15e3780e6bdf46d92"
 SRC_URI += "file://001-SRC_Makefile.patch;md5=36222be8bb239cdd62599f51f6720074"
 SRC_URI += "file://002-SRC_BLAS_Makefile.patch;md5=902cc505ecfff12f8e4d1f552b418ffc"
 
-EXTRA_OECMAKE = " -DBUILD_SHARED_LIBS=ON "
+EXTRA_OECMAKE = "-DBUILD_SHARED_LIBS=ON"
 
 inherit cmake pkgconfig
 
-do_compile() {
-     cp -f ${WORKDIR}/make.inc ${WORKDIR}/${PN}-${PV}/make.inc
-     oe_runmake blas
-     oe_runmake lapack
+do_configure_prepend () {
+    cp -f ${WORKDIR}/make.inc ${WORKDIR}/${PN}-${PV}/make.inc
 }
 
 FILES_${PN} += "${libdir}"
