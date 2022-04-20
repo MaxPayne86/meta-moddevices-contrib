@@ -29,7 +29,7 @@ do_install () {
 }
 
 DEPENDS = "\
-	lv2 \
+    lv2 \
 "
 
 RDEPENDS_${PN} = " \
@@ -41,5 +41,5 @@ RPROVIDES_${PN} = " \
 
 FILES_${PN} = "\
     /usr/include/lvtk-2 \
-	/usr/lib \
+    /usr/lib \
 "
