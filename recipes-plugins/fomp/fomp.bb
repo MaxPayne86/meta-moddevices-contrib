@@ -16,18 +16,12 @@ S = "${WORKDIR}/git"
 
 inherit waf pkgconfig
 
-do_configure () {
-    ${S}/waf configure --prefix=${D}/usr
-}
-
-do_compile () {
-    ${S}/waf build
-}
+EXTRA_OECONF = "--prefix=${D}/usr"
 
 do_install () {
+    # fomp.lv2 graphics is installed by mod-lv2-data recipe
     #${S}/waf install --destdir=${DESTDIR}
     install -d ${D}/${LV2_DIR}/fomp.lv2
-    #cp -r ${S}/fomp.lv2/* ${D}/${LV2_DIR}/fomp.lv2
     cp -r ${S}/build/fomp.lv2/*.so ${D}/${LV2_DIR}/fomp.lv2
     chmod 755 -R ${D}/${LV2_DIR}/fomp.lv2
 }
