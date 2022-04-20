@@ -9,11 +9,11 @@ INSANE_SKIP_${PN} = "already-stripped"
 
 # No information for SRC_URI yet (only an external source tree was specified)
 SRC_URI = "\
-    gitsm://github.com/polyeffects/lenticular_lv2.git;protocol=git;branch=master \
+    gitsm://github.com/polyeffects/lenticular_lv2.git;protocol=https;branch=master \
     file://fix-lv2-includes.patch \
-    file://remove-debug-flags.patch \
+    file://fix-typo-makefile.patch \
 "
-SRCREV="ab7bdb81cd69eecba609ea7373a878e21658a763"
+SRCREV="d1127077e9d7b29fdc9824d725c31464633b6a11"
 
 S = "${WORKDIR}/git"
 

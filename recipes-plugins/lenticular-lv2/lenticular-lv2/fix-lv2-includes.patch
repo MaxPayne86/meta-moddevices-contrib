@@ -1,5 +1,5 @@
 diff --git a/src/polyclouds.cpp b/src/polyclouds.cpp
-index afe0ccc..4e34030 100755
+index 54d9b80..772ea54 100755
 --- a/src/polyclouds.cpp
 +++ b/src/polyclouds.cpp
 @@ -12,7 +12,7 @@
@@ -12,7 +12,7 @@ index afe0ccc..4e34030 100755
  /** Include standard C headers */
  #include <math.h>
 diff --git a/src/polygrids.cpp b/src/polygrids.cpp
-index 98ce551..f0c00e7 100755
+index 579187a..6a2f8eb 100755
 --- a/src/polygrids.cpp
 +++ b/src/polygrids.cpp
 @@ -23,7 +23,7 @@
@@ -24,8 +24,18 @@ index 98ce551..f0c00e7 100755
  
  /** Include standard C headers */
  #include <math.h>
+diff --git a/src/polymarbles.cpp b/src/polymarbles.cpp
+index da6b5e9..85aa3ba 100644
+--- a/src/polymarbles.cpp
++++ b/src/polymarbles.cpp
+@@ -1,4 +1,4 @@
+-#include "lv2/core/lv2.h"
++#include "lv2.h"
+ 
+ /** Include standard C headers */
+ #include <math.h>
 diff --git a/src/polyplaits.cpp b/src/polyplaits.cpp
-index 77fbe65..6e6fc2c 100755
+index 13a2245..c67fff9 100755
 --- a/src/polyplaits.cpp
 +++ b/src/polyplaits.cpp
 @@ -13,7 +13,7 @@
@@ -37,8 +47,28 @@ index 77fbe65..6e6fc2c 100755
  
  /** Include standard C headers */
  #include <math.h>
+diff --git a/src/polyrings.cpp b/src/polyrings.cpp
+index 7bdab90..a73d67d 100644
+--- a/src/polyrings.cpp
++++ b/src/polyrings.cpp
+@@ -1,4 +1,4 @@
+-#include "lv2/core/lv2.h"
++#include "lv2.h"
+ 
+ /** Include standard C headers */
+ #include <math.h>
+diff --git a/src/polytides.cpp b/src/polytides.cpp
+index c33685c..ac432f6 100644
+--- a/src/polytides.cpp
++++ b/src/polytides.cpp
+@@ -1,4 +1,4 @@
+-#include "lv2/core/lv2.h"
++#include "lv2.h"
+ 
+ /** Include standard C headers */
+ #include <math.h>
 diff --git a/src/polywarps.cpp b/src/polywarps.cpp
-index 09527e9..9fc5625 100755
+index 13440b5..eec2920 100755
 --- a/src/polywarps.cpp
 +++ b/src/polywarps.cpp
 @@ -12,7 +12,7 @@

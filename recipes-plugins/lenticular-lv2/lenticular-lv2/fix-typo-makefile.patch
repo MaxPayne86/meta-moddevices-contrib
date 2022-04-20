@@ -1,0 +1,13 @@
+diff --git a/Makefile b/Makefile
+index 8484d55..3e2b8f6 100755
+--- a/Makefile
++++ b/Makefile
+@@ -188,7 +188,7 @@ $(BUILDDIR)$(LV2NAME_MARBLES).ttl: $(LV2NAME_MARBLES).ttl
+ $(BUILDDIR)$(LV2NAME_RINGS).ttl: $(LV2NAME_RINGS).ttl
+ 	@mkdir -p $(BUILDDIR)
+ 	cat $(LV2NAME_RINGS).ttl > $(BUILDDIR)$(LV2NAME_RINGS).ttl
+-	""
++
+ $(BUILDDIR)$(LV2NAME_TIDES).ttl: $(LV2NAME_TIDES).ttl
+ 	@mkdir -p $(BUILDDIR)
+ 	cat $(LV2NAME_TIDES).ttl > $(BUILDDIR)$(LV2NAME_TIDES).ttl
