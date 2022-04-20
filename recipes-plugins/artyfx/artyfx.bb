@@ -16,17 +16,15 @@ S = "${WORKDIR}/git"
 
 inherit cmake pkgconfig
 
-EXTRA_OECMAKE = " -DBUILD_GUI=OFF"
-
-do_compile () {
-    oe_runmake
-}
+EXTRA_OECMAKE = "-DBUILD_GUI=OFF"
 
 do_install () {
+    # artyfx.lv2 graphics is installed by mod-lv2-data recipe
     install -d ${D}/${LV2_DIR}/artyfx.lv2
     cp -r ${WORKDIR}/build/artyfx.so ${D}/${LV2_DIR}/artyfx.lv2
     chmod 755 -R ${D}/${LV2_DIR}/artyfx.lv2
 
+    # artyfx-bad.lv2 graphics is installed by mod-lv2-data recipe
     install -d ${D}/${LV2_DIR_BAD}/artyfx-bad.lv2
     cp -r ${WORKDIR}/build/artyfx.so ${D}/${LV2_DIR_BAD}/artyfx-bad.lv2
     chmod 755 -R ${D}/${LV2_DIR_BAD}/artyfx-bad.lv2
