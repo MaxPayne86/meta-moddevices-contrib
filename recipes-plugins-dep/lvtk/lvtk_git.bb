@@ -16,16 +16,12 @@ PV = "2.0.0"
 
 inherit waf pkgconfig
 
-do_configure () {
-    ${S}/waf configure --prefix=/usr --disable-examples --disable-ui
-}
+WAF_PYTHON = "python"
 
-do_compile () {
-    ${S}/waf build
-}
+EXTRA_OECONF = "--prefix=/usr --disable-examples --disable-ui"
 
-do_install () {
-    ${S}/waf install --destdir=${D}
+do_install_prepend () {
+    cp -r ${WORKDIR}/build ${S}/
 }
 
 DEPENDS = "\
