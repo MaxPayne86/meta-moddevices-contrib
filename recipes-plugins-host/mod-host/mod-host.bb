@@ -8,14 +8,18 @@ INSANE_SKIP_${PN} = "already-stripped"
 S = "${WORKDIR}/git"
 
 SRC_URI = "\
-    git://github.com/moddevices/mod-host.git;protocol=git;branch=hotfix-1.11 \
+    git://github.com/moddevices/mod-host.git;protocol=git;branch=master \
+    file://01_fix-libjack-dir.patch \
+    file://02_connect-all-networks.patch \
 "
-SRCREV="794e1fd8861e2a92b56bb89b33a59305c3e119cb"
+SRCREV="2b91ff30da05672fb079bd6bf0a812a975b1048e"
 
 inherit pkgconfig
 
+CFLAGS_append = "-ffast-math"
+
 do_compile () {
-    oe_runmake HAVE_NE10=true
+    oe_runmake
 }
 
 do_install () {
@@ -25,13 +29,13 @@ do_install () {
 DEPENDS = "\
     lilv \
     jack \
+    fftw \
+    readline \
     cc-master \
-    ne10 \
 "
 
 RDEPENDS_${PN} = "\
     cc-master \
-    ne10 \
 "
 
 FILES_${PN} += " \
@@ -42,4 +46,3 @@ FILES_${PN} += " \
     /usr/lib/jack/mod-host.so \
     /usr/lib/jack/mod-monitor.so \
 "
-
