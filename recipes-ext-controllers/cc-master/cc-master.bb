@@ -16,6 +16,8 @@ S = "${WORKDIR}/git"
 
 inherit waf pkgconfig
 
+WAF_PYTHON = "python"
+
 EXTRA_OECONF = "--prefix=/usr"
 
 RPROVIDES_${PN} += " \
