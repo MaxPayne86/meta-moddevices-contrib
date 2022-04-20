@@ -9,7 +9,7 @@ INSANE_SKIP_${PN} = "already-stripped"
 
 # No information for SRC_URI yet (only an external source tree was specified)
 SRC_URI = "\
-    gitsm://github.com/polyeffects/lenticular_lv2.git;protocol=https;branch=master \
+    git://github.com/polyeffects/lenticular_lv2.git;protocol=https;branch=master \
     file://fix-lv2-includes.patch \
     file://fix-typo-makefile.patch \
 "
@@ -20,6 +20,11 @@ S = "${WORKDIR}/git"
 inherit pkgconfig
 
 EXTRA_OEMAKE = "'DESTDIR=${D}' 'LV2DIR=${LV2_DIR_BAD}'"
+
+do_configure_prepend() {
+    cd ${S}
+    git submodule update --init --recursive
+}
 
 do_install () {
     oe_runmake install
