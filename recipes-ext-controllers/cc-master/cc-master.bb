@@ -23,17 +23,7 @@ S = "${WORKDIR}/git"
 
 inherit waf pkgconfig
 
-do_configure() {
-    ${S}/waf configure --prefix=/usr
-}
-
-do_compile () {
-    ${S}/waf build
-}
-
-do_install () {
-    ${S}/waf install --destdir=${D}
-}
+EXTRA_OECONF = "--prefix=/usr"
 
 RPROVIDES_${PN} += " \
     libcc_client \
