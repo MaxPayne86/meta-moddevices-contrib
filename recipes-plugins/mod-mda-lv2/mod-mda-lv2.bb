@@ -19,6 +19,8 @@ inherit waf pkgconfig
 
 EXTRA_OECONF = "--lv2-user --lv2dir=${LV2_DIR}"
 
+WAF_PYTHON = "python"
+
 do_install() {
     ${S}/waf -j1 install --destdir=${D}
 }
