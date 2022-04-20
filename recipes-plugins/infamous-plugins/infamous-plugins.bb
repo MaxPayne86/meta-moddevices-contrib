@@ -30,10 +30,6 @@ inherit cmake pkgconfig
 
 #EXTRA_OECMAKE = " -DBUILD_GUI=OFF"
 
-do_compile () {
-    oe_runmake
-}
-
 do_install () {
     # TODO: test other plugins in this package before install
 
