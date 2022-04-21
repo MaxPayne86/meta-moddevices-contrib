@@ -5,7 +5,7 @@
 # Instructions
 # build the package manually:
 # bitbake distrho-ports -c do_cleanall
-# bitbake distrho-ports -c do_unpack
+# bitbake distrho-ports -c do_patch
 # now open a linux shell:
 # cd tmp/work/aarch64-poky-linux/distrho-ports/1.0-r0/git
 # export LINUX_EMBED=1
@@ -31,6 +31,7 @@ SRCREV="d19e3eb1b79df52250e233329e3d31cdbc922cb4"
 
 S = "${WORKDIR}/git"
 
+# Below list is considered unstable aka "labs" or "bad"
 FXLIST = "\
     drowaudio-distortion.lv2 \
     drowaudio-distortionshaper.lv2 \
@@ -49,8 +50,13 @@ FXLIST = "\
     TAL-Vocoder-2.lv2 \
     TheFunction.lv2 \
     ThePilgrim.lv2 \
-    Vex.lv2 \
+    Temper.lv2 \
     Wolpertinger.lv2 \
+"
+
+# Following list is considered stable
+FXLIST += "\
+    Vex.lv2 \
 "
 
 EXTRA_OEMAKE = "lv2_nogen LINUX_EMBED=true"
@@ -60,6 +66,7 @@ do_compile () {
 }
 
 do_install () {
+    # distrho-ports plugins graphics is installed by mod-lv2-data recipe
     for fx in ${FXLIST}; do
         install -d ${D}/${LV2_DIR}/${fx}
         cp -r ${S}/bin/lv2/${fx}/*.so ${D}/${LV2_DIR}/${fx}
@@ -90,6 +97,7 @@ FILES_${PN} = "\
     ${LV2_DIR}/TAL-Vocoder-2.lv2/* \
     ${LV2_DIR}/TheFunction.lv2/* \
     ${LV2_DIR}/ThePilgrim.lv2/* \
-    ${LV2_DIR}/Vex.lv2/* \
+    ${LV2_DIR}/Temper.lv2/* \
     ${LV2_DIR}/Wolpertinger.lv2/* \
+    ${LV2_DIR}/Vex.lv2/* \
 "
