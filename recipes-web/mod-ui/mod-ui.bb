@@ -3,7 +3,8 @@ LICENSE = "CLOSED"
 LIC_FILES_CHKSUM = ""
 FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
 
-INSANE_SKIP_${PN} = "already-stripped"
+INSANE_SKIP_${PN} = "file-rdeps"
+INSANE_SKIP_${PN} += "already-stripped"
 
 S = "${WORKDIR}/git/utils"
 
