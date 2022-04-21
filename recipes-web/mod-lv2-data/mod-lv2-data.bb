@@ -72,6 +72,12 @@ DISTRHO_FXLIST2 = "\
     TAL-Vocoder-2.lv2 \
 "
 
+# List below is in distrho-ports-v6
+DISTRHO_FXLIST3 = "\
+    SwankyAmp.lv2 \
+    vitalium.lv2 \
+"
+
 DPF_FXLIST = "\
     3BandEQ.lv2 \
     3BandSplitter.lv2 \
@@ -172,6 +178,12 @@ do_install () {
         install -d ${D}/${LV2_DIR}/${fx}
         cp -r ${WORKDIR}/git/plugins/${fx}/*.ttl ${D}/${LV2_DIR}/${fx}
         cp -r ${WORKDIR}/git/plugins/${fx}/modgui ${D}/${LV2_DIR}/${fx}
+    done
+
+    # distrho-ports-v6
+    for fx in ${DISTRHO_FXLIST3}; do
+        install -d ${D}/${LV2_DIR}/${fx}
+        cp -r ${WORKDIR}/git/plugins/${fx}/*.ttl ${D}/${LV2_DIR}/${fx}
     done
 
     # dpf-plugins
@@ -337,6 +349,11 @@ FILES_${PN} += "\
     ${LV2_DIR}/Temper.lv2/* \
     ${LV2_DIR}/Wolpertinger.lv2/* \
     ${LV2_DIR}/Vex.lv2/* \
+"
+
+FILES_${PN} += "\
+    SwankyAmp.lv2 \
+    vitalium.lv2 \
 "
 
 FILES_${PN} += "\
