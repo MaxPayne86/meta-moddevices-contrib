@@ -352,8 +352,8 @@ FILES_${PN} += "\
 "
 
 FILES_${PN} += "\
-    SwankyAmp.lv2 \
-    vitalium.lv2 \
+    ${LV2_DIR}/SwankyAmp.lv2 \
+    ${LV2_DIR}/vitalium.lv2 \
 "
 
 FILES_${PN} += "\
