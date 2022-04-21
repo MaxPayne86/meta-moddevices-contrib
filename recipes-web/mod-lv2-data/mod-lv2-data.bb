@@ -44,6 +44,7 @@ ZYN_FXLIST = "\
     ZynReverb.lv2 \
 "
 
+# List below doesn't have modgui
 DISTRHO_FXLIST1 = "\
     drowaudio-distortion.lv2 \
     drowaudio-distortionshaper.lv2 \
@@ -55,10 +56,12 @@ DISTRHO_FXLIST1 = "\
     TAL-NoiseMaker.lv2 \
     TheFunction.lv2 \
     ThePilgrim.lv2 \
-    Vex.lv2 \
+    Temper.lv2 \
     Wolpertinger.lv2 \
+    Vex.lv2 \
 "
 
+# List below has modgui
 DISTRHO_FXLIST2 = "\
     TAL-Dub-3.lv2 \
     TAL-Filter-2.lv2 \
@@ -331,8 +334,9 @@ FILES_${PN} += "\
     ${LV2_DIR}/TAL-Vocoder-2.lv2/* \
     ${LV2_DIR}/TheFunction.lv2/* \
     ${LV2_DIR}/ThePilgrim.lv2/* \
-    ${LV2_DIR}/Vex.lv2/* \
+    ${LV2_DIR}/Temper.lv2/* \
     ${LV2_DIR}/Wolpertinger.lv2/* \
+    ${LV2_DIR}/Vex.lv2/* \
 "
 
 FILES_${PN} += "\
