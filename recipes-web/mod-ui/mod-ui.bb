@@ -34,6 +34,7 @@ DEPENDS = " \
 RDEPENDS_${PN} = "\
     bash \
     mod-host \
+    python3 \
     python3-pillow \
     python3-pyserial \
     python3-pystache \
