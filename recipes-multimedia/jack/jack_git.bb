@@ -22,7 +22,7 @@ SRC_URI = "\
     file://03_double-tick.patch \
 "
 SRCREV = "852ba2b8ebc944865e75d8eb5d4550d408772f3b"
-PV = "1.9.17"
+PV = "1.9.18"
 S = "${WORKDIR}/git"
 
 inherit waf pkgconfig
