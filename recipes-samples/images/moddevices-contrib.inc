@@ -16,11 +16,6 @@ JACK = "\
     jack-utils \
 "
 
-JACK_EXTRA = "\
-    jack-capture \
-    jack-smf-utils \
-"
-
 PYTHONSTUFF = "\
     python3-pyserial \
     python3-tornado \
