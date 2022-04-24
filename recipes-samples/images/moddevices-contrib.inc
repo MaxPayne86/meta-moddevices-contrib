@@ -42,6 +42,7 @@ AUDIOPLUGINS = "\
     x42-stepseq \
     x42-tinygain \
     distrho-ports \
+    distrho-ports-v6 \
     dpf-plugins \
     shiro-plugins \
     bolliedelay \
