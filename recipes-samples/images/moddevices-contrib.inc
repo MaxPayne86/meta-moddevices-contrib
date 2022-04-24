@@ -57,10 +57,14 @@ AUDIOPLUGINS = "\
     rkrlv2 \
     sfizz-lv2 \
     lsp-plugins \
-    lenticular-lv2 \
-    pitchtomidi-lv2 \
     carla-plugins \
     die-plugins \
+"
+
+# A few extra plugins from Polyeffects
+AUDIOPLUGINS_EXTRA = "\
+    lenticular-lv2 \
+    pitchtomidi-lv2 \
 "
 
 SYNTHENGINES = "\
