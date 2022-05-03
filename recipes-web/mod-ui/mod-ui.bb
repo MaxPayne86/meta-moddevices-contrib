@@ -8,10 +8,10 @@ INSANE_SKIP_${PN} = "already-stripped"
 S = "${WORKDIR}/git/utils"
 
 SRC_URI = "\
-    git://github.com/moddevices/mod-ui.git;protocol=http;branch=hotfix-1.11 \
+    git://github.com/moddevices/mod-ui.git;protocol=https;branch=master \
     file://solve-do-package-qa-issue.patch;patchdir=../ \
 "
-SRCREV="hotfix-1.11"
+SRCREV="6c0d2717ba041d7d65e967acfbcc148437b30bf5"
 
 inherit pkgconfig
 
