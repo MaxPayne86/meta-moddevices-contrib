@@ -1,0 +1,19 @@
+diff --git a/src/Makefile.cardinal.mk b/src/Makefile.cardinal.mk
+index 34213d1d..9a7f2253 100644
+--- a/src/Makefile.cardinal.mk
++++ b/src/Makefile.cardinal.mk
+@@ -285,10 +285,10 @@ VST3_RESOURCES  = $(CORE_RESOURCES:%=$(TARGET_DIR)/$(NAME).vst3/Contents/Resourc
+ 
+ # Install modgui resources if MOD build
+ ifeq ($(MOD_BUILD),true)
+-LV2_RESOURCES += $(TARGET_DIR)/$(NAME).lv2/Plateau_Reverb.ttl
+-LV2_RESOURCES += $(TARGET_DIR)/$(NAME).lv2/modgui.ttl
+-LV2_RESOURCES += $(TARGET_DIR)/$(NAME).lv2/modgui/documentation.pdf
+-LV2_RESOURCES += $(TARGET_DIR)/$(NAME).lv2/modgui
++#LV2_RESOURCES += $(TARGET_DIR)/$(NAME).lv2/Plateau_Reverb.ttl
++#LV2_RESOURCES += $(TARGET_DIR)/$(NAME).lv2/modgui.ttl
++#LV2_RESOURCES += $(TARGET_DIR)/$(NAME).lv2/modgui/documentation.pdf
++#LV2_RESOURCES += $(TARGET_DIR)/$(NAME).lv2/modgui
+ endif
+ 
+ # Cardinal main variant should not use rtaudio fallback (it has CV ports)

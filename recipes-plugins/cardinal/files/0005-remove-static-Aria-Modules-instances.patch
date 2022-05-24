@@ -1,0 +1,49 @@
+diff --git a/plugins/plugins.cpp b/plugins/plugins.cpp
+index c9c3eee0..1e376323 100644
+--- a/plugins/plugins.cpp
++++ b/plugins/plugins.cpp
+@@ -54,7 +54,7 @@
+ /* NOTE too much noise in original include, do this a different way
+ // #include "AriaModules/src/plugin.hpp"
+ */
+-#define modelBlank modelAriaBlank
++/*#define modelBlank modelAriaBlank
+ extern Model* modelSplort;
+ extern Model* modelSmerge;
+ extern Model* modelSpleet;
+@@ -75,7 +75,7 @@ extern Model* modelGrabby;
+ extern Model* modelRotatoes4;
+ extern Model* modelUndular;
+ extern Model* modelBlank;
+-#undef modelBlank
++#undef modelBlank*/
+ 
+ // AudibleInstruments
+ #include "AudibleInstruments/src/plugin.hpp"
+@@ -1059,7 +1059,7 @@ static void initStatic__ArableInstruments()
+     }
+ }
+ 
+-static void initStatic__Aria()
++/*static void initStatic__Aria()
+ {
+     Plugin* const p = new Plugin;
+     pluginInstance__Aria = p;
+@@ -1093,7 +1093,7 @@ static void initStatic__Aria()
+         spl.removeModule("Atout");
+         spl.removeModule("Aleister");
+     }
+-}
++}*/
+ 
+ static void initStatic__AudibleInstruments()
+ {
+@@ -2571,7 +2571,7 @@ void initStaticPlugins()
+     initStatic__AmalgamatedHarmonics();
+     initStatic__AnimatedCircuits();
+     initStatic__ArableInstruments();
+-    initStatic__Aria();
++    /*initStatic__Aria();*/
+     initStatic__AudibleInstruments();
+     initStatic__Autinn();
+     initStatic__Axioma();
