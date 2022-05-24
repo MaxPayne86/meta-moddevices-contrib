@@ -1,0 +1,13 @@
+diff --git a/src/Rack/include/dsp/convert.hpp b/src/Rack/include/dsp/convert.hpp
+index 0677973c..636da9c1 100644
+--- a/src/Rack/include/dsp/convert.hpp
++++ b/src/Rack/include/dsp/convert.hpp
+@@ -12,7 +12,7 @@ struct
+ #ifdef __clang__
+ __attribute__((packed, aligned(1)))
+ #else
+-__attribute__((packed, aligned(1), gcc_struct))
++__attribute__((packed, aligned(1)))
+ #endif
+ Int24 {
+ 	int32_t i : 24;

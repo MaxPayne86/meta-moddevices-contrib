@@ -1,0 +1,76 @@
+From adfee58252728f07f24d20b5ed2582dbe9fd1e59 Mon Sep 17 00:00:00 2001
+From: Massimo Pennazio <maxipenna@libero.it>
+Date: Mon, 23 May 2022 13:21:39 +0200
+Subject: [PATCH 2/2] Removed Aria Modules
+
+---
+ plugins/Makefile | 44 ++++++++++++++++++++++----------------------
+ 1 file changed, 22 insertions(+), 22 deletions(-)
+
+diff --git a/plugins/Makefile b/plugins/Makefile
+index bffe70df..c4cfbfdd 100644
+--- a/plugins/Makefile
++++ b/plugins/Makefile
+@@ -296,23 +296,23 @@ ARABLE_CUSTOM = Clouds FreezeLight clouds stmlib
+ # --------------------------------------------------------------
+ # Aria
+ 
+-PLUGIN_FILES += AriaModules/src/Blank.cpp
+-PLUGIN_FILES += AriaModules/src/Darius.cpp
+-PLUGIN_FILES += AriaModules/src/Pokies.cpp
+-PLUGIN_FILES += AriaModules/src/Psychopump.cpp
+-PLUGIN_FILES += AriaModules/src/Qqqq.cpp
+-PLUGIN_FILES += AriaModules/src/Quale.cpp
+-PLUGIN_FILES += AriaModules/src/Rotatoes.cpp
+-PLUGIN_FILES += AriaModules/src/Smerge.cpp
+-PLUGIN_FILES += AriaModules/src/Solomon.cpp
+-PLUGIN_FILES += AriaModules/src/Spleet.cpp
+-PLUGIN_FILES += AriaModules/src/Splirge.cpp
+-PLUGIN_FILES += AriaModules/src/Splort.cpp
+-PLUGIN_FILES += AriaModules/src/Swerge.cpp
+-PLUGIN_FILES += AriaModules/src/Undular.cpp
++#PLUGIN_FILES += AriaModules/src/Blank.cpp
++#PLUGIN_FILES += AriaModules/src/Darius.cpp
++#PLUGIN_FILES += AriaModules/src/Pokies.cpp
++#PLUGIN_FILES += AriaModules/src/Psychopump.cpp
++#PLUGIN_FILES += AriaModules/src/Qqqq.cpp
++#PLUGIN_FILES += AriaModules/src/Quale.cpp
++#PLUGIN_FILES += AriaModules/src/Rotatoes.cpp
++#PLUGIN_FILES += AriaModules/src/Smerge.cpp
++#PLUGIN_FILES += AriaModules/src/Solomon.cpp
++#PLUGIN_FILES += AriaModules/src/Spleet.cpp
++#PLUGIN_FILES += AriaModules/src/Splirge.cpp
++#PLUGIN_FILES += AriaModules/src/Splort.cpp
++#PLUGIN_FILES += AriaModules/src/Swerge.cpp
++#PLUGIN_FILES += AriaModules/src/Undular.cpp
+ 
+ # modules/types which are present in other plugins
+-ARIA_CUSTOM = Blank
++#ARIA_CUSTOM = Blank
+ 
+ # --------------------------------------------------------------
+ # AudibleInstruments
+@@ -1282,13 +1282,13 @@ $(BUILD_DIR)/ArableInstruments/%.o: ArableInstruments/%
+ 		-Wno-class-memaccess \
+ 		-Wno-unused-local-typedefs
+ 
+-$(BUILD_DIR)/AriaModules/%.cpp.o: AriaModules/%.cpp
+-	-@mkdir -p "$(shell dirname $(BUILD_DIR)/$<)"
+-	@echo "Compiling $<"
+-	$(SILENT)$(CXX) $< $(BUILD_CXX_FLAGS) -c -o $@ \
+-		$(foreach m,$(ARIA_CUSTOM),$(call custom_module_names,$(m),Aria)) \
+-		-DpluginInstance=pluginInstance__Aria \
+-		-Wno-cast-function-type
++#$(BUILD_DIR)/AriaModules/%.cpp.o: AriaModules/%.cpp
++#	-@mkdir -p "$(shell dirname $(BUILD_DIR)/$<)"
++#	@echo "Compiling $<"
++#	$(SILENT)$(CXX) $< $(BUILD_CXX_FLAGS) -c -o $@ \
++#		$(foreach m,$(ARIA_CUSTOM),$(call custom_module_names,$(m),Aria)) \
++#		-DpluginInstance=pluginInstance__Aria \
++#		-Wno-cast-function-type
+ 
+ $(BUILD_DIR)/AudibleInstruments/%.o: AudibleInstruments/%
+ 	-@mkdir -p "$(shell dirname $(BUILD_DIR)/$<)"
+-- 
+2.25.1
+

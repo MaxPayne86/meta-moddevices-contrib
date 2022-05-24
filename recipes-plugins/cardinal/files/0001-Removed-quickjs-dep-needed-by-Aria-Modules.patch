@@ -1,0 +1,33 @@
+From 773647c91fc6ab7121c6e288ded1d6851d1cf8ef Mon Sep 17 00:00:00 2001
+From: Massimo Pennazio <maxipenna@libero.it>
+Date: Mon, 23 May 2022 13:21:25 +0200
+Subject: [PATCH 1/2] Removed quickjs dep needed by Aria Modules
+
+---
+ Makefile | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+diff --git a/Makefile b/Makefile
+index a54098b0..553cd54b 100644
+--- a/Makefile
++++ b/Makefile
+@@ -206,11 +206,11 @@ ifneq ($(STATIC_BUILD),true)
+ endif
+ 
+ deps:
+-ifeq ($(SYSDEPS),true)
+-	$(MAKE) quickjs -C deps
+-else
+-	$(MAKE) all -C deps
+-endif
++#ifeq ($(SYSDEPS),true)
++#	$(MAKE) quickjs -C deps
++#else
++#	$(MAKE) all -C deps
++#endif
+ ifeq ($(HAVE_FFTW3F),true)
+ 	$(MAKE) all -C deps/aubio
+ endif
+-- 
+2.25.1
+
