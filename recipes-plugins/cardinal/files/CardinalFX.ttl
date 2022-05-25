@@ -1,0 +1,709 @@
+@prefix atom:  <http://lv2plug.in/ns/ext/atom#> .
+@prefix doap:  <http://usefulinc.com/ns/doap#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix lv2:   <http://lv2plug.in/ns/lv2core#> .
+@prefix midi:  <http://lv2plug.in/ns/ext/midi#> .
+@prefix mod:   <http://moddevices.com/ns/mod#> .
+@prefix opts:  <http://lv2plug.in/ns/ext/options#> .
+@prefix pg:    <http://lv2plug.in/ns/ext/port-groups#> .
+@prefix patch: <http://lv2plug.in/ns/ext/patch#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rsz:   <http://lv2plug.in/ns/ext/resize-port#> .
+@prefix spdx:  <http://spdx.org/rdf/terms#> .
+@prefix ui:    <http://lv2plug.in/ns/extensions/ui#> .
+@prefix unit:  <http://lv2plug.in/ns/extensions/units#> .
+
+<https://distrho.kx.studio/plugins/cardinal#fx#screenshot>
+    a lv2:Parameter ;
+    rdfs:label "Screenshot" ;
+    rdfs:range atom:String .
+
+<https://distrho.kx.studio/plugins/cardinal#fx#comment>
+    a lv2:Parameter ;
+    rdfs:label "Comment" ;
+    rdfs:range atom:String .
+
+<https://distrho.kx.studio/plugins/cardinal#fx>
+    a lv2:UtilityPlugin, lv2:Plugin, doap:Project ;
+
+    lv2:extensionData opts:interface ,
+                      <http://lv2plug.in/ns/ext/state#interface> ,
+                      <http://lv2plug.in/ns/ext/worker#interface> ;
+
+    lv2:optionalFeature <http://lv2plug.in/ns/ext/buf-size#boundedBlockLength> ;
+
+    lv2:requiredFeature opts:options ,
+                        <http://lv2plug.in/ns/ext/urid#map> ,
+                        <http://lv2plug.in/ns/ext/worker#schedule> ;
+
+    opts:supportedOption <http://lv2plug.in/ns/ext/buf-size#nominalBlockLength> ,
+                         <http://lv2plug.in/ns/ext/buf-size#maxBlockLength> ,
+                         <http://lv2plug.in/ns/ext/parameters#sampleRate> ;
+
+    patch:readable <https://distrho.kx.studio/plugins/cardinal#fx#screenshot> ;
+    patch:writable <https://distrho.kx.studio/plugins/cardinal#fx#comment> ;
+
+    ui:ui <https://distrho.kx.studio/plugins/cardinal#fx#DPF_UI> ;
+
+    lv2:port [
+        a lv2:InputPort, lv2:AudioPort ;
+        lv2:index 0 ;
+        lv2:symbol "lv2_audio_in_1" ;
+        lv2:name "Audio Input 1" ;
+    ] ,
+    [
+        a lv2:InputPort, lv2:AudioPort ;
+        lv2:index 1 ;
+        lv2:symbol "lv2_audio_in_2" ;
+        lv2:name "Audio Input 2" ;
+    ] ;
+
+    lv2:port [
+        a lv2:OutputPort, lv2:AudioPort ;
+        lv2:index 2 ;
+        lv2:symbol "lv2_audio_out_1" ;
+        lv2:name "Audio Output 1" ;
+    ] ,
+    [
+        a lv2:OutputPort, lv2:AudioPort ;
+        lv2:index 3 ;
+        lv2:symbol "lv2_audio_out_2" ;
+        lv2:name "Audio Output 2" ;
+    ] ;
+
+    lv2:port [
+        a lv2:InputPort, atom:AtomPort ;
+        lv2:index 4 ;
+        lv2:name "Events Input" ;
+        lv2:symbol "lv2_events_in" ;
+        rsz:minimumSize 2048 ;
+        atom:bufferType atom:Sequence ;
+        atom:supports atom:String ;
+        atom:supports midi:MidiEvent ;
+        atom:supports <http://lv2plug.in/ns/ext/time#Position> ;
+        atom:supports <http://lv2plug.in/ns/ext/patch#Message> ;
+        lv2:designation lv2:control ;
+    ] ;
+
+    lv2:port [
+        a lv2:OutputPort, atom:AtomPort ;
+        lv2:index 5 ;
+        lv2:name "Events Output" ;
+        lv2:symbol "lv2_events_out" ;
+        rsz:minimumSize 2048 ;
+        atom:bufferType atom:Sequence ;
+        atom:supports atom:String ;
+        atom:supports midi:MidiEvent ;
+        atom:supports <http://lv2plug.in/ns/ext/patch#Message> ;
+        lv2:designation lv2:control ;
+    ] ;
+
+    lv2:port [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 6 ;
+        lv2:name "Parameter 1" ;
+        lv2:symbol "param_1" ;
+        lv2:default 0 ;
+        lv2:minimum 0 ;
+        lv2:maximum 10 ;
+        unit:unit [
+            a unit:Unit ;
+            rdfs:label  "v" ;
+            unit:symbol "v" ;
+            unit:render "%f v" ;
+        ] ;
+    ] ,
+    [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 7 ;
+        lv2:name "Parameter 2" ;
+        lv2:symbol "param_2" ;
+        lv2:default 0 ;
+        lv2:minimum 0 ;
+        lv2:maximum 10 ;
+        unit:unit [
+            a unit:Unit ;
+            rdfs:label  "v" ;
+            unit:symbol "v" ;
+            unit:render "%f v" ;
+        ] ;
+    ] ,
+    [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 8 ;
+        lv2:name "Parameter 3" ;
+        lv2:symbol "param_3" ;
+        lv2:default 0 ;
+        lv2:minimum 0 ;
+        lv2:maximum 10 ;
+        unit:unit [
+            a unit:Unit ;
+            rdfs:label  "v" ;
+            unit:symbol "v" ;
+            unit:render "%f v" ;
+        ] ;
+    ] ,
+    [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 9 ;
+        lv2:name "Parameter 4" ;
+        lv2:symbol "param_4" ;
+        lv2:default 0 ;
+        lv2:minimum 0 ;
+        lv2:maximum 10 ;
+        unit:unit [
+            a unit:Unit ;
+            rdfs:label  "v" ;
+            unit:symbol "v" ;
+            unit:render "%f v" ;
+        ] ;
+    ] ,
+    [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 10 ;
+        lv2:name "Parameter 5" ;
+        lv2:symbol "param_5" ;
+        lv2:default 0 ;
+        lv2:minimum 0 ;
+        lv2:maximum 10 ;
+        unit:unit [
+            a unit:Unit ;
+            rdfs:label  "v" ;
+            unit:symbol "v" ;
+            unit:render "%f v" ;
+        ] ;
+    ] ,
+    [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 11 ;
+        lv2:name "Parameter 6" ;
+        lv2:symbol "param_6" ;
+        lv2:default 0 ;
+        lv2:minimum 0 ;
+        lv2:maximum 10 ;
+        unit:unit [
+            a unit:Unit ;
+            rdfs:label  "v" ;
+            unit:symbol "v" ;
+            unit:render "%f v" ;
+        ] ;
+    ] ,
+    [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 12 ;
+        lv2:name "Parameter 7" ;
+        lv2:symbol "param_7" ;
+        lv2:default 0 ;
+        lv2:minimum 0 ;
+        lv2:maximum 10 ;
+        unit:unit [
+            a unit:Unit ;
+            rdfs:label  "v" ;
+            unit:symbol "v" ;
+            unit:render "%f v" ;
+        ] ;
+    ] ,
+    [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 13 ;
+        lv2:name "Parameter 8" ;
+        lv2:symbol "param_8" ;
+        lv2:default 0 ;
+        lv2:minimum 0 ;
+        lv2:maximum 10 ;
+        unit:unit [
+            a unit:Unit ;
+            rdfs:label  "v" ;
+            unit:symbol "v" ;
+            unit:render "%f v" ;
+        ] ;
+    ] ,
+    [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 14 ;
+        lv2:name "Parameter 9" ;
+        lv2:symbol "param_9" ;
+        lv2:default 0 ;
+        lv2:minimum 0 ;
+        lv2:maximum 10 ;
+        unit:unit [
+            a unit:Unit ;
+            rdfs:label  "v" ;
+            unit:symbol "v" ;
+            unit:render "%f v" ;
+        ] ;
+    ] ,
+    [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 15 ;
+        lv2:name "Parameter 10" ;
+        lv2:symbol "param_10" ;
+        lv2:default 0 ;
+        lv2:minimum 0 ;
+        lv2:maximum 10 ;
+        unit:unit [
+            a unit:Unit ;
+            rdfs:label  "v" ;
+            unit:symbol "v" ;
+            unit:render "%f v" ;
+        ] ;
+    ] ,
+    [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 16 ;
+        lv2:name "Parameter 11" ;
+        lv2:symbol "param_11" ;
+        lv2:default 0 ;
+        lv2:minimum 0 ;
+        lv2:maximum 10 ;
+        unit:unit [
+            a unit:Unit ;
+            rdfs:label  "v" ;
+            unit:symbol "v" ;
+            unit:render "%f v" ;
+        ] ;
+    ] ,
+    [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 17 ;
+        lv2:name "Parameter 12" ;
+        lv2:symbol "param_12" ;
+        lv2:default 0 ;
+        lv2:minimum 0 ;
+        lv2:maximum 10 ;
+        unit:unit [
+            a unit:Unit ;
+            rdfs:label  "v" ;
+            unit:symbol "v" ;
+            unit:render "%f v" ;
+        ] ;
+    ] ,
+    [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 18 ;
+        lv2:name "Parameter 13" ;
+        lv2:symbol "param_13" ;
+        lv2:default 0 ;
+        lv2:minimum 0 ;
+        lv2:maximum 10 ;
+        unit:unit [
+            a unit:Unit ;
+            rdfs:label  "v" ;
+            unit:symbol "v" ;
+            unit:render "%f v" ;
+        ] ;
+    ] ,
+    [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 19 ;
+        lv2:name "Parameter 14" ;
+        lv2:symbol "param_14" ;
+        lv2:default 0 ;
+        lv2:minimum 0 ;
+        lv2:maximum 10 ;
+        unit:unit [
+            a unit:Unit ;
+            rdfs:label  "v" ;
+            unit:symbol "v" ;
+            unit:render "%f v" ;
+        ] ;
+    ] ,
+    [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 20 ;
+        lv2:name "Parameter 15" ;
+        lv2:symbol "param_15" ;
+        lv2:default 0 ;
+        lv2:minimum 0 ;
+        lv2:maximum 10 ;
+        unit:unit [
+            a unit:Unit ;
+            rdfs:label  "v" ;
+            unit:symbol "v" ;
+            unit:render "%f v" ;
+        ] ;
+    ] ,
+    [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 21 ;
+        lv2:name "Parameter 16" ;
+        lv2:symbol "param_16" ;
+        lv2:default 0 ;
+        lv2:minimum 0 ;
+        lv2:maximum 10 ;
+        unit:unit [
+            a unit:Unit ;
+            rdfs:label  "v" ;
+            unit:symbol "v" ;
+            unit:render "%f v" ;
+        ] ;
+    ] ,
+    [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 22 ;
+        lv2:name "Parameter 17" ;
+        lv2:symbol "param_17" ;
+        lv2:default 0 ;
+        lv2:minimum 0 ;
+        lv2:maximum 10 ;
+        unit:unit [
+            a unit:Unit ;
+            rdfs:label  "v" ;
+            unit:symbol "v" ;
+            unit:render "%f v" ;
+        ] ;
+    ] ,
+    [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 23 ;
+        lv2:name "Parameter 18" ;
+        lv2:symbol "param_18" ;
+        lv2:default 0 ;
+        lv2:minimum 0 ;
+        lv2:maximum 10 ;
+        unit:unit [
+            a unit:Unit ;
+            rdfs:label  "v" ;
+            unit:symbol "v" ;
+            unit:render "%f v" ;
+        ] ;
+    ] ,
+    [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 24 ;
+        lv2:name "Parameter 19" ;
+        lv2:symbol "param_19" ;
+        lv2:default 0 ;
+        lv2:minimum 0 ;
+        lv2:maximum 10 ;
+        unit:unit [
+            a unit:Unit ;
+            rdfs:label  "v" ;
+            unit:symbol "v" ;
+            unit:render "%f v" ;
+        ] ;
+    ] ,
+    [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 25 ;
+        lv2:name "Parameter 20" ;
+        lv2:symbol "param_20" ;
+        lv2:default 0 ;
+        lv2:minimum 0 ;
+        lv2:maximum 10 ;
+        unit:unit [
+            a unit:Unit ;
+            rdfs:label  "v" ;
+            unit:symbol "v" ;
+            unit:render "%f v" ;
+        ] ;
+    ] ,
+    [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 26 ;
+        lv2:name "Parameter 21" ;
+        lv2:symbol "param_21" ;
+        lv2:default 0 ;
+        lv2:minimum 0 ;
+        lv2:maximum 10 ;
+        unit:unit [
+            a unit:Unit ;
+            rdfs:label  "v" ;
+            unit:symbol "v" ;
+            unit:render "%f v" ;
+        ] ;
+    ] ,
+    [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 27 ;
+        lv2:name "Parameter 22" ;
+        lv2:symbol "param_22" ;
+        lv2:default 0 ;
+        lv2:minimum 0 ;
+        lv2:maximum 10 ;
+        unit:unit [
+            a unit:Unit ;
+            rdfs:label  "v" ;
+            unit:symbol "v" ;
+            unit:render "%f v" ;
+        ] ;
+    ] ,
+    [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 28 ;
+        lv2:name "Parameter 23" ;
+        lv2:symbol "param_23" ;
+        lv2:default 0 ;
+        lv2:minimum 0 ;
+        lv2:maximum 10 ;
+        unit:unit [
+            a unit:Unit ;
+            rdfs:label  "v" ;
+            unit:symbol "v" ;
+            unit:render "%f v" ;
+        ] ;
+    ] ,
+    [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 29 ;
+        lv2:name "Parameter 24" ;
+        lv2:symbol "param_24" ;
+        lv2:default 0 ;
+        lv2:minimum 0 ;
+        lv2:maximum 10 ;
+        unit:unit [
+            a unit:Unit ;
+            rdfs:label  "v" ;
+            unit:symbol "v" ;
+            unit:render "%f v" ;
+        ] ;
+    ] ,
+    [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 30 ;
+        lv2:name "Enabled" ;
+        lv2:symbol "lv2_enabled" ;
+        lv2:default 1 ;
+        lv2:minimum 0 ;
+        lv2:maximum 1 ;
+        lv2:portProperty lv2:toggled , lv2:integer ;
+        lv2:designation lv2:enabled ;
+    ] ,
+    [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 31 ;
+        lv2:name "Show tooltips" ;
+        lv2:symbol "tooltips" ;
+        lv2:default 1 ;
+        lv2:minimum 0 ;
+        lv2:maximum 1 ;
+        lv2:portProperty lv2:toggled ;
+        lv2:portProperty lv2:integer ;
+    ] ,
+    [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 32 ;
+        lv2:name "Cable opacity" ;
+        lv2:symbol "cableOpacity" ;
+        lv2:default 50 ;
+        lv2:minimum 0 ;
+        lv2:maximum 100 ;
+        unit:unit unit:pc ;
+    ] ,
+    [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 33 ;
+        lv2:name "Cable tension" ;
+        lv2:symbol "cableTension" ;
+        lv2:default 75 ;
+        lv2:minimum 0 ;
+        lv2:maximum 100 ;
+        unit:unit unit:pc ;
+    ] ,
+    [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 34 ;
+        lv2:name "Room brightness" ;
+        lv2:symbol "rackBrightness" ;
+        lv2:default 100 ;
+        lv2:minimum 0 ;
+        lv2:maximum 100 ;
+        unit:unit unit:pc ;
+    ] ,
+    [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 35 ;
+        lv2:name "Light Bloom" ;
+        lv2:symbol "haloBrightness" ;
+        lv2:default 25 ;
+        lv2:minimum 0 ;
+        lv2:maximum 100 ;
+        unit:unit unit:pc ;
+    ] ,
+    [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 36 ;
+        lv2:name "Knob mode" ;
+        lv2:symbol "knobMode" ;
+        lv2:default 0 ;
+        lv2:minimum 0 ;
+        lv2:maximum 2 ;
+        lv2:portProperty lv2:enumeration ;
+        lv2:scalePoint [
+            rdfs:label  "Linear" ;
+            rdf:value 0 ;
+        ] ,
+        [
+            rdfs:label  "Absolute rotary" ;
+            rdf:value 1 ;
+        ] ,
+        [
+            rdfs:label  "Relative rotary" ;
+            rdf:value 2 ;
+        ] ;
+        lv2:portProperty lv2:integer ;
+    ] ,
+    [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 37 ;
+        lv2:name "Scroll wheel knob control" ;
+        lv2:symbol "knobScroll" ;
+        lv2:default 0 ;
+        lv2:minimum 0 ;
+        lv2:maximum 1 ;
+        lv2:portProperty lv2:toggled ;
+        lv2:portProperty lv2:integer ;
+    ] ,
+    [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 38 ;
+        lv2:name "Scroll wheel knob sensitivity" ;
+        lv2:symbol "knobScrollSensitivity" ;
+        lv2:default 1 ;
+        lv2:minimum 0.10000000149 ;
+        lv2:maximum 10 ;
+        lv2:portProperty <http://lv2plug.in/ns/ext/port-props#logarithmic> ;
+    ] ,
+    [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 39 ;
+        lv2:name "Lock module positions" ;
+        lv2:symbol "lockModules" ;
+        lv2:default 0 ;
+        lv2:minimum 0 ;
+        lv2:maximum 1 ;
+        lv2:portProperty lv2:toggled ;
+        lv2:portProperty lv2:integer ;
+    ] ,
+    [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 40 ;
+        lv2:name "Update rate limit" ;
+        lv2:symbol "rateLimit" ;
+        lv2:default 0 ;
+        lv2:minimum 0 ;
+        lv2:maximum 2 ;
+        lv2:portProperty lv2:enumeration ;
+        lv2:scalePoint [
+            rdfs:label  "None" ;
+            rdf:value 0 ;
+        ] ,
+        [
+            rdfs:label  "2x" ;
+            rdf:value 1 ;
+        ] ,
+        [
+            rdfs:label  "4x" ;
+            rdf:value 2 ;
+        ] ;
+        lv2:portProperty lv2:integer ;
+    ] ,
+    [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 41 ;
+        lv2:name "Browser sort" ;
+        lv2:symbol "browserSort" ;
+        lv2:default 3 ;
+        lv2:minimum 0 ;
+        lv2:maximum 5 ;
+        lv2:portProperty lv2:enumeration ;
+        lv2:scalePoint [
+            rdfs:label  "Updated" ;
+            rdf:value 0 ;
+        ] ,
+        [
+            rdfs:label  "Last used" ;
+            rdf:value 1 ;
+        ] ,
+        [
+            rdfs:label  "Most used" ;
+            rdf:value 2 ;
+        ] ,
+        [
+            rdfs:label  "Brand" ;
+            rdf:value 3 ;
+        ] ,
+        [
+            rdfs:label  "Name" ;
+            rdf:value 4 ;
+        ] ,
+        [
+            rdfs:label  "Random" ;
+            rdf:value 5 ;
+        ] ;
+        lv2:portProperty lv2:integer ;
+    ] ,
+    [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 42 ;
+        lv2:name "Browser zoom" ;
+        lv2:symbol "browserZoom" ;
+        lv2:default 50 ;
+        lv2:minimum 25 ;
+        lv2:maximum 200 ;
+        lv2:portProperty lv2:enumeration ;
+        lv2:scalePoint [
+            rdfs:label  "25" ;
+            rdf:value 25 ;
+        ] ,
+        [
+            rdfs:label  "35" ;
+            rdf:value 35 ;
+        ] ,
+        [
+            rdfs:label  "50" ;
+            rdf:value 50 ;
+        ] ,
+        [
+            rdfs:label  "71" ;
+            rdf:value 71 ;
+        ] ,
+        [
+            rdfs:label  "100" ;
+            rdf:value 100 ;
+        ] ,
+        [
+            rdfs:label  "141" ;
+            rdf:value 141 ;
+        ] ,
+        [
+            rdfs:label  "200" ;
+            rdf:value 200 ;
+        ] ;
+        unit:unit unit:pc ;
+    ] ,
+    [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 43 ;
+        lv2:name "Invert zoom" ;
+        lv2:symbol "invertZoom" ;
+        lv2:default 0 ;
+        lv2:minimum 0 ;
+        lv2:maximum 1 ;
+        lv2:portProperty lv2:toggled ;
+        lv2:portProperty lv2:integer ;
+    ] ;
+
+    rdfs:comment """Cardinal is a free and open-source virtual modular synthesizer plugin.
+It is based on the popular VCV Rack but with a focus on being a fully self-contained plugin version.
+It is not an official VCV project, and it is not affiliated with it in any way.
+
+Cardinal contains Rack, some 3rd-party modules and a few internal utilities.
+It does not load external modules and does not connect to the official Rack library/store.
+""" ;
+
+    mod:brand "DISTRHO" ;
+    mod:label "Cardinal FX" ;
+
+    doap:name "Cardinal FX" ;
+    doap:license <http://spdx.org/licenses/GPL-3.0-or-later.html> ;
+
+    doap:maintainer [
+        foaf:name "DISTRHO" ;
+        foaf:homepage <https://github.com/DISTRHO/Cardinal> ;
+    ] ;
+
+    lv2:microVersion 5 ;
+    lv2:minorVersion 22 .
+
