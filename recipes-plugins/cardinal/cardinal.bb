@@ -36,7 +36,7 @@ EXTRA_OEMAKE = "HEADLESS=true CROSS_COMPILING=true MOD_BUILD=true NOOPT=true SYS
 
 do_install () {
     install -d ${D}/${LV2_DIR_BAD}/CardinalFX.lv2
-    cp -rL ${S}/bin/CardinalFX.lv2 ${D}/${LV2_DIR_BAD}/CardinalFX.lv2
+    cp -rL ${S}/bin/CardinalFX.lv2 ${D}/${LV2_DIR_BAD}/
 
     # @TODO: remove 0006-fix-non-present-modgui-graphics.patch in next Cardinal releases
     cp -r ${WORKDIR}/src/MOD/CardinalFX.lv2/* ${D}/${LV2_DIR_BAD}/CardinalFX.lv2/
