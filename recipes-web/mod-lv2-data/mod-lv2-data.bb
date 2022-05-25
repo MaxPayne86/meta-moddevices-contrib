@@ -11,7 +11,7 @@ LIC_FILES_CHKSUM = ""
 SRC_URI = "\
     git://github.com/moddevices/mod-lv2-data.git;protocol=git;branch=master \
 "
-SRCREV="185049ee7fdab1f6bf35ddd6be5c8711748a3f9b"
+SRCREV="e4bbdbd280ea963fbdb1c47614ee367be01bd877"
 
 GX_FXLIST = "\
     gxtuner.lv2 \

@@ -14,7 +14,7 @@ SRC_URI = "\
     git://github.com/moddevices/lv2-data-creative-commons.git;protocol=git;branch=master \
     file://remove-mod-cv-ports.patch \
 "
-SRCREV="64d77a8a394310909aca67b8c03dc314b57b77f5"
+SRCREV="1143b9e85ad74312fc9daac2d3897b068e4d06d5"
 
 S = "${WORKDIR}/git"
 
