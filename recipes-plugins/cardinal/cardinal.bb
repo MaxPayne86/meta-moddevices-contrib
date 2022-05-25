@@ -60,6 +60,16 @@ DEPENDS += " \
     liblo \
 "
 
+RDEPENDS_${PN} += " \
+    fftw \
+    liblo \
+    jansson \
+    libarchive \
+    libsamplerate0 \
+    speexdsp \
+    liblo \
+"
+
 FILES_${PN} = "\
     ${LV2_DIR_BAD} \
 "
