@@ -12,7 +12,6 @@ do_compile[noexec] = "1"
 # No information for SRC_URI yet (only an external source tree was specified)
 SRC_URI = "\
     git://github.com/moddevices/lv2-data-creative-commons.git;protocol=git;branch=master \
-    file://remove-mod-cv-ports.patch \
 "
 SRCREV="1143b9e85ad74312fc9daac2d3897b068e4d06d5"
 

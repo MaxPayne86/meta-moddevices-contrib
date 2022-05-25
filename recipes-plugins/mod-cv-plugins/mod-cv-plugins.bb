@@ -13,7 +13,6 @@ INHIBIT_PACKAGE_DEBUG_SPLIT  = "1"
 # No information for SRC_URI yet (only an external source tree was specified)
 SRC_URI = "\
     gitsm://github.com/moddevices/mod-cv-plugins.git;protocol=git;branch=master \
-    file://remove-mod-cv-ports.patch \
 "
 SRCREV="0fe6574bb4178ecb7a294212d0449b2af039e713"
 
