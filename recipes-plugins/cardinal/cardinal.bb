@@ -61,13 +61,13 @@ DEPENDS += " \
 "
 
 RDEPENDS_${PN} += " \
-    fftw \
     liblo \
     jansson \
     libarchive \
     libsamplerate0 \
     speexdsp \
     liblo \
+    zstd \
 "
 
 FILES_${PN} = "\
