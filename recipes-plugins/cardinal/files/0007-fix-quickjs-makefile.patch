@@ -1,0 +1,44 @@
+diff --git a/deps/QuickJS/Makefile b/deps/QuickJS/Makefile
+index 74ed522..e3c1fa0 100644
+--- a/deps/QuickJS/Makefile
++++ b/deps/QuickJS/Makefile
+@@ -80,14 +80,14 @@ ifdef CONFIG_CLANG
+     endif
+   endif
+ else
+-  HOST_CC=gcc
+-  CC=$(CROSS_PREFIX)gcc
++  HOST_CC=$(CC)
++  #CC=$(CROSS_PREFIX)gcc
+   CFLAGS += -fPIC -Wall -MMD -MF $(OBJDIR)/$(@F).d
+   CFLAGS += -Wno-array-bounds -Wno-format-truncation
+   ifdef CONFIG_LTO
+-    AR=$(CROSS_PREFIX)gcc-ar
++    #AR=$(CROSS_PREFIX)gcc-ar
+   else
+-    AR=$(CROSS_PREFIX)ar
++    #AR=$(CROSS_PREFIX)ar
+   endif
+ endif
+ STRIP=$(CROSS_PREFIX)strip
+@@ -100,7 +100,7 @@ CFLAGS_DEBUG=$(CFLAGS) -O0
+ CFLAGS_SMALL=$(CFLAGS) -Os
+ CFLAGS_OPT=$(CFLAGS) -O2
+ CFLAGS_NOLTO:=$(CFLAGS_OPT)
+-LDFLAGS=
++#LDFLAGS=
+ ifdef CONFIG_LTO
+ CFLAGS_SMALL+=-flto
+ CFLAGS_OPT+=-flto
+@@ -115,9 +115,9 @@ CFLAGS+=-fsanitize=address
+ LDFLAGS+=-fsanitize=address
+ endif
+ ifdef CONFIG_WIN32
+-LDEXPORT=
++#LDEXPORT=
+ else
+-LDEXPORT=-rdynamic
++LDEXPORT+=-rdynamic
+ endif
+ 
+ PROGS=qjs$(EXE) qjsbn$(EXE) qjsc$(EXE) qjsbnc$(EXE) run-test262 run-test262-bn
