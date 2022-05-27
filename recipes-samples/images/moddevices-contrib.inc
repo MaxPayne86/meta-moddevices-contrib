@@ -60,6 +60,7 @@ AUDIOPLUGINS = "\
     lsp-plugins \
     carla-plugins \
     die-plugins \
+    cardinal \
 "
 
 # A few extra plugins from Polyeffects
