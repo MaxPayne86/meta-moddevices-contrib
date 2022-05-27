@@ -11,7 +11,6 @@
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix rsz:   <http://lv2plug.in/ns/ext/resize-port#> .
 @prefix spdx:  <http://spdx.org/rdf/terms#> .
-@prefix ui:    <http://lv2plug.in/ns/extensions/ui#> .
 @prefix unit:  <http://lv2plug.in/ns/extensions/units#> .
 
 <https://distrho.kx.studio/plugins/cardinal#fx#screenshot>
@@ -43,8 +42,6 @@
 
     patch:readable <https://distrho.kx.studio/plugins/cardinal#fx#screenshot> ;
     patch:writable <https://distrho.kx.studio/plugins/cardinal#fx#comment> ;
-
-    ui:ui <https://distrho.kx.studio/plugins/cardinal#fx#DPF_UI> ;
 
     lv2:port [
         a lv2:InputPort, lv2:AudioPort ;
