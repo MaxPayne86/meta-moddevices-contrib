@@ -1,8 +1,8 @@
 diff --git a/src/Plugin/AlienWah/CMakeLists.txt b/src/Plugin/AlienWah/CMakeLists.txt
-index 8c650881..74bc3b03 100644
+index e03faba..e26d101 100644
 --- a/src/Plugin/AlienWah/CMakeLists.txt
 +++ b/src/Plugin/AlienWah/CMakeLists.txt
-@@ -20,10 +20,6 @@ target_link_libraries(ZynAlienWah_vst zynaddsubfx_core ${OS_LIBRARIES})
+@@ -25,10 +25,6 @@ endif()
  install(TARGETS ZynAlienWah_lv2 LIBRARY DESTINATION ${PluginLibDir}/lv2/ZynAlienWah.lv2/)
  install(TARGETS ZynAlienWah_vst LIBRARY DESTINATION ${PluginLibDir}/vst/)
  
@@ -10,14 +10,14 @@ index 8c650881..74bc3b03 100644
 -    COMMAND ../../lv2-ttl-generator $<TARGET_FILE:ZynAlienWah_lv2>
 -	WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/lv2)
 -
+ add_dependencies(ZynAlienWah_lv2 lv2-ttl-generator)
+ 
  install(FILES
- 	${CMAKE_CURRENT_BINARY_DIR}/lv2/manifest.ttl
- 	${CMAKE_CURRENT_BINARY_DIR}/lv2/presets.ttl
 diff --git a/src/Plugin/Chorus/CMakeLists.txt b/src/Plugin/Chorus/CMakeLists.txt
-index a9dbe038..f0086b2d 100644
+index e632164..2a24dc1 100644
 --- a/src/Plugin/Chorus/CMakeLists.txt
 +++ b/src/Plugin/Chorus/CMakeLists.txt
-@@ -20,10 +20,6 @@ target_link_libraries(ZynChorus_vst zynaddsubfx_core ${OS_LIBRARIES})
+@@ -25,10 +25,6 @@ endif()
  install(TARGETS ZynChorus_lv2 LIBRARY DESTINATION ${PluginLibDir}/lv2/ZynChorus.lv2/)
  install(TARGETS ZynChorus_vst LIBRARY DESTINATION ${PluginLibDir}/vst/)
  
@@ -25,14 +25,14 @@ index a9dbe038..f0086b2d 100644
 -    COMMAND ../../lv2-ttl-generator $<TARGET_FILE:ZynChorus_lv2>
 -	WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/lv2)
 -
+ add_dependencies(ZynChorus_lv2 lv2-ttl-generator)
+ 
  install(FILES
- 	${CMAKE_CURRENT_BINARY_DIR}/lv2/manifest.ttl
- 	${CMAKE_CURRENT_BINARY_DIR}/lv2/presets.ttl
 diff --git a/src/Plugin/Distortion/CMakeLists.txt b/src/Plugin/Distortion/CMakeLists.txt
-index 0a0affa6..ee3a3d78 100644
+index 6188774..c4c40a4 100644
 --- a/src/Plugin/Distortion/CMakeLists.txt
 +++ b/src/Plugin/Distortion/CMakeLists.txt
-@@ -20,10 +20,6 @@ target_link_libraries(ZynDistortion_vst zynaddsubfx_core ${OS_LIBRARIES})
+@@ -25,10 +25,6 @@ endif()
  install(TARGETS ZynDistortion_lv2 LIBRARY DESTINATION ${PluginLibDir}/lv2/ZynDistortion.lv2/)
  install(TARGETS ZynDistortion_vst LIBRARY DESTINATION ${PluginLibDir}/vst/)
  
@@ -40,14 +40,14 @@ index 0a0affa6..ee3a3d78 100644
 -    COMMAND ../../lv2-ttl-generator $<TARGET_FILE:ZynDistortion_lv2>
 -	WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/lv2)
 -
+ add_dependencies(ZynDistortion_lv2 lv2-ttl-generator)
+ 
  install(FILES
- 	${CMAKE_CURRENT_BINARY_DIR}/lv2/manifest.ttl
- 	${CMAKE_CURRENT_BINARY_DIR}/lv2/presets.ttl
 diff --git a/src/Plugin/DynamicFilter/CMakeLists.txt b/src/Plugin/DynamicFilter/CMakeLists.txt
-index 0fd8ed78..dcb49284 100644
+index c562783..6e6f183 100644
 --- a/src/Plugin/DynamicFilter/CMakeLists.txt
 +++ b/src/Plugin/DynamicFilter/CMakeLists.txt
-@@ -20,10 +20,6 @@ target_link_libraries(ZynDynamicFilter_vst zynaddsubfx_core ${OS_LIBRARIES})
+@@ -25,10 +25,6 @@ endif()
  install(TARGETS ZynDynamicFilter_lv2 LIBRARY DESTINATION ${PluginLibDir}/lv2/ZynDynamicFilter.lv2/)
  install(TARGETS ZynDynamicFilter_vst LIBRARY DESTINATION ${PluginLibDir}/vst/)
  
@@ -55,14 +55,14 @@ index 0fd8ed78..dcb49284 100644
 -    COMMAND ../../lv2-ttl-generator $<TARGET_FILE:ZynDynamicFilter_lv2>
 -	WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/lv2)
 -
+ add_dependencies(ZynDynamicFilter_lv2 lv2-ttl-generator)
+ 
  install(FILES
- 	${CMAKE_CURRENT_BINARY_DIR}/lv2/manifest.ttl
- 	${CMAKE_CURRENT_BINARY_DIR}/lv2/presets.ttl
 diff --git a/src/Plugin/Echo/CMakeLists.txt b/src/Plugin/Echo/CMakeLists.txt
-index fe4e47ee..68e98268 100644
+index fa7c31c..10847e7 100644
 --- a/src/Plugin/Echo/CMakeLists.txt
 +++ b/src/Plugin/Echo/CMakeLists.txt
-@@ -20,10 +20,6 @@ target_link_libraries(ZynEcho_vst zynaddsubfx_core ${OS_LIBRARIES})
+@@ -25,10 +25,6 @@ endif()
  install(TARGETS ZynEcho_lv2 LIBRARY DESTINATION ${PluginLibDir}/lv2/ZynEcho.lv2/)
  install(TARGETS ZynEcho_vst LIBRARY DESTINATION ${PluginLibDir}/vst/)
  
@@ -70,14 +70,14 @@ index fe4e47ee..68e98268 100644
 -    COMMAND ../../lv2-ttl-generator $<TARGET_FILE:ZynEcho_lv2>
 -	WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/lv2)
 -
+ add_dependencies(ZynEcho_lv2 lv2-ttl-generator)
+ 
  install(FILES
- 	${CMAKE_CURRENT_BINARY_DIR}/lv2/manifest.ttl
- 	${CMAKE_CURRENT_BINARY_DIR}/lv2/presets.ttl
 diff --git a/src/Plugin/Phaser/CMakeLists.txt b/src/Plugin/Phaser/CMakeLists.txt
-index ce4a1cfa..0e9c63d8 100644
+index f344d93..60a0a72 100644
 --- a/src/Plugin/Phaser/CMakeLists.txt
 +++ b/src/Plugin/Phaser/CMakeLists.txt
-@@ -20,10 +20,6 @@ target_link_libraries(ZynPhaser_vst zynaddsubfx_core ${OS_LIBRARIES})
+@@ -25,10 +25,6 @@ endif()
  install(TARGETS ZynPhaser_lv2 LIBRARY DESTINATION ${PluginLibDir}/lv2/ZynPhaser.lv2/)
  install(TARGETS ZynPhaser_vst LIBRARY DESTINATION ${PluginLibDir}/vst/)
  
@@ -85,14 +85,14 @@ index ce4a1cfa..0e9c63d8 100644
 -    COMMAND ../../lv2-ttl-generator $<TARGET_FILE:ZynPhaser_lv2>
 -	WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/lv2)
 -
+ add_dependencies(ZynPhaser_lv2 lv2-ttl-generator)
+ 
  install(FILES
- 	${CMAKE_CURRENT_BINARY_DIR}/lv2/manifest.ttl
- 	${CMAKE_CURRENT_BINARY_DIR}/lv2/presets.ttl
 diff --git a/src/Plugin/Reverb/CMakeLists.txt b/src/Plugin/Reverb/CMakeLists.txt
-index b61564d2..a60ce608 100644
+index c2d74a9..8a2f289 100644
 --- a/src/Plugin/Reverb/CMakeLists.txt
 +++ b/src/Plugin/Reverb/CMakeLists.txt
-@@ -20,10 +20,6 @@ target_link_libraries(ZynReverb_vst zynaddsubfx_core ${OS_LIBRARIES})
+@@ -25,10 +25,6 @@ endif()
  install(TARGETS ZynReverb_lv2 LIBRARY DESTINATION ${PluginLibDir}/lv2/ZynReverb.lv2/)
  install(TARGETS ZynReverb_vst LIBRARY DESTINATION ${PluginLibDir}/vst/)
  
@@ -100,21 +100,21 @@ index b61564d2..a60ce608 100644
 -    COMMAND ../../lv2-ttl-generator $<TARGET_FILE:ZynReverb_lv2>
 -	WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/lv2)
 -
+ add_dependencies(ZynReverb_lv2 lv2-ttl-generator)
+ 
  install(FILES
- 	${CMAKE_CURRENT_BINARY_DIR}/lv2/manifest.ttl
- 	${CMAKE_CURRENT_BINARY_DIR}/lv2/presets.ttl
 diff --git a/src/Plugin/ZynAddSubFX/CMakeLists.txt b/src/Plugin/ZynAddSubFX/CMakeLists.txt
-index e8c11315..9f142dbb 100644
+index b63bccc..fba9361 100644
 --- a/src/Plugin/ZynAddSubFX/CMakeLists.txt
 +++ b/src/Plugin/ZynAddSubFX/CMakeLists.txt
-@@ -126,10 +126,6 @@ endif()
- install(TARGETS ZynAddSubFX_lv2 LIBRARY DESTINATION ${PluginLibDir}/lv2/ZynAddSubFX.lv2/)
- install(TARGETS ZynAddSubFX_vst LIBRARY DESTINATION ${PluginLibDir}/vst/)
+@@ -150,10 +150,6 @@ if(NOT ${CMAKE_SYSTEM_NAME} STREQUAL "Windows")
+     install(TARGETS ZynAddSubFX_lv2 LIBRARY DESTINATION ${PluginLibDir}/lv2/ZynAddSubFX.lv2/)
+     install(TARGETS ZynAddSubFX_vst LIBRARY DESTINATION ${PluginLibDir}/vst/)
  
--add_custom_command(TARGET ZynAddSubFX_lv2 POST_BUILD
--    COMMAND ../../lv2-ttl-generator $<TARGET_FILE:ZynAddSubFX_lv2>
--    WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/lv2)
+-    add_custom_command(TARGET ZynAddSubFX_lv2 POST_BUILD
+-        COMMAND ../../lv2-ttl-generator $<TARGET_FILE:ZynAddSubFX_lv2>
+-        WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/lv2)
 -
- install(FILES
-     ${CMAKE_CURRENT_BINARY_DIR}/lv2/manifest.ttl
-     ${CMAKE_CURRENT_BINARY_DIR}/lv2/presets.ttl
+     add_dependencies(ZynAddSubFX_lv2 lv2-ttl-generator)
+ endif()
+ 

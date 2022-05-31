@@ -9,23 +9,26 @@ FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
 
 INSANE_SKIP_${PN} = "already-stripped"
 
-S = "${WORKDIR}/git"
-
 # No information for SRC_URI yet (only an external source tree was specified)
 SRC_URI = "\
-    gitsm://github.com/fundamental/zynaddsubfx.git;protocol=git;branch=master \
+    gitsm://git.code.sf.net/p/zynaddsubfx/code;protocol=git;branch=master \
     file://01_no-asm.patch \
     file://02_tweak-global-settings.patch \
     file://03_no-cmake-opts.patch \
     file://04_no-async.patch \
-    file://05_noui-x11-link.patch \
     file://06_no-notepool-assert.patch \
     file://07_no-fft-mutex.patch \
     file://08_use-fftwf.patch \
     file://09_more-tweaks.patch \
-    file://10_no-ttl-generator.patch \
+    file://10_fix-build.patch \
+    file://11_mod-path-tweaks.patch \
+    file://12_no-ttl-generator.patch \
 "
-SRCREV="67366a08a8362af15ea60f6fe39f4ad9918af08f"
+SRCREV="4d4aedf834dbd13c6e5f07ac512c9da74732fd58"
+
+PV = "3.0.5"
+
+S = "${WORKDIR}/git"
 
 inherit cmake
 
