@@ -39,14 +39,14 @@ QUICKJS_MAKE_FLAGS += ' CONFIG_LTO=y'
 
 do_compile () {
     # Compile QuickJS first
-    bbwarning "Compiling QuickJS"
+    bbwarn "Compiling QuickJS"
     cd ${S}/deps/QuickJS
     oe_runmake ${QUICKJS_MAKE_FLAGS}
     mkdir -p ${S}/deps/sysroot/lib
     cp ${S}/deps/QuickJS/libquickjs.a ${S}/deps/sysroot/lib/
     cp ${S}/deps/QuickJS/quickjs.h ${S}/plugins/AriaModules/src/
 
-    bbwarning Compiling Cardinal
+    bbwarn Compiling Cardinal
     cd ${S}
     oe_runmake
 }
