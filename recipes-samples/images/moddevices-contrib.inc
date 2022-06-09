@@ -63,10 +63,11 @@ AUDIOPLUGINS = "\
     cardinal \
 "
 
-# A few extra plugins from Polyeffects
+# A few extra plugins from Polyeffects and others
 AUDIOPLUGINS_EXTRA = "\
     lenticular-lv2 \
     pitchtomidi-lv2 \
+    abninjam \
 "
 
 SYNTHENGINES = "\
