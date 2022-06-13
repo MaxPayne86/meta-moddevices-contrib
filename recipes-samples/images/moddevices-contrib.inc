@@ -67,7 +67,7 @@ AUDIOPLUGINS = "\
 AUDIOPLUGINS_EXTRA = "\
     lenticular-lv2 \
     pitchtomidi-lv2 \
-    abninjam \
+    abninjam-lv2 \
 "
 
 SYNTHENGINES = "\
