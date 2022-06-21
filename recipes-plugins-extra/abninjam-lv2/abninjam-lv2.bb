@@ -12,7 +12,7 @@ SRC_URI = " \
     gitsm://github.com/antanasbruzas/abNinjam.git;protocol=https \
     file://connection.properties \
 "
-SRCREV="79e1ee00c71e3219fa5b5c807e7cf6d186ca6a2c"
+SRCREV="947ba6579261d5d090d093d0b4384a832aea75bb"
 
 S = "${WORKDIR}/git"
 
@@ -30,16 +30,21 @@ DEPENDS += " \
 TARGET_CC_ARC2H += "-pthread"
 
 do_install () {
+    # plugin install
     install -d ${D}/${LV2_DIR_BAD}/abNinjam.lv2
     cp -r ${WORKDIR}/build/abNinjam.lv2/*.so ${D}/${LV2_DIR_BAD}/abNinjam.lv2
     cp -r ${WORKDIR}/build/abNinjam.lv2/manifest.ttl ${D}/${LV2_DIR_BAD}/abNinjam.lv2
     cp -r ${WORKDIR}/build/abNinjam.lv2/abNinjam.ttl ${D}/${LV2_DIR_BAD}/abNinjam.lv2
     chmod 755 -R ${D}/${LV2_DIR_BAD}
-    install -d ${D}/${ROOT_HOME}/abNinjam
-    install -m 0644 ${WORKDIR}/connection.properties ${D}/${ROOT_HOME}/abNinjam/
+
+    install -d ${D}/mnt/data/.config/abNinjam
+    install -m 0644 ${WORKDIR}/connection.properties ${D}/mnt/data/.config/abNinjam/
+    install -d ${D}/${ROOT_HOME}
+    ln -s ../../mnt/data/.config/abNinjam ${D}${ROOT_HOME}/abNinjam
 }
 
 FILES_${PN} = "\
     ${LV2_DIR_BAD} \
+    /mnt/data/.config/abNinjam \
     ${ROOT_HOME}/abNinjam \
 "
