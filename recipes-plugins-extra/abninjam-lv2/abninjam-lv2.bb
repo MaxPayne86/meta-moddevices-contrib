@@ -8,10 +8,11 @@ INHIBIT_PACKAGE_STRIP = "1"
 INHIBIT_SYSROOT_STRIP = "1"
 INHIBIT_PACKAGE_DEBUG_SPLIT  = "1"
 
-SRC_URI = "gitsm://github.com/antanasbruzas/abNinjam.git;protocol=http \
+SRC_URI = " \
+    gitsm://github.com/antanasbruzas/abNinjam.git;protocol=https \
+    file://connection.properties \
 "
-SRCREV="947ba6579261d5d090d093d0b4384a832aea75bb"
-SRC_URI[sha256sum] = "973d9517d775fc3b1496b6cb3987100b6cd85c09b411cd1077cb8b9134568237"
+SRCREV="79e1ee00c71e3219fa5b5c807e7cf6d186ca6a2c"
 
 S = "${WORKDIR}/git"
 
@@ -33,10 +34,12 @@ do_install () {
     cp -r ${WORKDIR}/build/abNinjam.lv2/*.so ${D}/${LV2_DIR_BAD}/abNinjam.lv2
     cp -r ${WORKDIR}/build/abNinjam.lv2/manifest.ttl ${D}/${LV2_DIR_BAD}/abNinjam.lv2
     cp -r ${WORKDIR}/build/abNinjam.lv2/abNinjam.ttl ${D}/${LV2_DIR_BAD}/abNinjam.lv2
-
     chmod 755 -R ${D}/${LV2_DIR_BAD}
+    install -d ${D}/${ROOT_HOME}/abNinjam
+    install -m 0644 ${WORKDIR}/connection.properties ${D}/${ROOT_HOME}/abNinjam/
 }
 
 FILES_${PN} = "\
     ${LV2_DIR_BAD} \
+    ${ROOT_HOME}/abNinjam \
 "
