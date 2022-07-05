@@ -14,9 +14,9 @@ SRCREV="a32024ba96ee1cd37be6c71188b57dec8e3cbbbe"
 
 S = "${WORKDIR}/git"
 
-EXTRA_OECMAKE = "-DRTNEURAL_XSIMD=ON"
-
 inherit cmake pkgconfig
+
+EXTRA_OECMAKE = "-DRTNEURAL_DEFAULT_ALIGNMENT=16 -DRTNEURAL_XSIMD=ON"
 
 do_install () {
     install -d ${D}${libdir}
