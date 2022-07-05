@@ -6,7 +6,8 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=989b379cee495d4160172fe4c2033ea4"
 DEPENDS = "xsimd"
 
 SRC_URI = "\
-    git://github.com/jatinchowdhury18/RTNeural.git;protocol=https;branch=main \
+    gitsm://github.com/jatinchowdhury18/RTNeural.git;protocol=https;branch=main \
+    file://RTNeural.pc \
 "
 
 SRCREV="a32024ba96ee1cd37be6c71188b57dec8e3cbbbe"
@@ -20,7 +21,17 @@ inherit cmake pkgconfig
 do_install () {
     install -d ${D}${libdir}
     install -m 644 ${B}/RTNeural/libRTNeural.a ${D}${libdir}/libRTNeural.a
+
+    install -d ${D}${libdir}/pkgconfig
+    install -m 644 ${WORKDIR}/RTNeural.pc ${D}${libdir}/pkgconfig/
+
+    install -d ${D}${includedir}/RTNeural
+    cp -r ${S}/RTNeural/* ${D}${includedir}/RTNeural/
+
+    install -d ${D}${includedir}/modules/json
+    cp -r ${S}/modules/json ${D}${includedir}/modules/
 }
 
 FILES_${PN} += "${libdir}"
+FILES_${PN}-dev += "${includedir}"
 FILES_${PN}-dbg += "${libdir}/.debug"
