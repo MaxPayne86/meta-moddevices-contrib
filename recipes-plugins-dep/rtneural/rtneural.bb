@@ -3,7 +3,7 @@ URL = "https://github.com/jatinchowdhury18/RTNeural"
 LICENSE = "BSD-3-Clause"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=989b379cee495d4160172fe4c2033ea4"
 
-DEPENDS = "xsimd"
+#DEPENDS = "xsimd nlohmann-json"
 
 SRC_URI = "\
     gitsm://github.com/jatinchowdhury18/RTNeural.git;protocol=https;branch=main \
