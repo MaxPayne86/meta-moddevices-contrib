@@ -2,9 +2,10 @@
 # LICENSE: the web graphics is provided by lv2-data-creative-commons
 SUMMARY = "Mod-cv-plugins plugin suite"
 DESCRIPTION = ""
-SECTION = "lv2/unstable"
+SECTION = "lv2/stable"
 LICENSE = "CLOSED"
 LIC_FILES_CHKSUM = ""
+BUNDLEDIR = "${@bb.utils.contains('SECTION', 'lv2/stable', '${LV2_DIR}', '${LV2_DIR_BAD}', d)}"
 
 INHIBIT_PACKAGE_STRIP = "1"
 INHIBIT_SYSROOT_STRIP = "1"
@@ -48,17 +49,17 @@ do_compile () {
 }
 
 do_install () {
-    install -d ${D}${LV2_DIR_BAD}
-    #oe_runmake install DEST_DIR=${D}${LV2_DIR_BAD}
+    install -d ${D}${BUNDLEDIR}
+    #oe_runmake install DEST_DIR=${D}${BUNDLEDIR}
     for fx in ${FXLIST}; do
-        install -d ${D}/${LV2_DIR_BAD}/${fx}.lv2
+        install -d ${D}/${BUNDLEDIR}/${fx}.lv2
         if [ ${fx} = "mod-logic-operators" ]; then
-            cp -r ${S}/source/${fx}/bin/${fx}.lv2/*.so ${D}/${LV2_DIR_BAD}/${fx}.lv2
+            cp -r ${S}/source/${fx}/bin/${fx}.lv2/*.so ${D}/${BUNDLEDIR}/${fx}.lv2
         else
-            cp -r ${S}/source/${fx}/${fx}.lv2/*.so ${D}/${LV2_DIR_BAD}/${fx}.lv2
+            cp -r ${S}/source/${fx}/${fx}.lv2/*.so ${D}/${BUNDLEDIR}/${fx}.lv2
         fi
     done
-    chmod 755 -R ${D}/${LV2_DIR_BAD}
+    chmod 755 -R ${D}/${BUNDLEDIR}
 }
 
 DEPENDS += " \
@@ -66,5 +67,5 @@ DEPENDS += " \
 "
 
 FILES_${PN} = "\
-    ${LV2_DIR_BAD} \
+    ${BUNDLEDIR} \
 "
