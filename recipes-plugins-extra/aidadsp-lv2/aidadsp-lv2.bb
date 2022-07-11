@@ -19,8 +19,8 @@ S = "${WORKDIR}/git"
 inherit cmake pkgconfig
 
 # -mtune=cortex-a53 -mfpu=neon-fp-armv8 -mfloat-abi=hard -mvectorize-with-neon-quad
-CXXFLAGS_append_aarch64 = " -O3 -ffast-math -fno-finite-math-only -fprefetch-loop-arrays -funroll-loops -funsafe-loop-optimizations -static-libstdc++ -Wl,-Ofast -Wl,--as-needed -Wl,--strip-all"
-LDFLAGS_append_aarch64 = " -static-libstdc++ -Wl,-Ofast -Wl,--as-needed -Wl,--strip-all"
+#CXXFLAGS_append_aarch64 = " -O3 -ffast-math -fno-finite-math-only -fprefetch-loop-arrays -funroll-loops -funsafe-loop-optimizations -static-libstdc++ -Wl,-Ofast -Wl,--as-needed -Wl,--strip-all"
+#LDFLAGS_append_aarch64 = " -static-libstdc++ -Wl,-Ofast -Wl,--as-needed -Wl,--strip-all"
 
 EXTRA_OECMAKE = '-DCMAKE_BUILD_TYPE=Release -DRTNEURAL_XSIMD=ON -DRTNEURAL_DEFAULT_ALIGNMENT:STRING="16" -DDESTDIR=${BUNDLEDIR}'
 
