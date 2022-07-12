@@ -22,7 +22,7 @@ inherit cmake pkgconfig
 #CXXFLAGS_append_aarch64 = " -O3 -ffast-math -fno-finite-math-only -fprefetch-loop-arrays -funroll-loops -funsafe-loop-optimizations -static-libstdc++ -Wl,-Ofast -Wl,--as-needed -Wl,--strip-all"
 #LDFLAGS_append_aarch64 = " -static-libstdc++ -Wl,-Ofast -Wl,--as-needed -Wl,--strip-all"
 
-EXTRA_OECMAKE = '-DCMAKE_BUILD_TYPE=Release -DRTNEURAL_XSIMD=ON -DRTNEURAL_DEFAULT_ALIGNMENT:STRING="16" -DDESTDIR=${BUNDLEDIR}'
+EXTRA_OECMAKE = '-DCMAKE_BUILD_TYPE=Release -DRTNEURAL_XSIMD=ON -DRTNEURAL_LSTM_MODEL_HIDDEN_SIZE:STRING="16" -DDESTDIR=${BUNDLEDIR}'
 
 DEPENDS = " \
     lilv \
