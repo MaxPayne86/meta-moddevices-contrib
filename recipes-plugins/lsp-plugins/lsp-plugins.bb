@@ -1,10 +1,11 @@
 # Recipe to install LSP (Linux Studio Plugins)
 SUMMARY = "LSP (Linux Studio Plugins)"
 DESCRIPTION = "LSP (Linux Studio Plugins) is a collection of open-source plugins currently compatible with LADSPA, LV2 and LinuxVST formats."
-SECTION = "lv2/unstable"
-LICENSE = "CLOSED"
-LIC_FILES_CHKSUM = ""
+SECTION = "lv2/stable"
+LICENSE = "GPL-3.0"
+LIC_FILES_CHKSUM = "file://LICENSE.txt;md5=3000208d539ec061b899bce1d9ce9404"
 FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
+BUNDLEDIR = "${@bb.utils.contains('SECTION', 'lv2/stable', '${LV2_DIR}', '${LV2_DIR_BAD}', d)}"
 
 INSANE_SKIP_${PN} = "ldflags"
 
@@ -13,10 +14,15 @@ SRC_URI = "\
     gitsm://github.com/sadko4u/lsp-plugins.git;protocol=git;branch=master \
     file://change-lv2path-behaviour.patch \
     file://ttl.tar.gz \
+    file://lsp-plugins-impulsantworten.lv2/impulse_responses_mono.ttl \
+    file://lsp-plugins-impulsantworten.lv2/impulse_responses_stereo.ttl \
+    file://lsp-plugins-impulsantworten.lv2/manifest.ttl \
 "
-SRCREV="ad2720345ce5dffb45f871146de1ae6d16f4c73d"
+SRCREV="5ea0b02e08595a2fd2e29a1e0a2acf7189cce47a"
 
 S = "${WORKDIR}/git"
+
+PV = "1.1.31"
 
 inherit pkgconfig
 
@@ -29,16 +35,20 @@ do_compile () {
 do_install () {
     # Not possible to use make install since lv2_genttl.exe is compiled for target as well
     # so I've generated ttl files from a desktop install and provide them in a tar.gz
-    #oe_runmake install DESTDIR=${D} PREFIX= LV2PATH=${LV2_DIR_BAD}
+    #oe_runmake install DESTDIR=${D} PREFIX= LV2PATH=${BUNDLEDIR}
 
     # Install binary
-    install -d ${D}/${LV2_DIR_BAD}/${PN}.lv2
-    cp ${S}/.build/lsp-plugins-lv2.so ${D}/${LV2_DIR_BAD}/${PN}.lv2/
+    install -d ${D}/${BUNDLEDIR}/${PN}.lv2
+    cp ${S}/.build/lsp-plugins-lv2.so ${D}/${BUNDLEDIR}/${PN}.lv2/
 
     # Install .ttl
-    cp ${WORKDIR}/ttl/*.ttl ${D}/${LV2_DIR_BAD}/${PN}.lv2/
+    cp ${WORKDIR}/ttl/*.ttl ${D}/${BUNDLEDIR}/${PN}.lv2/
+    mv ${D}/${BUNDLEDIR}/${PN}.lv2/manifest.ttl ${D}/${BUNDLEDIR}/${PN}.lv2/manifest.ttl.original
 
-    chmod 755 -R ${D}/${LV2_DIR_BAD}
+    # Overwrite with moddevices version, containing only impulse responses
+    cp ${WORKDIR}/lsp-plugins-impulsantworten.lv2/*.ttl ${D}/${BUNDLEDIR}/${PN}.lv2/
+
+    chmod 755 -R ${D}/${BUNDLEDIR}
 }
 
 DEPENDS += " \
@@ -50,5 +60,5 @@ DEPENDS += " \
 "
 
 FILES_${PN} = "\
-    ${LV2_DIR_BAD} \
+    ${BUNDLEDIR} \
 "
