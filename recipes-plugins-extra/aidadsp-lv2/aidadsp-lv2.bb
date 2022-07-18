@@ -25,7 +25,7 @@ inherit cmake pkgconfig
 EXTRA_OECMAKE = '-DCMAKE_BUILD_TYPE=Release -DRTNEURAL_XSIMD=ON -DRTNEURAL_LSTM_MODEL_HIDDEN_SIZE:STRING="16" -DDESTDIR=${BUNDLEDIR}'
 
 DEPENDS = " \
-    lilv \
+    lv2 \
 "
 
 FILES_${PN} = "\
