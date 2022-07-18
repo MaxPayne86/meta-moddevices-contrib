@@ -13,6 +13,7 @@ IMAGE_INSTALL += "\
     ${ALSA} \
     ${JACK} \
     ${AUDIOLIBRARIES} \
+    libstdc++-staticdev \
 "
 
 export IMAGE_BASENAME = "moddevices-contrib-sdk-image"
