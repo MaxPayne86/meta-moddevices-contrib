@@ -10,9 +10,9 @@ INSANE_SKIP_${PN} += "already-stripped"
 
 # No information for SRC_URI yet (only an external source tree was specified)
 SRC_URI = "\
-    gitsm://github.com/AidaDSP/aidadsp-lv2.git;protocol=https;branch=next \
+    gitsm://github.com/AidaDSP/aidadsp-lv2.git;protocol=https;branch=main \
 "
-SRCREV="next"
+SRCREV="d7754c94629047599480dec2d3a1d8cbd9dacfb7"
 
 S = "${WORKDIR}/git"
 
