@@ -1,7 +1,7 @@
 SUMMARY = "Lv2 plugin bundle aidadsp-lv2"
 DESCRIPTION = ""
 URL = "https://github.com/AidaDSP/aidadsp-lv2.git"
-SECTION = "lv2/unstable"
+SECTION = "lv2/stable"
 LICENSE = "GPL-3.0"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=1ebbd3e34237af26da5dc08a4e440464"
 BUNDLEDIR = "${@bb.utils.contains('SECTION', 'lv2/stable', '${LV2_DIR}', '${LV2_DIR_BAD}', d)}"
