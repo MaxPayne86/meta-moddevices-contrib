@@ -124,7 +124,7 @@ lsp:impulse_responses_mono
 			[ rdfs:label "65536"; rdf:value 7 ] ;
 		lv2:minimum 0 ;
 		lv2:maximum 7 ;
-		lv2:default 4 ;
+		lv2:default 2 ;
 	] , [
 		a lv2:InputPort, lv2:ControlPort ;
 		lv2:index 4 ;
