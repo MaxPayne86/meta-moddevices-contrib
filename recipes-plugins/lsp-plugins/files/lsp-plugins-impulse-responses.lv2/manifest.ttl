@@ -5,9 +5,9 @@
 lsp:impulse_responses_mono
 	a lv2:Plugin ;
 	lv2:binary <lsp-plugins-lv2.so> ;
-	rdfs:seeAlso <impulse_responses_mono.ttl> .
+	rdfs:seeAlso <impulse_responses_mono.ttl> , <modgui_mono.ttl> .
 
 lsp:impulse_responses_stereo
 	a lv2:Plugin ;
 	lv2:binary <lsp-plugins-lv2.so> ;
-	rdfs:seeAlso <impulse_responses_stereo.ttl> .
+	rdfs:seeAlso <impulse_responses_stereo.ttl> , <modgui_stereo.ttl> .
