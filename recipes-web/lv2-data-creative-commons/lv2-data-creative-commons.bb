@@ -41,8 +41,6 @@ MODCV_FXLIST = "\
 "
 
 do_install () {
-    # TODO: install mod-arpeggiator.lv2  mod-cv-plugins  mod-midi-utilities  mod-utilities
-
     # gx_shimmizita.lv2 (guitarix-lv2)
     install -d ${D}/${LV2_DIR}/gx_shimmizita.lv2
     cp -r ${WORKDIR}/git/plugin-data/gx_shimmizita.lv2/*.ttl ${D}/${LV2_DIR}/gx_shimmizita.lv2
@@ -55,9 +53,9 @@ do_install () {
 
     # mod-cv-plugins
     for fx in ${MODCV_FXLIST}; do
-        install -d ${D}/${LV2_DIR_BAD}/${fx}.lv2
-        cp -r ${WORKDIR}/git/plugin-data/mod-cv-plugins/${fx}.lv2/*.ttl ${D}/${LV2_DIR_BAD}/${fx}.lv2
-        cp -r ${WORKDIR}/git/plugin-data/mod-cv-plugins/${fx}.lv2/modgui ${D}/${LV2_DIR_BAD}/${fx}.lv2
+        install -d ${D}/${LV2_DIR}/${fx}.lv2
+        cp -r ${WORKDIR}/git/plugin-data/mod-cv-plugins/${fx}.lv2/*.ttl ${D}/${LV2_DIR}/${fx}.lv2
+        cp -r ${WORKDIR}/git/plugin-data/mod-cv-plugins/${fx}.lv2/modgui ${D}/${LV2_DIR}/${fx}.lv2
     done
 
     # distrho-a-fluidsynth.lv2 (die-plugins)
@@ -73,5 +71,4 @@ DEPENDS = " \
 
 FILES_${PN} = "\
     ${LV2_DIR} \
-    ${LV2_DIR_BAD} \
 "
