@@ -14,9 +14,12 @@ SRC_URI = "\
     gitsm://github.com/sadko4u/lsp-plugins.git;protocol=git;branch=master \
     file://change-lv2path-behaviour.patch \
     file://ttl.tar.gz \
-    file://lsp-plugins-impulsantworten.lv2/impulse_responses_mono.ttl \
-    file://lsp-plugins-impulsantworten.lv2/impulse_responses_stereo.ttl \
-    file://lsp-plugins-impulsantworten.lv2/manifest.ttl \
+    file://lsp-plugins-impulse-responses.lv2/impulse_responses_mono.ttl \
+    file://lsp-plugins-impulse-responses.lv2/impulse_responses_stereo.ttl \
+    file://lsp-plugins-impulse-responses.lv2/manifest.ttl \
+    file://lsp-plugins-impulse-responses.lv2/modgui_mono.ttl \
+    file://lsp-plugins-impulse-responses.lv2/modgui_stereo.ttl \
+    file://lsp-plugins-impulse-responses.lv2/modgui \
 "
 SRCREV="5ea0b02e08595a2fd2e29a1e0a2acf7189cce47a"
 
@@ -45,8 +48,9 @@ do_install () {
     cp ${WORKDIR}/ttl/*.ttl ${D}/${BUNDLEDIR}/${PN}.lv2/
     mv ${D}/${BUNDLEDIR}/${PN}.lv2/manifest.ttl ${D}/${BUNDLEDIR}/${PN}.lv2/manifest.ttl.original
 
-    # Overwrite with moddevices version, containing only impulse responses
-    cp ${WORKDIR}/lsp-plugins-impulsantworten.lv2/*.ttl ${D}/${BUNDLEDIR}/${PN}.lv2/
+    # Overwrite with custom version, containing only impulse responses loader mono/stereo
+    cp ${WORKDIR}/lsp-plugins-impulse-responses.lv2/*.ttl ${D}/${BUNDLEDIR}/${PN}.lv2/
+    cp -r ${WORKDIR}/lsp-plugins-impulse-responses.lv2/modgui ${D}/${BUNDLEDIR}/${PN}.lv2/
 
     chmod 755 -R ${D}/${BUNDLEDIR}
 }
