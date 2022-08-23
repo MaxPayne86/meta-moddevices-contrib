@@ -61,6 +61,7 @@ AUDIOPLUGINS = "\
     carla-plugins \
     die-plugins \
     cardinal \
+    modspectre \
 "
 
 # A few extra plugins from Polyeffects and others
