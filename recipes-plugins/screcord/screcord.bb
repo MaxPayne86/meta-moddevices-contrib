@@ -1,15 +1,18 @@
-# Recipe to install screcord-lv2, a simple Lv2 capture plugin
+SUMMARY = "Screcord.lv2 a Lv2 capture plugin"
+DESCRIPTION = ""
+SECTION = "lv2/stable"
 LICENSE = "CLOSED"
 LIC_FILES_CHKSUM = ""
-FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
+BUNDLEDIR = "${@bb.utils.contains('SECTION', 'lv2/stable', '${LV2_DIR}', '${LV2_DIR_BAD}', d)}"
 
-INSANE_SKIP_${PN} = "ldflags"
+INSANE_SKIP_${PN} = "already-stripped"
 
 # No information for SRC_URI yet (only an external source tree was specified)
 SRC_URI = "\
-    git://github.com/brkl/screcord.lv2.git;protocol=git;branch=master \
+    gitsm://github.com/brummer10/screcord.lv2.git;protocol=https;branch=master \
+    file://fix-compilation.patch \
 "
-SRCREV="master"
+SRCREV="fe0d42d31fecde5ad7d3c05514cf2ecb57fd2495"
 
 S = "${WORKDIR}/git"
 
@@ -20,13 +23,14 @@ DEPENDS = " \
     lv2 \
 "
 
+do_compile () {
+    oe_runmake mod
+}
+
 do_install () {
-    install -d ${D}/${LV2_DIR}/sc_record.lv2
-    cp -r ${WORKDIR}/git/sc_record.lv2/*.so ${D}/${LV2_DIR}/sc_record.lv2
-    cp -r ${WORKDIR}/git/sc_record.lv2/*.ttl ${D}/${LV2_DIR}/sc_record.lv2
-    cp -r ${WORKDIR}/git/modgui ${D}/${LV2_DIR}/sc_record.lv2
+    oe_runmake install DESTDIR=${D}${BUNDLEDIR} INSTALL_DIR=""
 }
 
 FILES_${PN} = "\
-    ${LV2_DIR}/sc_record.lv2/* \
+    ${BUNDLEDIR} \
 "
