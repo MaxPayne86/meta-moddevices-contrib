@@ -162,7 +162,7 @@ lsp:impulse_responses_stereo
 		lv2:portProperty pp:logarithmic, pp:hasStrictBounds ;
 		lv2:minimum 0.01 ;
 		lv2:maximum 10.000000 ;
-		lv2:default 1.000000 ;
+		lv2:default 0.01 ;
 	] , [
 		a lv2:InputPort, lv2:ControlPort ;
 		lv2:index 7 ;
@@ -177,7 +177,7 @@ lsp:impulse_responses_stereo
 		lv2:portProperty pp:logarithmic, pp:hasStrictBounds ;
 		lv2:minimum 0.01 ;
 		lv2:maximum 10.000000 ;
-		lv2:default 0.500000 ;
+		lv2:default 1.000000 ;
 	] , [
 		a lv2:InputPort, lv2:ControlPort ;
 		lv2:index 8 ;
