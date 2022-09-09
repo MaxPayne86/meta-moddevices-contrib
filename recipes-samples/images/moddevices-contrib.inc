@@ -54,7 +54,6 @@ AUDIOPLUGINS = "\
     invada-lv2 \
     alo-lv2 \
     fluidsynth-plug \
-    zeroconvo-lv2  \
     rkrlv2 \
     sfizz-lv2 \
     lsp-plugins \
@@ -62,6 +61,8 @@ AUDIOPLUGINS = "\
     die-plugins \
     cardinal \
     modspectre \
+    screcord \
+    x42-zconv \
 "
 
 # A few extra plugins from Polyeffects and others
