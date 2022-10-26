@@ -4,9 +4,9 @@ HOMEPAGE = "http://www.zamaudio.com"
 SECTION = "lv2/stable"
 LICENSE = "CLOSED"
 LIC_FILES_CHKSUM = ""
-FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
+FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
 
-INSANE_SKIP_${PN} = "already-stripped"
+INSANE_SKIP:${PN} = "already-stripped"
 
 S = "${WORKDIR}/git"
 
@@ -55,10 +55,10 @@ DEPENDS = " \
     fftw \
 "
 
-RDEPENDS_zam-plugins = "\
+RDEPENDS:zam-plugins = "\
 "
 
-FILES_${PN} = "\
+FILES:${PN} = "\
     ${LV2_DIR}/ZamAutoSat.lv2/* \
     ${LV2_DIR}/ZaMaximX2.lv2/* \
     ${LV2_DIR}/ZamComp.lv2/* \

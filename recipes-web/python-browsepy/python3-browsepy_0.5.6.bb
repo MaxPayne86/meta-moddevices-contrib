@@ -12,7 +12,7 @@ SRCREV="368e6918f10175111956c89907f7baec4efe99b3"
 
 S = "${WORKDIR}/git"
 
-RDEPENDS_${PN} = "\
+RDEPENDS:${PN} = "\
     python3-flask \
     python3-unicategories \
 "

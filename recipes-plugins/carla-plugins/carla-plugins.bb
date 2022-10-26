@@ -3,9 +3,9 @@ DESCRIPTION = "Carla lv2 plugins contains audio and midi players"
 SECTION = "lv2/stable"
 LICENSE = "CLOSED"
 LIC_FILES_CHKSUM = ""
-FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
+FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
 
-INSANE_SKIP_${PN} = "already-stripped"
+INSANE_SKIP:${PN} = "already-stripped"
 
 SRC_URI = "\
     gitsm://github.com/falkTX/Carla.git;protocol=git;branch=main \
@@ -36,6 +36,6 @@ DEPENDS += " \
     libsndfile1 \
 "
 
-FILES_${PN} = "\
+FILES:${PN} = "\
     ${LV2_DIR} \
 "

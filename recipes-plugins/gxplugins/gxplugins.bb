@@ -88,6 +88,6 @@ DEPENDS = " \
     jack \
 "
 
-FILES_${PN} = "\
+FILES:${PN} = "\
     ${LV2_DIR} \
 "

@@ -4,8 +4,8 @@ SECTION = "lv2/webui"
 LICENSE = "CLOSED"
 LIC_FILES_CHKSUM = ""
 
-#INSANE_SKIP_${PN} = "already-stripped"
-#INSANE_SKIP_${PN} += " installed-vs-shipped"
+#INSANE_SKIP:${PN} = "already-stripped"
+#INSANE_SKIP:${PN} += " installed-vs-shipped"
 
 # No information for SRC_URI yet (only an external source tree was specified)
 SRC_URI = "\
@@ -283,12 +283,12 @@ DEPENDS = " \
     jack \
 "
 
-FILES_${PN} = "\
+FILES:${PN} = "\
     ${LV2_DIR}/calf.lv2/* \
     ${LV2_DIR_BAD}/calf-bad.lv2/* \
 "
 
-FILES_${PN} += "\
+FILES:${PN} += "\
     ${LV2_DIR}/Freakclip.lv2/* \
     ${LV2_DIR}/Granulator.lv2/* \
     ${LV2_DIR}/b_overdrive/* \
@@ -297,11 +297,11 @@ FILES_${PN} += "\
     ${LV2_DIR}/b_whirl/* \
 "
 
-FILES_${PN} += "\
+FILES:${PN} += "\
     ${LV2_DIR}/gxtuner.lv2/* \
 "
 
-FILES_${PN} += "\
+FILES:${PN} += "\
     ${LV2_DIR}/ZamAutoSat.lv2/* \
     ${LV2_DIR}/ZaMaximX2.lv2/* \
     ${LV2_DIR}/ZamComp.lv2/* \
@@ -317,7 +317,7 @@ FILES_${PN} += "\
     ${LV2_DIR}/ZaMultiCompX2.lv2/* \
 "
 
-FILES_${PN} += "\
+FILES:${PN} += "\
     ${LV2_DIR}/ZynAddSubFX.lv2/* \
     ${LV2_DIR}/ZynAlienWah.lv2/* \
     ${LV2_DIR}/ZynChorus.lv2/* \
@@ -328,7 +328,7 @@ FILES_${PN} += "\
     ${LV2_DIR}/ZynReverb.lv2/* \
 "
 
-FILES_${PN} += "\
+FILES:${PN} += "\
     ${LV2_DIR}/drowaudio-distortion.lv2/* \
     ${LV2_DIR}/drowaudio-distortionshaper.lv2/* \
     ${LV2_DIR}/drowaudio-flanger.lv2/* \
@@ -351,12 +351,12 @@ FILES_${PN} += "\
     ${LV2_DIR}/Vex.lv2/* \
 "
 
-FILES_${PN} += "\
+FILES:${PN} += "\
     ${LV2_DIR}/SwankyAmp.lv2 \
     ${LV2_DIR}/vitalium.lv2 \
 "
 
-FILES_${PN} += "\
+FILES:${PN} += "\
     ${LV2_DIR}/3BandEQ.lv2/* \
     ${LV2_DIR}/3BandSplitter.lv2/* \
     ${LV2_DIR}/AmplitudeImposer.lv2/* \
@@ -372,7 +372,7 @@ FILES_${PN} += "\
     ${LV2_DIR}/SoulForce.lv2/* \
 "
 
-FILES_${PN} += "\
+FILES:${PN} += "\
     ${LV2_DIR}/Harmless.lv2/* \
     ${LV2_DIR}/Larynx.lv2/* \
     ${LV2_DIR}/Modulay.lv2/* \
@@ -380,40 +380,40 @@ FILES_${PN} += "\
     ${LV2_DIR}/Shiroverb.lv2/* \
 "
 
-FILES_${PN} += "\
+FILES:${PN} += "\
     ${LV2_DIR}/stepseq_s8n4.lv2/* \
     ${LV2_DIR}/stepseq_s8n8.lv2/* \
     ${LV2_DIR}/stepseq_s8n16.lv2/* \
 "
 
-FILES_${PN} += "\
+FILES:${PN} += "\
     ${LV2_DIR}/fomp.lv2 \
 "
 
-FILES_${PN} += "\
+FILES:${PN} += "\
     ${LV2_DIR}/artyfx.lv2 \
     ${LV2_DIR_BAD}/artyfx-bad.lv2 \
 "
 
-FILES_${PN} += "\
+FILES:${PN} += "\
     ${LV2_DIR}/invada.lv2 \
     ${LV2_DIR_BAD}/invada-bad.lv2 \
 "
 
-FILES_${PN} += "\
+FILES:${PN} += "\
     ${LV2_DIR_BAD}/sooperlooper.lv2 \
     ${LV2_DIR_BAD}/sooperlooper-2x2.lv2 \
 "
 
-FILES_${PN} += "\
+FILES:${PN} += "\
     ${LV2_DIR}/rkr.lv2 \
     ${LV2_DIR_BAD}/rkr-bad.lv2 \
 "
 
-FILES_${PN} += "\
+FILES:${PN} += "\
     ${LV2_DIR}/amsynth.lv2 \
 "
 
-FILES_${PN} += "\
+FILES:${PN} += "\
     ${LV2_DIR}/carla-files.lv2 \
 "

@@ -1,10 +1,10 @@
 # Recipe to install mod-ui software
 LICENSE = "CLOSED"
 LIC_FILES_CHKSUM = ""
-FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
+FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
 
-INSANE_SKIP_${PN} = "file-rdeps"
-INSANE_SKIP_${PN} += "already-stripped"
+INSANE_SKIP:${PN} = "file-rdeps"
+INSANE_SKIP:${PN} += "already-stripped"
 
 S = "${WORKDIR}/git/utils"
 
@@ -32,7 +32,7 @@ DEPENDS = " \
     lilv \
 "
 
-RDEPENDS_${PN} = "\
+RDEPENDS:${PN} = "\
     bash \
     mod-host \
     sndfile-tools \
@@ -48,7 +48,7 @@ RDEPENDS_${PN} = "\
     kxstudio-lv2-extensions \
 "
 
-FILES_${PN} += "\
+FILES:${PN} += "\
     ${MOD_UI_DIR}/* \
     ${MOD_UI_DIR}/utils/libmod_utils.so \
 "

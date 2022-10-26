@@ -34,7 +34,7 @@ EXTRA_OECONF = " \
     --lv2dir=${LV2_DIR} \
 "
 
-do_install_append () {
+do_install:append () {
     # gxtuner.lv2 graphics is installed by mod-lv2-data recipe
     rm -rf ${D}${LV2_DIR}/gxtuner.lv2/*.ttl
 
@@ -54,6 +54,6 @@ DEPENDS = " \
     jack \
 "
 
-FILES_${PN} += "\
+FILES:${PN} += "\
     ${LV2_DIR} \
 "

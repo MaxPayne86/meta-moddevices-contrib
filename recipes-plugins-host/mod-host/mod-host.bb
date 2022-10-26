@@ -2,8 +2,8 @@
 LICENSE = "CLOSED"
 LIC_FILES_CHKSUM = ""
 
-INSANE_SKIP_${PN} = "already-stripped"
-#INSANE_SKIP_${PN} += " installed-vs-shipped"
+INSANE_SKIP:${PN} = "already-stripped"
+#INSANE_SKIP:${PN} += " installed-vs-shipped"
 
 S = "${WORKDIR}/git"
 
@@ -16,7 +16,7 @@ SRCREV="2b91ff30da05672fb079bd6bf0a812a975b1048e"
 
 inherit pkgconfig
 
-CFLAGS_append = "-ffast-math"
+CFLAGS:append = "-ffast-math"
 
 do_compile () {
     oe_runmake
@@ -34,11 +34,11 @@ DEPENDS = "\
     cc-master \
 "
 
-RDEPENDS_${PN} = "\
+RDEPENDS:${PN} = "\
     cc-master \
 "
 
-FILES_${PN} += " \
+FILES:${PN} += " \
     /usr/bin \
     /usr/lib \
     /usr/bin/mod-host \
