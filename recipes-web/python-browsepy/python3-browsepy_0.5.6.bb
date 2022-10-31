@@ -3,7 +3,7 @@ HOMEPAGE = "https://github.com/ergoithz/browsepy"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=e8d404beb09945b662eef91856df88db"
 
-inherit pypi setuptools3
+inherit setuptools3 pkgconfig
 
 SRC_URI = "\
     git://github.com/moddevices/browsepy.git;protocol=https;branch=master \
