@@ -1,4 +1,4 @@
-SUMMARY = "The simple web file browser."
+SUMMARY = "Simple web file browser using flask"
 HOMEPAGE = "https://github.com/ergoithz/browsepy"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=e8d404beb09945b662eef91856df88db"
