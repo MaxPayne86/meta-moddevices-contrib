@@ -9,7 +9,7 @@ LIC_FILES_CHKSUM = ""
 
 # No information for SRC_URI yet (only an external source tree was specified)
 SRC_URI = "\
-    git://github.com/moddevices/mod-lv2-data.git;protocol=git;branch=master \
+    git://github.com/moddevices/mod-lv2-data.git;protocol=https;branch=master \
 "
 SRCREV="e4bbdbd280ea963fbdb1c47614ee367be01bd877"
 

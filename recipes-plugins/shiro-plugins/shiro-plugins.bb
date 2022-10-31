@@ -7,7 +7,7 @@ INSANE_SKIP_${PN} = "already-stripped"
 
 # No information for SRC_URI yet (only an external source tree was specified)
 SRC_URI = "\
-    gitsm://github.com/ninodewit/SHIRO-Plugins.git;protocol=git;branch=master \
+    gitsm://github.com/ninodewit/SHIRO-Plugins.git;protocol=https;branch=master \
 "
 SRCREV="60a678ca6abdb7fa10b0ac8dd87e0e41052abe78"
 

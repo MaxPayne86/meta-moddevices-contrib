@@ -8,7 +8,7 @@ LIC_FILES_CHKSUM = ""
 INSANE_SKIP_${PN} = "already-stripped"
 
 SRC_URI = "\
-    gitsm://github.com/DISTRHO/DIE-Plugins.git;protocol=git;branch=main \
+    gitsm://github.com/DISTRHO/DIE-Plugins.git;protocol=https;branch=main \
 "
 SRCREV="d4c3922368710531b2adbebea292fd277cdc3ba0"
 

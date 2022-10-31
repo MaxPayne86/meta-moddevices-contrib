@@ -4,7 +4,7 @@ LIC_FILES_CHKSUM = ""
 
 # No information for SRC_URI yet (only an external source tree was specified)
 SRC_URI = "\
-    git://sigrok.org/libserialport;protocol=git;branch=master \
+    git://sigrok.org/libserialport;protocol=https;branch=master \
 "
 SRCREV="master"
 

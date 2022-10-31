@@ -9,7 +9,7 @@ FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
 
 # No information for SRC_URI yet (only an external source tree was specified)
 SRC_URI = "\
-    git://github.com/moddevices/mod-cabsim-IR-loader.git;protocol=git;branch=master \
+    git://github.com/moddevices/mod-cabsim-IR-loader.git;protocol=https;branch=master \
     file://01-fix-installation-paths.patch;patchdir=../ \
     file://cabsim.wisdom \
 "

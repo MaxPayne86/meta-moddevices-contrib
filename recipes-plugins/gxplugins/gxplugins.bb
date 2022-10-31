@@ -11,7 +11,7 @@ INHIBIT_SYSROOT_STRIP = "1"
 INHIBIT_PACKAGE_DEBUG_SPLIT  = "1"
 
 SRC_URI = "\
-    gitsm://github.com/brummer10/GxPlugins.lv2.git;protocol=git;branch=master \
+    gitsm://github.com/brummer10/GxPlugins.lv2.git;protocol=https;branch=master \
 "
 SRCREV = "e40b34f3fd5dc4c6523dc826062d0ddb2578f573"
 PV = "0.8"

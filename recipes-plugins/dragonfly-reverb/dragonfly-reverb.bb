@@ -9,7 +9,7 @@ LIC_FILES_CHKSUM = ""
 
 # No information for SRC_URI yet (only an external source tree was specified)
 SRC_URI = "\
-    gitsm://github.com/michaelwillis/dragonfly-reverb.git;protocol=git;branch=master \
+    gitsm://github.com/michaelwillis/dragonfly-reverb.git;protocol=https;branch=master \
 "
 SRCREV="0e1413decb1a652d68ab14b8c718ceb8d5d676dc"
 

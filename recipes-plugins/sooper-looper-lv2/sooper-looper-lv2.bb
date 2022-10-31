@@ -9,7 +9,7 @@ LIC_FILES_CHKSUM = ""
 
 # No information for SRC_URI yet (only an external source tree was specified)
 SRC_URI = "\
-    git://github.com/moddevices/sooperlooper-lv2-plugin.git;protocol=git;branch=master \
+    git://github.com/moddevices/sooperlooper-lv2-plugin.git;protocol=https;branch=master \
 "
 SRCREV="d3e80029ce4f6ef62b3758e95c5b889cab1db740"
 

@@ -7,7 +7,7 @@ FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
 
 # No information for SRC_URI yet (only an external source tree was specified)
 SRC_URI = "\
-    git://github.com/dcoredump/dexed.git;protocol=git;branch=master \
+    git://github.com/dcoredump/dexed.git;protocol=https;branch=master \
     file://01_fix-duplicated-comment.patch \
     file://02_makefile-ignore-ttl-change.patch \
 "

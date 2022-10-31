@@ -11,7 +11,7 @@ INHIBIT_PACKAGE_DEBUG_SPLIT  = "1"
 
 # No information for SRC_URI yet (only an external source tree was specified)
 SRC_URI = "\
-    git://github.com/devcurmudgeon/alo.git;protocol=git;branch=master \
+    git://github.com/devcurmudgeon/alo.git;protocol=https;branch=master \
     file://0001-Now-log-is-saved-under-tmp.patch;patchdir=../ \
 "
 SRCREV="e4199cc84db18dbd9eb6a14c39fd6e1fae9a57c0"

@@ -9,7 +9,7 @@ INSANE_SKIP_${PN} = "already-stripped"
 
 # No information for SRC_URI yet (only an external source tree was specified)
 SRC_URI = "\
-    git://github.com/DISTRHO/DPF-Plugins.git;protocol=git;branch=master \
+    git://github.com/DISTRHO/DPF-Plugins.git;protocol=https;branch=master \
 "
 SRCREV="86084a934adb26f529038cbcf901fd7a09b95897"
 

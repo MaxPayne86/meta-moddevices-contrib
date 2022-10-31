@@ -6,7 +6,7 @@ LIC_FILES_CHKSUM = ""
 FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
 
 SRC_URI = "\
-    gitsm://github.com/sfztools/sfizz.git;protocol=git;branch=master \
+    gitsm://github.com/sfztools/sfizz.git;protocol=https;branch=master \
     file://01-filetypes.patch \
     file://02-skip-qt-widgets.patch \
 "

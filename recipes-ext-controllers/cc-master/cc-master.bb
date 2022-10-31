@@ -8,7 +8,7 @@ INHIBIT_PACKAGE_DEBUG_SPLIT  = "1"
 
 # No information for SRC_URI yet (only an external source tree was specified)
 SRC_URI = "\
-    git://github.com/moddevices/cc-master.git;protocol=git;branch=master \
+    git://github.com/moddevices/cc-master.git;protocol=https;branch=master \
 "
 SRCREV="3fc46c8cee5318217a8d88e9883cbba25cc5e131"
 

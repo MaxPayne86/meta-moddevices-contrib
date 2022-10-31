@@ -10,7 +10,7 @@ S = "${WORKDIR}/git"
 
 # No information for SRC_URI yet (only an external source tree was specified)
 SRC_URI = "\
-    git://github.com/moddevices/caps-lv2.git;protocol=git;branch=master \
+    git://github.com/moddevices/caps-lv2.git;protocol=https;branch=master \
 "
 SRCREV="b830e2f8e46c2bf860ae77bdf86c57dfc9d977f9"
 

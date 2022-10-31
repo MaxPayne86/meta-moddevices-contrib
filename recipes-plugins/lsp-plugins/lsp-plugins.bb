@@ -11,7 +11,7 @@ INSANE_SKIP_${PN} = "ldflags"
 
 # No information for SRC_URI yet (only an external source tree was specified)
 SRC_URI = "\
-    gitsm://github.com/sadko4u/lsp-plugins.git;protocol=git;branch=master \
+    gitsm://github.com/sadko4u/lsp-plugins.git;protocol=https;branch=master \
     file://change-lv2path-behaviour.patch \
     file://ttl.tar.gz \
     file://lsp-plugins-impulse-responses.lv2/impulse_responses_mono.ttl \

@@ -10,7 +10,7 @@ INHIBIT_PACKAGE_DEBUG_SPLIT  = "1"
 
 # No information for SRC_URI yet (only an external source tree was specified)
 SRC_URI = "\
-    gitsm://github.com/dsheeler/harmonizer.lv2.git;protocol=git;branch=master \
+    gitsm://github.com/dsheeler/harmonizer.lv2.git;protocol=https;branch=master \
     file://0001-Fixing-shell-command-that-broke-compilation.patch \
 "
 SRCREV="b16e01c71263bd6254df3096eb16c70864a3d6dd"

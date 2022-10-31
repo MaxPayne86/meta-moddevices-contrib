@@ -8,7 +8,7 @@ FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
 INSANE_SKIP_${PN} = "already-stripped"
 
 SRC_URI = "\
-    gitsm://github.com/falkTX/Carla.git;protocol=git;branch=main \
+    gitsm://github.com/falkTX/Carla.git;protocol=https;branch=main \
 "
 SRCREV="51028655d09c9a21fc51cadd7bc48210295aa791"
 

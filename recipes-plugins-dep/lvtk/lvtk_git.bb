@@ -6,7 +6,7 @@ LIC_FILES_CHKSUM = ""
 
 # No information for SRC_URI yet (only an external source tree was specified)
 SRC_URI = "\
-    git://github.com/lvtk/lvtk.git;protocol=git;branch=master \
+    git://github.com/lvtk/lvtk.git;protocol=https;branch=master \
 "
 SRCREV="6bfe981dfb5b27ea199dd4f6801b5305ca0355f9"
 

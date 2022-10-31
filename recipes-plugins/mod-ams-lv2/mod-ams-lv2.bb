@@ -9,7 +9,7 @@ S = "${WORKDIR}/git"
 
 # No information for SRC_URI yet (only an external source tree was specified)
 SRC_URI = "\
-    git://github.com/moddevices/mod-ams-lv2.git;protocol=git;branch=master \
+    git://github.com/moddevices/mod-ams-lv2.git;protocol=https;branch=master \
     file://limit_frequency.patch \
     file://0001-We-re-using-lvtk-version-2.0.0.patch \
     file://0002-Adjusted-includes-for-lvtk-2.0.0.patch \

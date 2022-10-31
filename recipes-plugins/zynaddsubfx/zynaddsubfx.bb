@@ -11,7 +11,7 @@ INSANE_SKIP_${PN} = "already-stripped"
 
 # No information for SRC_URI yet (only an external source tree was specified)
 SRC_URI = "\
-    gitsm://git.code.sf.net/p/zynaddsubfx/code;protocol=git;branch=master \
+    gitsm://git.code.sf.net/p/zynaddsubfx/code;protocol=https;branch=master \
     file://01_no-asm.patch \
     file://02_tweak-global-settings.patch \
     file://03_no-cmake-opts.patch \

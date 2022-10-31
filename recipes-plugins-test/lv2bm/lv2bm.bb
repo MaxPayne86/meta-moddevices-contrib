@@ -4,7 +4,7 @@ LIC_FILES_CHKSUM = ""
 
 # No information for SRC_URI yet (only an external source tree was specified)
 SRC_URI = "\
-    git://github.com/moddevices/lv2bm.git;protocol=git;branch=master \
+    git://github.com/moddevices/lv2bm.git;protocol=https;branch=master \
 "
 SRCREV="ffd35a049c5f609f93460289dae0b319ad297810"
 

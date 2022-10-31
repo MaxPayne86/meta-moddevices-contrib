@@ -5,7 +5,7 @@ LICENSE = "CLOSED"
 LIC_FILES_CHKSUM = ""
 
 SRC_URI = "\
-    git://github.com/moddevices/mod-ttymidi;protocol=git;branch=master \
+    git://github.com/moddevices/mod-ttymidi;protocol=https;branch=master \
 "
 SRCREV="512edcc6aab390bdd3627cea005861211cd29d67"
 

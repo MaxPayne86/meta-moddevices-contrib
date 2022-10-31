@@ -7,7 +7,7 @@ LIC_FILES_CHKSUM = ""
 
 # No information for SRC_URI yet (only an external source tree was specified)
 SRC_URI = "\
-    git://github.com/pantherb/setBfree.git;protocol=git;branch=master \
+    git://github.com/pantherb/setBfree.git;protocol=https;branch=master \
 "
 SRCREV="93e7f154bee67590d6d321a572a1b107f8fc36e1"
 

@@ -10,7 +10,7 @@ INSANE_SKIP_${PN} = "already-stripped"
 
 # No information for SRC_URI yet (only an external source tree was specified)
 SRC_URI = "\
-    git://gareus.org/zeroconvo.lv2;protocol=git;branch=master \
+    git://gareus.org/zeroconvo.lv2;protocol=https;branch=master \
 "
 SRCREV="9a056680a7d460ec93ec5ff355812586513ed2ea"
 

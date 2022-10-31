@@ -10,7 +10,7 @@ FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
 
 # No information for SRC_URI yet (only an external source tree was specified)
 SRC_URI = "\
-    git://github.com/calf-studio-gear/calf.git;protocol=git;tag=0.0.60 \
+    git://github.com/calf-studio-gear/calf.git;protocol=https;tag=0.0.60 \
     file://fix-compilation-float-double.patch \
 "
 

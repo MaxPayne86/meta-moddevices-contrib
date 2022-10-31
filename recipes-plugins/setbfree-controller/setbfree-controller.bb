@@ -10,7 +10,7 @@ LIC_FILES_CHKSUM = ""
 
 # No information for SRC_URI yet (only an external source tree was specified)
 SRC_URI = "\
-    git://github.com/vallsv/setbfree-controller.lv2;protocol=git;branch=master \
+    git://github.com/vallsv/setbfree-controller.lv2;protocol=https;branch=master \
 "
 SRCREV="f38a874143814b92a7ca81f2274cc5a76c80bf6f"
 

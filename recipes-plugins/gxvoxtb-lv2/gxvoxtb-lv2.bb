@@ -6,7 +6,7 @@ S = "${WORKDIR}/git"
 
 # No information for SRC_URI yet (only an external source tree was specified)
 SRC_URI = "\
-    git://github.com/moddevices/gx_voxtb.lv2.git;protocol=git;branch=master \
+    git://github.com/moddevices/gx_voxtb.lv2.git;protocol=https;branch=master \
 "
 SRCREV="54a9acc8fe85212542c1cb4088338d3627788139"
 

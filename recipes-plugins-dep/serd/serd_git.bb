@@ -6,7 +6,7 @@ LIC_FILES_CHKSUM = "file://COPYING;md5=7aceb3a3edc99517b08f5cdd557e11fb"
 inherit waf pkgconfig
 
 SRC_URI = "\
-    git://github.com/drobilla/serd.git;protocol=git;branch=master \
+    git://github.com/drobilla/serd.git;protocol=https;branch=master \
     file://01_bypass-strict-separator-check.patch \
 "
 SRCREV="32f10751605e7124e415d38feb4d8176288c03ad"

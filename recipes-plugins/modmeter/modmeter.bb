@@ -7,7 +7,7 @@ INSANE_SKIP_${PN} = "already-stripped"
 
 # No information for SRC_URI yet (only an external source tree was specified)
 SRC_URI = "\
-    git://github.com/x42/modmeter.lv2.git;protocol=git;branch=master \
+    git://github.com/x42/modmeter.lv2.git;protocol=https;branch=master \
 "
 SRCREV="5927f9623473b031d2e281af503cab1ca6d917d0"
 

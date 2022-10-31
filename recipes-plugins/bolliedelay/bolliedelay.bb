@@ -10,7 +10,7 @@ INHIBIT_PACKAGE_DEBUG_SPLIT  = "1"
 
 # No information for SRC_URI yet (only an external source tree was specified)
 SRC_URI = "\
-    git://github.com/MrBollie/bolliedelay.lv2.git;protocol=git;branch=master \
+    git://github.com/MrBollie/bolliedelay.lv2.git;protocol=https;branch=master \
 "
 SRCREV="e00d63e5011ac209de3a70bd9a83c7cbb896383a"
 

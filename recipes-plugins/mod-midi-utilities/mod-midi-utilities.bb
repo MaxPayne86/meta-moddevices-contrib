@@ -4,7 +4,7 @@ LIC_FILES_CHKSUM = ""
 
 # No information for SRC_URI yet (only an external source tree was specified)
 SRC_URI = "\
-    git://github.com/moddevices/mod-midi-utilities.git;protocol=git;branch=master \
+    git://github.com/moddevices/mod-midi-utilities.git;protocol=https;branch=master \
 "
 SRCREV="ffa812ca034d0f6e5c924c29f59f78569246d958"
 

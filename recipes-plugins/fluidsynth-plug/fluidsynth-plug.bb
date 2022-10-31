@@ -9,7 +9,7 @@ S = "${WORKDIR}/git"
 
 # No information for SRC_URI yet (only an external source tree was specified)
 SRC_URI = "\
-    git://github.com/falkTX/FluidPlug.git;protocol=git;branch=master\
+    git://github.com/falkTX/FluidPlug.git;protocol=https;branch=master\
 "
 SRCREV="889b2568f5c4483b1c72b5d82e4090e27ef824de"
 

@@ -10,7 +10,7 @@ S = "${WORKDIR}/git"
 
 # No information for SRC_URI yet (only an external source tree was specified)
 SRC_URI = "\
-    git://github.com/moddevices/mod-pitchshifter.git;protocol=git;branch=master \
+    git://github.com/moddevices/mod-pitchshifter.git;protocol=https;branch=master \
 "
 SRCREV="4fabd8994c8dff40886198d9641c1b734655602d"
 

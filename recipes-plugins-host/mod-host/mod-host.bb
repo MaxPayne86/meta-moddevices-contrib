@@ -8,7 +8,7 @@ INSANE_SKIP_${PN} = "already-stripped"
 S = "${WORKDIR}/git"
 
 SRC_URI = "\
-    git://github.com/moddevices/mod-host.git;protocol=git;branch=master \
+    git://github.com/moddevices/mod-host.git;protocol=https;branch=master \
     file://01_fix-libjack-dir.patch \
     file://02_connect-all-networks.patch \
 "

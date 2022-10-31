@@ -13,7 +13,7 @@ FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
 
 # No information for SRC_URI yet (only an external source tree was specified)
 SRC_URI = "\
-    git://github.com/ssj71/rkrlv2.git;protocol=git;branch=master \
+    git://github.com/ssj71/rkrlv2.git;protocol=https;branch=master \
     file://Remove-custom-cxx-flags.patch \
 "
 SRCREV="7edcb4e29a358623bfd57fa2c27e5da60adfcec3"

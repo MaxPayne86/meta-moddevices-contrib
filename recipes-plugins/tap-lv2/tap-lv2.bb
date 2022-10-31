@@ -12,7 +12,7 @@ S = "${WORKDIR}/git"
 
 # No information for SRC_URI yet (only an external source tree was specified)
 SRC_URI = "\
-    git://github.com/moddevices/tap-lv2.git;protocol=git;branch=master \
+    git://github.com/moddevices/tap-lv2.git;protocol=https;branch=master \
     file://fix-code-indentation.patch \
 "
 SRCREV="de26a3c8c8c2227e6d7fba3dcb54ec5fe2def258"

@@ -7,7 +7,7 @@ LIC_FILES_CHKSUM = ""
 
 # No information for SRC_URI yet (only an external source tree was specified)
 SRC_URI = "\
-    git://github.com/ssj71/infamousPlugins.git;protocol=git;branch=master \
+    git://github.com/ssj71/infamousPlugins.git;protocol=https;branch=master \
 "
 SRCREV="28b405414a5d044e576ab00b75ceaa1c0a7b8929"
 

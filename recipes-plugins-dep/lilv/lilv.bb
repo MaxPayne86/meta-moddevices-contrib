@@ -11,7 +11,7 @@ DEPENDS += "lv2 serd sord sratom"
 PV = "0.24.2"
 
 SRC_URI = "\
-    git://github.com/lv2/lilv.git;protocol=git;branch=master \
+    git://github.com/lv2/lilv.git;protocol=https;branch=master \
     file://01_optional-skip-state-properties.patch \
     file://02_mod-version-compare.patch \
 "

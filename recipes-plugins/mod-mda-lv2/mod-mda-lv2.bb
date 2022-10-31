@@ -11,7 +11,7 @@ S = "${WORKDIR}/git"
 
 # No information for SRC_URI yet (only an external source tree was specified)
 SRC_URI = "\
-    git://github.com/moddevices/mda-lv2.git;protocol=git;branch=master \
+    git://github.com/moddevices/mda-lv2.git;protocol=https;branch=master \
 "
 SRCREV="3d6dd099146b72c1fe88e06679034715fb999a5b"
 

@@ -12,7 +12,7 @@ INHIBIT_PACKAGE_DEBUG_SPLIT  = "1"
 
 # No information for SRC_URI yet (only an external source tree was specified)
 SRC_URI = "\
-    gitsm://github.com/x42/x42-plugins.git;protocol=git;branch=master \
+    gitsm://github.com/x42/x42-plugins.git;protocol=https;branch=master \
     file://0001-Skip-desktop-plugins.patch \
 "
 SRCREV="ec8a2d0d3a59a8465aef1325c0ba748e8e5b1757"

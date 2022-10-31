@@ -10,7 +10,7 @@ INHIBIT_PACKAGE_DEBUG_SPLIT  = "1"
 
 # No information for SRC_URI yet (only an external source tree was specified)
 SRC_URI = "\
-    gitsm://github.com/x42/tinyamp.lv2.git;protocol=git;branch=master \
+    gitsm://github.com/x42/tinyamp.lv2.git;protocol=https;branch=master \
 "
 SRCREV="7da2876da03a443cb08b27f0c4d3f24633ed91c4"
 
