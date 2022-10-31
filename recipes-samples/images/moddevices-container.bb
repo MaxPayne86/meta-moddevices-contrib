@@ -9,6 +9,7 @@ OCI_IMAGE_ENTRYPOINT = "/usr/bin/sh"
 CONTAINER_SHELL = "busybox"
 
 IMAGE_INSTALL:append = "\
+    coreutils \
     ${ALSA} \
     ${JACK} \
     ${PYTHONSTUFF} \
