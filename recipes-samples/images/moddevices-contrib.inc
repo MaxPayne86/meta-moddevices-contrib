@@ -113,5 +113,4 @@ MODDEVICES = "\
     mod-ttymidi \
     mod-host \
     mod-ui \
-    cc-master \
 "

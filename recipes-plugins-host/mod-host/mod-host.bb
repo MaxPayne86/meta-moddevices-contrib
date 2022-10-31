@@ -31,11 +31,6 @@ DEPENDS = "\
     jack \
     fftw \
     readline \
-    cc-master \
-"
-
-RDEPENDS_${PN} = "\
-    cc-master \
 "
 
 FILES_${PN} += " \
