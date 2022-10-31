@@ -16,5 +16,6 @@ IMAGE_INSTALL_append = "\
     ${MODDEVICES} \
     aidadsp-lv2 \
     ${AUDIOLIBRARIES} \
+    container-files \
 "
 
