@@ -18,4 +18,3 @@ IMAGE_INSTALL_append = "\
     ${AUDIOLIBRARIES} \
     container-files \
 "
-
