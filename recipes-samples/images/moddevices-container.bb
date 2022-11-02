@@ -10,11 +10,8 @@ CONTAINER_SHELL = "busybox"
 
 IMAGE_INSTALL_append = " \
     ${CONTAINER_SHELL} \
-    ${ALSA} \
     ${JACK} \
-    ${PYTHONSTUFF} \
     ${MODDEVICES} \
     aidadsp-lv2 \
-    ${AUDIOLIBRARIES} \
     container-files \
 "
