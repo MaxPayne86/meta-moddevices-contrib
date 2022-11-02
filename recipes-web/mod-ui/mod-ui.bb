@@ -33,10 +33,8 @@ DEPENDS = " \
 "
 
 RDEPENDS_${PN} = "\
-    bash \
     mod-host \
     sndfile-tools \
-    python3 \
     python3-pillow \
     python3-pyserial \
     python3-pystache \
@@ -44,6 +42,7 @@ RDEPENDS_${PN} = "\
     python3-pycryptodome \
     python3-aggdraw \
     python3-browsepy \
+    python3-ctypes \
     mod-lv2-extensions \
     kxstudio-lv2-extensions \
 "
