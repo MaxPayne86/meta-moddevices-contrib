@@ -13,5 +13,5 @@ IMAGE_INSTALL_append = " \
     ${JACK} \
     ${MODDEVICES} \
     aidadsp-lv2 \
-    container-files \
+    container-entrypoint \
 "
