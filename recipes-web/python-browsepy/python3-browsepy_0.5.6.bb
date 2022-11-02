@@ -15,4 +15,5 @@ S = "${WORKDIR}/git"
 RDEPENDS_${PN} = "\
     python3-flask \
     python3-unicategories \
+    python3-setuptools \
 "
