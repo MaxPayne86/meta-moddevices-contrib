@@ -6,33 +6,24 @@ FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
 INSANE_SKIP_${PN} = "file-rdeps"
 INSANE_SKIP_${PN} += "already-stripped"
 
-S = "${WORKDIR}/git/utils"
+inherit setuptools3 pkgconfig
 
 SRC_URI = "\
     git://github.com/moddevices/mod-ui.git;protocol=https;branch=master \
-    file://solve-do-package-qa-issue.patch;patchdir=../ \
+    file://solve-do-package-qa-issue.patch \
+    file://0002-Migration-to-python3-pycryptodome.patch \
 "
 SRCREV="6c0d2717ba041d7d65e967acfbcc148437b30bf5"
 
-inherit pkgconfig
+S = "${WORKDIR}/git"
 
-MOD_UI_DIR = "/usr/local/mod-ui"
-
-do_install () {
-    install -d ${D}${MOD_UI_DIR}
-    cp -r ${S}/../* ${D}${MOD_UI_DIR}
-    chmod 777 -R ${D}${MOD_UI_DIR}
-
-    install -d ${D}${MOD_UI_DIR}/data
-}
-
-DEPENDS = " \
+DEPENDS += " \
     alsa-lib \
     jack \
     lilv \
 "
 
-RDEPENDS_${PN} = "\
+RDEPENDS_${PN} = " \
     mod-host \
     sndfile-tools \
     python3-pillow \
@@ -47,8 +38,4 @@ RDEPENDS_${PN} = "\
     kxstudio-lv2-extensions \
 "
 
-FILES_${PN} += "\
-    ${MOD_UI_DIR}/* \
-    ${MOD_UI_DIR}/utils/libmod_utils.so \
-"
-
+FILES_${PN} += "/"
