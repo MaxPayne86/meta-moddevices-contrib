@@ -19,11 +19,9 @@ IMAGE_INSTALL = "\
 IMAGE_INSTALL += "\
     ${ALSA} \
     ${JACK} \
-    ${PYTHONSTUFF} \
     ${MODDEVICES} \
     ${MODPLUGINS} \
     ${AUDIOPLUGINS} \
-    ${AUDIOLIBRARIES} \
     ${SYNTHENGINES} \
 "
 
