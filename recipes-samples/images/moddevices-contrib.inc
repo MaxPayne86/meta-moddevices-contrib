@@ -65,7 +65,8 @@ AUDIOPLUGINS = "\
     x42-zconv \
 "
 
-# A few extra plugins from Polyeffects and others
+# A few extra plugins not included in
+# mod-plugin-builder
 AUDIOPLUGINS_EXTRA = "\
     lenticular-lv2 \
     pitchtomidi-lv2 \
