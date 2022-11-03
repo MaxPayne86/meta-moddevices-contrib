@@ -3,6 +3,7 @@
 # Entrypoint script for moddevices-container
 
 # Additional env variables
+#export LD_BIND_NOW=1
 export LV2_PATH=$LV2_PATH:/usr/lib/lv2
 export SNDFILE_JACKPLAY_AUTOCONNECT=mod-host:monitor-in_%d
 
@@ -27,25 +28,30 @@ start_modttymidi()
 start_browsepy()
 {
     mkdir -p /home/root/user-files
+    mkdir -p /home/root/user-files/'SF2 Instruments'
+    mkdir -p /home/root/user-files/'SFZ Instruments'
+    mkdir -p /home/root/user-files/'Audio Loops'
+    mkdir -p /home/root/user-files/'Audio Recordings'
+    mkdir -p /home/root/user-files/'Audio Samples'
+    mkdir -p /home/root/user-files/'Audio Tracks'
+    mkdir -p /home/root/user-files/'MIDI Clips'
+    mkdir -p /home/root/user-files/'MIDI Songs'
+    mkdir -p /home/root/user-files/'Speaker Cabinets IRs'
+    mkdir -p /home/root/user-files/'Reverb IRs'
+    mkdir -p /home/root/user-files/'Model SIMs'
     /usr/bin/browsepy --directory /home/root/user-files --upload /home/root/user-files --removable /home/root/user-files 0.0.0.0 8081 2>&1|awk '{print "[browsepy]: "$0}' > /dev/stdout &
 }
 
 start_modui()
 {
-    #export HOME=/home/root
-    #export LV2_PATH=$LV2_PATH:/usr/lib/lv2:/home/root/.lv2plugins
+    /usr/bin/jack_wait -w 2> /dev/null
     mkdir -p /home/root/.pedalboards
-    mkdir -p /home/root/.data/mod-ui
-    export MOD_DATA_DIR=/home/root/.data/mod-ui
-    export MOD_DEV_ENVIRONMENT=0
     #export MOD_LOG=1
-    export MOD_LOG=0
-    export MOD_APP=0
-    export MOD_DEV_HMI=0
-    #export MOD_HMI_SERIAL_PORT="/dev/ttyUSB1"
-    export MOD_USER_FILES_DIR=/home/root/user-files
-    cd /usr/local/mod-ui
-    /usr/bin/python3 -u server.py 2>&1|awk '{print "[modui]: "$0}' > /dev/stdout &
+    export MOD_DEV_HMI=1
+    export MOD_KEYS_PATH=/root/keys/
+    export MOD_USER_FILES_DIR="/home/root/user-files"
+    export MOD_DEVICE_WEBSERVER_PORT=8888
+    /usr/bin/python3 /usr/bin/mod-ui 2>&1|awk '{print "[modui]: "$0}' > /dev/stdout &
 }
 
 start_jackd
