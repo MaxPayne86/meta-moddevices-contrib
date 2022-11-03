@@ -16,18 +16,6 @@ JACK = "\
     jack-utils \
 "
 
-PYTHONSTUFF = "\
-    python3-pyserial \
-    python3-tornado \
-    python3-pillow \
-    python3-pystache \
-    python3-modules \
-    python3-pydoc \
-    python3-smbus \
-    python3-websocket-client \
-    python3-requests \
-"
-
 AUDIOPLUGINS = "\
     calf \
     caps-lv2 \
