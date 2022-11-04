@@ -276,13 +276,6 @@ do_install () {
     chmod 755 -R ${D}/${LV2_DIR_BAD}
 }
 
-DEPENDS = " \
-    calf \
-    freaked \
-    lilv \
-    jack \
-"
-
 FILES_${PN} = "\
     ${LV2_DIR}/calf.lv2/* \
     ${LV2_DIR_BAD}/calf-bad.lv2/* \
