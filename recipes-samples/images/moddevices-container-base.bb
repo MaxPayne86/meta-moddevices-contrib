@@ -1,4 +1,4 @@
-SUMMARY = "Container for running moddevices software, a lv2 host controlled by a web ui"
+SUMMARY = "Container image running moddevices software stack, a lv2 host controlled by a web ui"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://${COREBASE}/meta/COPYING.MIT;md5=3da9cfbcb788c80a0384361b4de20420"
 
@@ -12,6 +12,5 @@ IMAGE_INSTALL_append = " \
     ${CONTAINER_SHELL} \
     ${JACK} \
     ${MODDEVICES} \
-    aidadsp-lv2 \
     container-entrypoint \
 "
