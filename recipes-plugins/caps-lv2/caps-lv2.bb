@@ -63,11 +63,7 @@ do_install () {
 }
 
 DEPENDS = " \
-    lilv \
-    jack \
-"
-
-RDEPENDS_caps-lv2 = "\
+    lv2 \
 "
 
 FILES_${PN} = "\
