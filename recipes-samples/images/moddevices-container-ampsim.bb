@@ -9,4 +9,5 @@ IMAGE_INSTALL_append = " \
     caps-lv2 \
     carla-plugins \
     x42-zconv \
+    container-browsepy-files \
 "
