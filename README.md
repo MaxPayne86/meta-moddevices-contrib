@@ -12,7 +12,13 @@ Moddevices Linux OpenEmbedded/Yocto Project base layer community contributed.
 - there is an example self-contained docker container image built with yocto
 
 ```
-bitbake moddevices-container
+bitbake moddevices-container-base
+```
+
+or
+
+```
+bitbake moddevices-container-ampsim
 ```
 
 you can find example local.conf and bblayers.conf under conf dir
