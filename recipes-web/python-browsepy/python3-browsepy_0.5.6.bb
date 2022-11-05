@@ -2,11 +2,13 @@ SUMMARY = "Simple web file browser using flask"
 HOMEPAGE = "https://github.com/ergoithz/browsepy"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=e8d404beb09945b662eef91856df88db"
+FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
 
 inherit setuptools3 pkgconfig
 
 SRC_URI = "\
     git://github.com/moddevices/browsepy.git;protocol=https;branch=master \
+    file://add-device-models.patch \
 "
 SRCREV="368e6918f10175111956c89907f7baec4efe99b3"
 
