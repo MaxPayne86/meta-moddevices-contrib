@@ -12,12 +12,6 @@ Moddevices Linux OpenEmbedded/Yocto Project base layer community contributed.
 - there is an example self-contained docker container image built with yocto
 
 ```
-bitbake moddevices-container-base
-```
-
-or
-
-```
 bitbake moddevices-container-ampsim
 ```
 
@@ -26,12 +20,12 @@ you can find example local.conf and bblayers.conf under conf dir
 #### Importing container image
 
 ```
-docker import moddevices-container-qemuarm64.tar.bz2 moddevices-container
+docker import moddevices-container-ampsim-qemuarm64.tar.bz2 moddevices-container
 ```
 
 #### Running container image
 
-Warning: jackd in container is problematic and non officially supported at the moment, use high buffer sizes
+Warning: jackd in container is problematic and non officially supported at the moment, use big buffer sizes
 
 ```
 docker run -it --rm -u 0 --cap-add=sys_nice --ulimit rtprio=95 --ulimit memlock=-1 --shm-size=128m --device=/dev/snd:/dev/snd --device=/dev/ttymxc3:/dev/ttymxc3 --env CARD=i2saudio --env SR=48000 --env BUFFER=1024 --env TTY=ttymxc3 moddevices-container sh
