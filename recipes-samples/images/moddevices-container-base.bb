@@ -10,6 +10,7 @@ CONTAINER_SHELL = "busybox"
 
 IMAGE_INSTALL_append = " \
     ${CONTAINER_SHELL} \
+    alsa-utils \
     ${JACK} \
     ${MODDEVICES} \
     container-entrypoint \
