@@ -1,6 +1,6 @@
 # INFO: The plugins in mod-cv-plugins use mod:CVPort specifier in the ttl.
 SUMMARY = "Ttl and gui files for lv2 plugins from moddevices with cc license"
-DESCRIPTION = "The files contained in this repo are supposed to overwrite the ones contained in other packages if already present O_o"
+DESCRIPTION = "These files usually overwrite those present in plugins sources"
 SECTION = "lv2/webui"
 LICENSE = "CLOSED"
 LIC_FILES_CHKSUM = ""
