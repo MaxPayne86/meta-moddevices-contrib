@@ -14,9 +14,7 @@ start_jackd()
 l mod-host mod-host 5555
 #l mod-peakmeter mod-peakmeter container
 EOF
-    # @TODO: add snd-seq module
-    #/usr/bin/jackd -R -P 80 -S -t 200 -C /tmp/jack-internal-session.conf -d alsa -d hw:$CARD -r $SR -p $BUFFER -n 2 -X seq 2>&1|awk '{print "[jackd]: "$0}' > /dev/stdout &
-    /usr/bin/jackd -R -P 80 -S -t 200 -C /tmp/jack-internal-session.conf -d alsa -d hw:$CARD -r $SR -p $BUFFER -n 2 2>&1|awk '{print "[jackd]: "$0}' > /dev/stdout &
+    /usr/bin/jackd -R -P 80 -S -t 200 -C /tmp/jack-internal-session.conf -d alsa -d hw:$CARD -r $SR -p $BUFFER -n 2 -X seq 2>&1|awk '{print "[jackd]: "$0}' > /dev/stdout &
 }
 
 start_modttymidi()
