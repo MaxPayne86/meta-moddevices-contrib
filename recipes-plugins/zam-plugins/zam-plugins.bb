@@ -2,9 +2,10 @@ SUMMARY = "Zamaudio lv2 plugin suite"
 DESCRIPTION = ""
 HOMEPAGE = "http://www.zamaudio.com"
 SECTION = "lv2/stable"
-LICENSE = "CLOSED"
-LIC_FILES_CHKSUM = ""
+LICENSE = "GPL-2.0"
+LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/GPL-2.0;md5=801f80980d171dd6425610833a22dbe6"
 FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
+BUNDLEDIR = "${@bb.utils.contains('SECTION', 'lv2/stable', '${LV2_DIR}', '${LV2_DIR_BAD}', d)}"
 
 INSANE_SKIP_${PN} = "already-stripped"
 
@@ -43,19 +44,20 @@ do_compile () {
 do_install () {
     # INFO: this suite now uses internal zita-convolver library
     for fx in ${FXLIST}; do
-        install -d ${D}/${LV2_DIR}/${fx}
-        cp -r ${S}/bin/${fx}/*.so ${D}/${LV2_DIR}/${fx}
+        install -d ${D}/${BUNDLEDIR}/${fx}
+        cp -r ${S}/bin/${fx}/*.so ${D}/${BUNDLEDIR}/${fx}
+        # ttls and modgui files are installed from mod-lv2-data
+        cp -r ${WORKDIR}/../../mod-lv2-data/*/git/plugins-fixed/${fx}/*.ttl ${D}/${BUNDLEDIR}/${fx}
+        cp -r ${WORKDIR}/../../mod-lv2-data/*/git/plugins-fixed/${fx}/modgui ${D}/${BUNDLEDIR}/${fx}
     done
-    chmod 755 -R ${D}/${LV2_DIR}/
+    chmod 644 -R ${D}/${LV2_DIR}/
 }
 
 DEPENDS = " \
     lilv \
     jack \
     fftw \
-"
-
-RDEPENDS_zam-plugins = "\
+    mod-lv2-data \
 "
 
 FILES_${PN} = "\
