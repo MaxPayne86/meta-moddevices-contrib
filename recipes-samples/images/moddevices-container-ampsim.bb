@@ -12,3 +12,5 @@ IMAGE_INSTALL_append = " \
     x42-tinygain \
     container-browsepy-files \
 "
+
+export IMAGE_BASENAME = "moddevices-container-ampsim"

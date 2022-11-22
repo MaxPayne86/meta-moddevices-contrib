@@ -16,3 +16,5 @@ IMAGE_INSTALL_append = " \
     ${MODDEVICES} \
     container-entrypoint \
 "
+
+export IMAGE_BASENAME = "moddevices-container-base"
