@@ -1,6 +1,6 @@
 # Recipe to install mod-ui software
-LICENSE = "CLOSED"
-LIC_FILES_CHKSUM = ""
+LICENSE = "GPL-3.0"
+LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/GPL-3.0;md5=c79ff39f19dfec6d293b95dea7b07891"
 FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
 
 INSANE_SKIP_${PN} = "file-rdeps"
