@@ -12,6 +12,7 @@ IMAGE_INSTALL_append = " \
     ${CONTAINER_SHELL} \
     alsa-utils \
     ${JACK} \
+    ${JACK_EXTRA} \
     ${MODDEVICES} \
     container-entrypoint \
 "

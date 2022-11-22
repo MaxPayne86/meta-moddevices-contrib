@@ -19,6 +19,7 @@ IMAGE_INSTALL = "\
 IMAGE_INSTALL += "\
     ${ALSA} \
     ${JACK} \
+    ${JACK_EXTRA} \
     ${MODDEVICES} \
     ${MODPLUGINS} \
     ${AUDIOPLUGINS} \

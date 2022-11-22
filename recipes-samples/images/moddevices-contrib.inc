@@ -3,17 +3,17 @@ HOMEPAGE = "https://github.com/MaxPayne86/meta-moddevices-contrib"
 LICENSE = "MIT"
 
 ALSA = "\
-    alsa-dev \
-    libasound \
-    alsa-plugins \
     alsa-utils \
-    alsa-utils-scripts \
 "
 
 JACK = "\
     jack-server \
     libjack \
     jack-utils \
+"
+
+JACK_EXTRA = "\
+    jack-capture \
 "
 
 AUDIOPLUGINS = "\
