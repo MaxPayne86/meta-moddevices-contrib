@@ -7,6 +7,19 @@
 export LV2_PATH=$LV2_PATH:/usr/lib/lv2
 export SNDFILE_JACKPLAY_AUTOCONNECT=mod-host:monitor-in_%d
 
+get_soundcard_number_from_id()
+{
+    ID=$1
+    for item in $(ls /sys/class/sound/card*/id); do
+        id=$(cat $item)
+        if [ "$id" = "$ID" ]; then
+            number=$(cat $(echo $item | sed -e 's/\/id$//')"/number")
+            return $number
+        fi
+    done
+    return -1
+}
+
 start_jackd()
 {
     cat > /tmp/jack-internal-session.conf <<EOF
@@ -51,6 +64,36 @@ start_modui()
     export MOD_DEVICE_WEBSERVER_PORT=8888
     /usr/bin/python3 /usr/bin/mod-ui 2>&1|awk '{print "[modui]: "$0}' > /dev/stdout &
 }
+
+# Specific Arduino stuff, apply custom settings
+# depending on board / carrier board combination
+if [ -e /run/arduino_hw_info.env ]; then
+    . /run/arduino_hw_info.env
+    if [ "$BOARD" = "portenta-x8" ]; then
+        if [ "$CARRIER_NAME" = "max" ]; then
+            echo "Applying Arduino Portenta-X8 settings for Max carrier board"
+            export CARD="cs42l52audio"
+            echo "Configuring soundcard $CARD"
+            get_soundcard_number_from_id $CARD
+            n=$?
+            if [ $n -lt 0 ]; then
+                echo "Error! Cannot identify hw:n for soundcard $CARD"
+                exit 1
+            fi
+            amixer -c $n sset 'ADC Left Mux' 'Input2A'
+            amixer -c $n sset 'ADC Right Mux' 'Input2B'
+
+            amixer -c $n sset 'HP Left Amp' on
+            amixer -c $n sset 'HP Right Amp' on
+            amixer -c $n sset 'Master' 204 # 0dB
+            amixer -c $n sset 'Headphone' 192 # 0dB
+
+            amixer -c $n sset 'SPK Left Amp' on
+            amixer -c $n sset 'SPK Right Amp' on
+            amixer -c $n sset 'Speaker' 192 # 0dB
+        fi
+    fi
+fi
 
 start_jackd
 #start_modttymidi
