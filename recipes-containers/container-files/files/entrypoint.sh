@@ -27,7 +27,11 @@ start_jackd()
 l mod-host mod-host 5555
 #l mod-peakmeter mod-peakmeter container
 EOF
-    /usr/bin/jackd -R -P 80 -S -t 200 -C /tmp/jack-internal-session.conf -d alsa -d hw:$CARD -r $SR -p $BUFFER -n 2 -X seq 2>&1|awk '{print "[jackd]: "$0}' > /dev/stdout &
+    if [ "FMT" = "16le" ]; then
+        /usr/bin/jackd -R -P 80 -S -t 200 -C /tmp/jack-internal-session.conf -d alsa -d hw:$CARD -S -r $SR -p $BUFFER -n 2 -X seq 2>&1|awk '{print "[jackd]: "$0}' > /dev/stdout &
+    else
+        /usr/bin/jackd -R -P 80 -S -t 200 -C /tmp/jack-internal-session.conf -d alsa -d hw:$CARD -r $SR -p $BUFFER -n 2 -X seq 2>&1|awk '{print "[jackd]: "$0}' > /dev/stdout &
+    fi
 }
 
 start_modttymidi()
@@ -73,6 +77,7 @@ if [ -e /run/arduino_hw_info.env ]; then
         if [ "$CARRIER_NAME" = "max" ]; then
             echo "Applying Arduino Portenta-X8 settings for Max carrier board"
             export CARD="cs42l52audio"
+            export FMT="16le"
             echo "Configuring soundcard $CARD"
             get_soundcard_number_from_id $CARD
             n=$?
@@ -83,16 +88,21 @@ if [ -e /run/arduino_hw_info.env ]; then
             amixer -c $n sset 'ADC Left Mux' 'Input2A'
             amixer -c $n sset 'ADC Right Mux' 'Input2B'
 
-            amixer -c $n sset 'HP Left Amp' on
-            amixer -c $n sset 'HP Right Amp' on
+            #amixer -c $n sset 'HP Left Amp' on
+            #amixer -c $n sset 'HP Right Amp' on
             amixer -c $n sset 'Master' 204 # 0dB
             amixer -c $n sset 'Headphone' 192 # 0dB
 
-            amixer -c $n sset 'SPK Left Amp' on
-            amixer -c $n sset 'SPK Right Amp' on
+            #amixer -c $n sset 'SPK Left Amp' on
+            #amixer -c $n sset 'SPK Right Amp' on
             amixer -c $n sset 'Speaker' 192 # 0dB
         fi
     fi
+fi
+
+if [ -z $CARD ]; then
+    echo "Error! No soundcard specified please set CARD env variable"
+    exit 1
 fi
 
 start_jackd
