@@ -1,29 +1,71 @@
 SUMMARY = "Dragonfly Reverb lv2 plugin"
 DESCRIPTION = "Dragonfly Reverb is a bundle of free audio effects for Linux, MacOS, and Windows."
-SECTION = "lv2/unstable"
-LICENSE = "CLOSED"
-LIC_FILES_CHKSUM = ""
+HOMEPAGE = "https://github.com/michaelwillis/dragonfly-reverb.git"
+SECTION = "lv2/stable"
+LICENSE = "GPL-3.0"
+LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/GPL-3.0;md5=c79ff39f19dfec6d293b95dea7b07891"
+BUNDLEDIR = "${@bb.utils.contains('SECTION', 'lv2/stable', '${LV2_DIR}', '${LV2_DIR_BAD}', d)}"
 
-#INSANE_SKIP_${PN} = "already-stripped"
-#INSANE_SKIP_${PN} += " installed-vs-shipped"
+INSANE_SKIP_${PN} += "already-stripped"
 
-# No information for SRC_URI yet (only an external source tree was specified)
-SRC_URI = "\
-    gitsm://github.com/michaelwillis/dragonfly-reverb.git;protocol=https;branch=master \
+FXLIST = "\
+    dragonfly-early-reflections \
+    dragonfly-hall-reverb \
+    dragonfly-plate-reverb \
+    dragonfly-room-reverb \
 "
-SRCREV="0e1413decb1a652d68ab14b8c718ceb8d5d676dc"
+
+BINLIST = "\
+    DragonflyRoomReverb.lv2 \
+    DragonflyPlateReverb.lv2 \
+    DragonflyHallReverb.lv2 \
+    DragonflyEarlyReflections.lv2 \
+"
+
+# @TODO: gitsm doesn't work for this recipe
+SRC_URI = "\
+    git://github.com/michaelwillis/dragonfly-reverb.git;protocol=https;branch=master \
+    file://01_optimizations.patch \
+    file://02_allow-zero-size-delay.patch \
+"
+SRCREV="582b9c65248023f710ae3245951fff678d38c3a2"
 
 S = "${WORKDIR}/git"
 
 inherit pkgconfig
 
-EXTRA_OEMAKE = "'NOOPT=true'"
+do_configure_prepend () {
+    bbwarn Fetching submodules in do_configure_prepend, fixme
+    cd ${S}
+    git submodule update --init --recursive
+}
 
-DEPENDS += " \
+do_compile () {
+    for fx in ${FXLIST}; do
+        bbdebug 1 "Building ${fx}..."
+        cd ${S}/plugins/${fx}
+        oe_runmake 'NOOPT=true lv2_dsp -C .'
+    done
+}
+
+do_install () {
+    for fx in ${BINLIST}; do
+        install -d ${D}/${BUNDLEDIR}/${fx}
+        cp -r ${S}/bin/${fx}/*.so ${D}/${BUNDLEDIR}/${fx}
+    done
+
+    # carla-files.lv2 ttls and modgui are installed from mod-lv2-data
+    for fx in ${BINLIST}; do
+        cp -r ${WORKDIR}/../../mod-lv2-data/*/git/plugins-fixed/${fx}/*.ttl ${D}/${BUNDLEDIR}/${fx}
+        cp -r ${WORKDIR}/../../mod-lv2-data/*/git/plugins-fixed/${fx}/modgui ${D}/${BUNDLEDIR}/${fx}
+    done
+}
+
+DEPENDS += "\
     lv2 \
-    jack \
+    mod-lv2-data \
 "
 
 FILES_${PN} = "\
-    ${LV2_DIR_BAD} \
+    ${BUNDLEDIR} \
 "
