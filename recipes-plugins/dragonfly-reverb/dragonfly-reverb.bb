@@ -54,7 +54,7 @@ do_install () {
         cp -r ${S}/bin/${fx}/*.so ${D}/${BUNDLEDIR}/${fx}
     done
 
-    # carla-files.lv2 ttls and modgui are installed from mod-lv2-data
+    # Ttls and modgui are installed from mod-lv2-data
     for fx in ${BINLIST}; do
         cp -r ${WORKDIR}/../../mod-lv2-data/*/git/plugins-fixed/${fx}/*.ttl ${D}/${BUNDLEDIR}/${fx}
         cp -r ${WORKDIR}/../../mod-lv2-data/*/git/plugins-fixed/${fx}/modgui ${D}/${BUNDLEDIR}/${fx}
