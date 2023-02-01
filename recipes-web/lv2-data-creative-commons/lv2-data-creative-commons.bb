@@ -16,6 +16,6 @@ do_install[noexec] = "1"
 SRC_URI = "\
     git://github.com/moddevices/lv2-data-creative-commons.git;protocol=https;branch=master \
 "
-SRCREV="1143b9e85ad74312fc9daac2d3897b068e4d06d5"
+SRCREV="d94a369b849d2c0c511319c12a2b5a10908ca2d9"
 
 S = "${WORKDIR}/git"
