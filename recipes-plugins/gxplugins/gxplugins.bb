@@ -64,12 +64,12 @@ FXLIST = "\
 "
 
 # This is required since different naming between this repo
-# and modgui graphics repo. Keep this list in sync with WEBGUI.
+# and modgui graphics repo. Keep this list in sync with WEBGUICC.
 FXLIST_remove = "\
     ${@bb.utils.contains("LICENSE_FLAGS_WHITELIST", "commercial", "GxSupersonic.lv2", "", d)} \
 "
 
-WEBGUI = "\
+WEBGUICC = "\
     ${@bb.utils.contains("LICENSE_FLAGS_WHITELIST", "commercial", "gx_supersonic.lv2", "", d)} \
 "
 
@@ -91,7 +91,7 @@ do_install () {
     done
 
     # The web graphics of GxSupersonic.lv2 is optionally provided by lv2-data-creative-commons under gx_supersonic.lv2
-    for fx in ${WEBGUI}; do
+    for fx in ${WEBGUICC}; do
         install -d ${D}/${BUNDLEDIR}/${fx}
         cp -rL ${WORKDIR}/../../lv2-data-creative-commons/*/git/plugin-data/${fx}/*.ttl ${D}/${BUNDLEDIR}/${fx}
         cp -rL ${WORKDIR}/../../lv2-data-creative-commons/*/git/plugin-data/${fx}/modgui ${D}/${BUNDLEDIR}/${fx}
