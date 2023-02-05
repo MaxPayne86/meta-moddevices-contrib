@@ -1,0 +1,12 @@
+diff --git a/plugins/ConvolutionReverb/OneKnobPlugin.cpp b/plugins/ConvolutionReverb/OneKnobPlugin.cpp
+index 5694483..529ead6 100644
+--- a/plugins/ConvolutionReverb/OneKnobPlugin.cpp
++++ b/plugins/ConvolutionReverb/OneKnobPlugin.cpp
+@@ -337,6 +337,7 @@ protected:
+             else
+                 ir = drwav_open_file_and_read_pcm_frames_f32(value, &channels, &sampleRate, &numFrames, nullptr);
+             DISTRHO_SAFE_ASSERT_RETURN(ir != nullptr,);
++            DISTRHO_SAFE_ASSERT_RETURN(numFrames > (drwav_uint64)(headBlockSize+tailBlockSize),);
+ 
+             loadedFilename = value;
+ 
