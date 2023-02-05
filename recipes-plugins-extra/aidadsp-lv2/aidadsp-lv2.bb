@@ -10,9 +10,9 @@ INSANE_SKIP_${PN} += "already-stripped"
 
 # No information for SRC_URI yet (only an external source tree was specified)
 SRC_URI = "\
-    gitsm://github.com/AidaDSP/aidadsp-lv2.git;protocol=https;branch=next \
+    gitsm://github.com/AidaDSP/aidadsp-lv2.git;protocol=https;branch=fancy-gui \
 "
-SRCREV="bcdf3fa7296be39595d642d7083f00597fd38f18"
+SRCREV="b049c9b5e7d0e4ea8fd22f8e28529f01c9e3b2a3"
 
 PV = "0.95"
 
