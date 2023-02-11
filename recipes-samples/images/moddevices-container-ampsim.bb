@@ -8,8 +8,12 @@ IMAGE_INSTALL_append = " \
     aidadsp-lv2 \
     caps-lv2 \
     carla-plugins \
-    x42-zconv \
+    lsp-plugins \
     x42-tinygain \
+    dragonfly-reverb \
+    oneknob-series \
+    guitarix-lv2 \
+    gxplugins \
     container-browsepy-files \
 "
 
