@@ -23,8 +23,8 @@ S = "${WORKDIR}/git"
 inherit pkgconfig
 
 EXTRA_OEMAKE += 'CROSS_COMPILING=true MOD_BUILD=true NOOPT=true WITH_LTO=true -C .'
-CFLAGS_append = " -D__MOD_DEVICES__"
-CXXFLAGS_append = " -D__MOD_DEVICES__"
+CFLAGS_append = " -D__MOD_DEVICES__ -D_MOD_DEVICE_DWARF"
+CXXFLAGS_append = " -D__MOD_DEVICES__ -D_MOD_DEVICE_DWARF"
 
 do_install () {
     for fx in ${FXLIST}; do
