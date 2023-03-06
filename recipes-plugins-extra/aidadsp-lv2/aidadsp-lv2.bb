@@ -10,11 +10,11 @@ INSANE_SKIP_${PN} += "already-stripped"
 
 # No information for SRC_URI yet (only an external source tree was specified)
 SRC_URI = "\
-    gitsm://github.com/AidaDSP/aidadsp-lv2.git;protocol=https;branch=fancy-gui \
+    gitsm://github.com/AidaDSP/aidadsp-lv2.git;protocol=https;branch=main \
 "
-SRCREV="b049c9b5e7d0e4ea8fd22f8e28529f01c9e3b2a3"
+SRCREV="6e54495ce95bcbaf2432ef4a3931299492b14671"
 
-PV = "0.95"
+PV = "0.96"
 
 S = "${WORKDIR}/git"
 
@@ -24,7 +24,7 @@ inherit cmake pkgconfig
 CXXFLAGS_append_aarch64 = " -fprefetch-loop-arrays -funroll-loops -static-libstdc++ -Wl,-Ofast -Wl,--as-needed -Wl,--strip-all"
 LDFLAGS_append_aarch64 = " -static-libstdc++ -Wl,-Ofast -Wl,--as-needed -Wl,--strip-all"
 
-EXTRA_OECMAKE = '-DCMAKE_BUILD_TYPE=Release -DRTNEURAL_XSIMD=ON -DDESTDIR=${BUNDLEDIR}'
+EXTRA_OECMAKE = '-DCMAKE_BUILD_TYPE=Release -DRTNEURAL_XSIMD=ON -DDESTDIR=${BUNDLEDIR} -DCMAKE_VERBOSE_MAKEFILE:BOOL=ON'
 
 DEPENDS = " \
     lv2 \
