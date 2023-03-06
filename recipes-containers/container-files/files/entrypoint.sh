@@ -100,6 +100,21 @@ if [ -e /run/arduino_hw_info.env ]; then
     fi
 fi
 
+if [ "$CARD" = "da7213audio" ]; then
+    echo "Configuring soundcard $CARD"
+    get_soundcard_number_from_id $CARD
+    n=$?
+    if [ $n -lt 0 ]; then
+        echo "Error! Cannot identify hw:n for soundcard $CARD"
+        exit 1
+    fi
+    amixer -c $n sset 'Mixout Left DAC Left' unmute
+    amixer -c $n sset 'Mixout Right DAC Right' unmute
+    amixer -c $n sset 'Headphone' unmute
+    amixer -c $n sset 'Lineout' unmute
+    amixer -c $n sset 'Lineout' 81
+fi
+
 if [ -z $CARD ]; then
     echo "Error! No soundcard specified please set CARD env variable"
     exit 1
