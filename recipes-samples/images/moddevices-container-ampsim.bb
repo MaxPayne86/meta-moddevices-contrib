@@ -10,6 +10,7 @@ IMAGE_INSTALL_append = " \
     carla-plugins \
     lsp-plugins \
     x42-tinygain \
+    x42-zconv \
     dragonfly-reverb \
     oneknob-series \
     guitarix-lv2 \
