@@ -16,4 +16,4 @@ do_package[noexec] = "1"
 SRC_URI = "\
     git://github.com/moddevices/mod-lv2-data.git;protocol=https;branch=master \
 "
-SRCREV="031517248a96dac83a0da898ec6d0321895d707b"
+SRCREV="0a89fb9806083cf02f99b28171d2d0ed427f2d62"
