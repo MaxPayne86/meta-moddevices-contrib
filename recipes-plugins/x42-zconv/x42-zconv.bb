@@ -14,11 +14,10 @@ SRC_URI = "\
     git://github.com/x42/zconvo.lv2.git;protocol=https;branch=master \
     file://01_skip-thread-safe-planner.patch \
     file://02_mod-tweaks.patch \
-    file://zeroconvo.lv2 \
 "
-SRCREV="052d518ee5849f7425b89db0f791cb530100b228"
+SRCREV="348f266330de493fae73520361af89c4826029c4"
 
-PV = "0.6.1"
+PV = "0.6.5"
 
 S = "${WORKDIR}/git"
 
@@ -29,8 +28,12 @@ CXXFLAGS_append = " -fno-finite-math-only -DNDEBUG -D_MOD_DEVICE_DWARF"
 do_install () {
     cd ${S}
     oe_runmake install DESTDIR=${D} LV2DIR=${BUNDLEDIR} PREFIX=""
+
+    # zeroconvo.lv2.lv2 ttls and modgui are installed from mod-lv2-data
     rm -rf ${D}${BUNDLEDIR}/zeroconvo.lv2/ir ${D}${BUNDLEDIR}/zeroconvo.lv2/*.ttl
-    cp -r ${WORKDIR}/zeroconvo.lv2/* ${D}${BUNDLEDIR}/zeroconvo.lv2/
+    install -d ${D}/${BUNDLEDIR}/carla-files.lv2
+    cp -r ${WORKDIR}/../../mod-lv2-data/*/git/plugins-fixed/zeroconvo.lv2/*.ttl ${D}/${BUNDLEDIR}/zeroconvo.lv2
+    cp -r ${WORKDIR}/../../mod-lv2-data/*/git/plugins-fixed/zeroconvo.lv2/modgui ${D}/${BUNDLEDIR}/zeroconvo.lv2
 }
 
 DEPENDS += " \
@@ -39,6 +42,7 @@ DEPENDS += " \
     libsndfile1 \
     libsamplerate0 \
     glib-2.0 \
+    mod-lv2-data \
 "
 
 FILES_${PN} = "\
