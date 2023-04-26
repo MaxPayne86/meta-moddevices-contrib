@@ -12,9 +12,9 @@ INSANE_SKIP_${PN} += "already-stripped"
 SRC_URI = "\
     gitsm://github.com/AidaDSP/aidadsp-lv2.git;protocol=https;branch=main \
 "
-SRCREV="ed18aaad0aeff313b43deb88323db908396338f7"
+SRCREV="b313724e80e0321cf14109d99dfed0d4526879b3"
 
-PV = "0.97"
+PV = "v1.0"
 
 S = "${WORKDIR}/git"
 
