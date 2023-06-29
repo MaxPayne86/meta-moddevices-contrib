@@ -10,10 +10,10 @@ INSANE_SKIP_${PN} += "already-stripped"
 
 # No information for SRC_URI yet (only an external source tree was specified)
 SRC_URI = "\
-    gitsm://github.com/AidaDSP/aidadsp-lv2.git;protocol=https;branch=main \
+    gitsm://github.com/AidaDSP/aidadsp-lv2.git;protocol=https;branch=minor-fixes \
     file://change-fileTypes-to-modelsim.patch \
 "
-SRCREV="b313724e80e0321cf14109d99dfed0d4526879b3"
+SRCREV="2d705838208993d8036bd8b8548ce36d06118d4f"
 
 PV = "v1.0"
 

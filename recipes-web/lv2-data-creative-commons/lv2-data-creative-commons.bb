@@ -12,9 +12,6 @@ do_populate_sysroot[noexec] = "1"
 do_configure[noexec] = "1"
 do_compile[noexec] = "1"
 do_install[noexec] = "1"
-do_package[noexec] = "1"
-do_packagedata[noexec] = "1"
-do_package_write_ipk[noexec] = "1"
 
 # No information for SRC_URI yet (only an external source tree was specified)
 SRC_URI = "\
