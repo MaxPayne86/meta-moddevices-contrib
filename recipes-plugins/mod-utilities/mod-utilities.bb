@@ -62,7 +62,7 @@ DEPENDS = " \
 "
 
 RDEPENDS_${PN} = "\
-	libasound \
+    libasound \
 "
 
 FILES_${PN} = "\
