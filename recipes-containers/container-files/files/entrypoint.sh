@@ -97,28 +97,29 @@ if [ -e /run/arduino_hw_info.env ]; then
             #amixer -c $n sset 'SPK Right Amp' on
             amixer -c $n sset 'Speaker' 192 # 0dB
         elif [ "$CARRIER_NAME" = "ditto" ]; then
-            if [ "$HAT_NAME" = "thestomp" ];
-            echo "Applying Arduino Portenta-X8 settings for Ditto carrier board and TheStomp! hat"
-            export CARD="cs42l52audio"
-            export FMT="16le"
-            echo "Configuring soundcard $CARD"
-            get_soundcard_number_from_id $CARD
-            n=$?
-            if [ $n -lt 0 ]; then
-                echo "Error! Cannot identify hw:n for soundcard $CARD"
-                exit 1
+            if [ "$HAT_NAME" = "thestomp" ]; then
+                echo "Applying Arduino Portenta-X8 settings for Ditto carrier board and TheStomp! hat"
+                export CARD="cs42l52audio"
+                export FMT="16le"
+                echo "Configuring soundcard $CARD"
+                get_soundcard_number_from_id $CARD
+                n=$?
+                if [ $n -lt 0 ]; then
+                    echo "Error! Cannot identify hw:n for soundcard $CARD"
+                    exit 1
+                fi
+                amixer -c $n sset 'ADC Left Mux' 'Input1A'
+                amixer -c $n sset 'ADC Right Mux' 'Input1B'
+
+                #amixer -c $n sset 'HP Left Amp' on
+                #amixer -c $n sset 'HP Right Amp' on
+                amixer -c $n sset 'Master' 204 # 0dB
+                amixer -c $n sset 'Headphone' 192 # 0dB
+
+                #amixer -c $n sset 'SPK Left Amp' on
+                #amixer -c $n sset 'SPK Right Amp' on
+                amixer -c $n sset 'Speaker' 192 # 0dB
             fi
-            amixer -c $n sset 'ADC Left Mux' 'Input1A'
-            amixer -c $n sset 'ADC Right Mux' 'Input1B'
-
-            #amixer -c $n sset 'HP Left Amp' on
-            #amixer -c $n sset 'HP Right Amp' on
-            amixer -c $n sset 'Master' 204 # 0dB
-            amixer -c $n sset 'Headphone' 192 # 0dB
-
-            #amixer -c $n sset 'SPK Left Amp' on
-            #amixer -c $n sset 'SPK Right Amp' on
-            amixer -c $n sset 'Speaker' 192 # 0dB
         fi
     fi
 fi
