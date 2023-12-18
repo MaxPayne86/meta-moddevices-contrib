@@ -14,7 +14,7 @@ SRC_URI[sha256sum] = "163f5b8fb45f6be3a5074a53a47e79ef51ec015ee43f3ec34b16be2791
 
 S = "${WORKDIR}/pystache-${PV}"
 
-DEPENDS += "python3"
+DEPENDS += "python3-core"
 
 # DISTUTILS_INSTALL_ARGS += "--disable-platform-guessing"
 

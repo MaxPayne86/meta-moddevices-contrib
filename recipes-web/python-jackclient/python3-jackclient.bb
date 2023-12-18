@@ -13,7 +13,7 @@ SRC_URI[md5sum] = "d6f0a5a66c76ccfa7dfb84df8184d181"
 SRC_URI[sha256sum] = "55bc516a88fc9e3eaac9dc6e55205bbf8eab8d9f9aae665a07324b2cfb54f211"
 
 DEPENDS += "\
-    python3 \
+    python3-core \
     python3-cffi \
     jack \
 "
