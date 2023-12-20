@@ -28,16 +28,16 @@ l mod-host mod-host 5555
 #l mod-peakmeter mod-peakmeter container
 EOF
     if [ "$FMT" = "16le" ]; then
-        /usr/bin/jackd -R -P 80 -S -t 200 -C /tmp/jack-internal-session.conf -d alsa -d hw:$CARD -S -r $SR -p $BUFFER -n 2 -X seq 2>&1|awk '{print "[jackd]: "$0}' > /dev/stdout &
+        $TASKSETCMD /usr/bin/jackd -R -P 80 -S -t 200 -C /tmp/jack-internal-session.conf -d alsa -d hw:$CARD -S -r $SR -p $BUFFER -n 2 -X seq 2>&1|awk '{print "[jackd]: "$0}' > /dev/stdout &
     else
-        /usr/bin/jackd -R -P 80 -S -t 200 -C /tmp/jack-internal-session.conf -d alsa -d hw:$CARD -r $SR -p $BUFFER -n 2 -X seq 2>&1|awk '{print "[jackd]: "$0}' > /dev/stdout &
+        $TASKSETCMD /usr/bin/jackd -R -P 80 -S -t 200 -C /tmp/jack-internal-session.conf -d alsa -d hw:$CARD -r $SR -p $BUFFER -n 2 -X seq 2>&1|awk '{print "[jackd]: "$0}' > /dev/stdout &
     fi
 }
 
 start_modttymidi()
 {
     /usr/bin/jack_wait -w 2> /dev/null
-    /usr/local/bin/mod-ttymidi -s /dev/$TTY -b 31250 -n ttymidi -r 70 2>&1|awk '{print "[ttymidi]: "$0}' > /dev/stdout &
+    $TASKSETCMD /usr/local/bin/mod-ttymidi -s /dev/$TTY -b 31250 -n ttymidi -r 70 2>&1|awk '{print "[ttymidi]: "$0}' > /dev/stdout &
 }
 
 start_browsepy()
