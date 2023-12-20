@@ -11,6 +11,8 @@ CONTAINER_SHELL = "busybox"
 IMAGE_INSTALL_append = " \
     ${CONTAINER_SHELL} \
     alsa-utils \
+    util-linux-taskset \
+    util-linux-chrt \
     ${JACK} \
     ${JACK_EXTRA} \
     ${MODDEVICES} \
