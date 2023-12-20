@@ -17,3 +17,7 @@ DEPENDS += "\
     python3-cffi \
     jack \
 "
+
+RDEPENDS_${PN} = "\
+    python3-core \
+"

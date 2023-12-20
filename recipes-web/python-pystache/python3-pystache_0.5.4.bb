@@ -16,6 +16,10 @@ S = "${WORKDIR}/pystache-${PV}"
 
 DEPENDS += "python3"
 
+RDEPENDS_${PN} = "\
+    python3-core \
+"
+
 # DISTUTILS_INSTALL_ARGS += "--disable-platform-guessing"
 
 CFLAGS_append = " -I${STAGING_INCDIR}"
