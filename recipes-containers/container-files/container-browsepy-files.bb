@@ -9,8 +9,8 @@ do_install () {
     ln -s ../.irfiles/cabs ${D}/home/root/user-files/'Speaker Cabinets IRs'
     ln -s ../.irfiles ${D}/home/root/user-files/'Reverb IRs'
 
-    install -d ${D}/home/root/user-files/'Model SIMs'
-    cp -r ${WORKDIR}/../../aidadsp-lv2/*/git/models/* ${D}/home/root/user-files/'Model SIMs'/
+    install -d ${D}/home/root/user-files/'Aida DSP Models'
+    cp -r ${WORKDIR}/../../aidadsp-lv2/*/git/models/* ${D}/home/root/user-files/'Aida DSP Models'/
 }
 
 DEPENDS = "\

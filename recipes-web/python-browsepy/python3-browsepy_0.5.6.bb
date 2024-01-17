@@ -8,14 +8,13 @@ inherit setuptools3 pkgconfig
 
 SRC_URI = "\
     git://github.com/moddevices/browsepy.git;protocol=https;branch=master \
-    file://add-device-models.patch \
+    file://01_skip-unicategories-req.patch \
 "
-SRCREV="368e6918f10175111956c89907f7baec4efe99b3"
+SRCREV="c2245873f9432b2839f09be7eeb2992fd3bbc5ff"
 
 S = "${WORKDIR}/git"
 
 RDEPENDS_${PN} = "\
     python3-flask \
-    python3-unicategories \
     python3-setuptools \
 "

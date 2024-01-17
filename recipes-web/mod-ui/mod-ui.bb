@@ -11,10 +11,9 @@ inherit setuptools3 pkgconfig
 SRC_URI = "\
     git://github.com/moddevices/mod-ui.git;protocol=https;branch=master \
     file://solve-do-package-qa-issue.patch \
-    file://0001-Added-support-for-Model-SIMs.patch \
     file://0002-Migration-to-python3-pycryptodome.patch \
 "
-SRCREV="6c0d2717ba041d7d65e967acfbcc148437b30bf5"
+SRCREV="43c204a397cf12f25654381893f59304ceec32a5"
 
 S = "${WORKDIR}/git"
 

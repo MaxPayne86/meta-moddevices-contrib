@@ -12,7 +12,7 @@ SRC_URI = "\
     file://01_fix-libjack-dir.patch \
     file://02_connect-all-networks.patch \
 "
-SRCREV="2b91ff30da05672fb079bd6bf0a812a975b1048e"
+SRCREV="f36bce78eed80f4f7194c923afd4dcae2c80bc79"
 
 inherit pkgconfig
 
