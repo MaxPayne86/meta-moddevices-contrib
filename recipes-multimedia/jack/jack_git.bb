@@ -19,10 +19,9 @@ DEPENDS = "libsamplerate0 libsndfile1 readline"
 SRC_URI = "\
     git://github.com/jackaudio/jack2.git \
     file://01-cycle_counter_timing.patch \
-    file://03_double-tick.patch \
 "
-SRCREV = "852ba2b8ebc944865e75d8eb5d4550d408772f3b"
-PV = "1.9.18"
+SRCREV = "58194d90f4321e0a8a0fbc5708a637e13f77159a"
+PV = "1.9.20"
 S = "${WORKDIR}/git"
 
 inherit waf pkgconfig
