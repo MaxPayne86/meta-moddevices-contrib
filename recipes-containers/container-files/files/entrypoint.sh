@@ -138,8 +138,17 @@ if [ "$CARD" = "da7213audio" ]; then
     amixer -c $n sset 'Mixout Left DAC Left' unmute
     amixer -c $n sset 'Mixout Right DAC Right' unmute
     amixer -c $n sset 'Headphone' unmute
-    amixer -c $n sset 'Lineout' unmute
-    amixer -c $n sset 'Lineout' 81
+    amixer -c $n sset 'Headphone' 57 # 0dB
+    amixer -c $n sset 'Aux' unmute
+    amixer -c $n sset 'ADC' unmute
+    amixer -c $n sset 'Mixin Left Aux Left' unmute
+    amixer -c $n sset 'Mixin Right Aux Right' unmute
+    amixer -c $n sset 'Mixin PGA' unmute
+    amixer -c $n sset 'Mixin PGA' 3 # 0dB
+    amixer -c $n sset 'Mixout Left DAC Left' unmute
+    amixer -c $n sset 'Mixout Right DAC Right' unmute
+    #amixer -c $n sset 'Lineout' unmute
+    #amixer -c $n sset 'Lineout' 81
 fi
 
 if [ -z $CARD ]; then
